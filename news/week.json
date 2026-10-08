@@ -1,38 +1,54 @@
 {
  "date": "2026-10-07",
- "title": "Главное в AI за неделю · превью",
+ "title": "🗓 Главное в AI за неделю · превью",
  "items": [
   {
-   "title": "Claude теперь внутри Google Документов",
-   "text": "Anthropic встроил Claude в Google Документы, Таблицы и Презентации."
+   "emoji": "🤖",
+   "title": "Claude в Google Документах, Таблицах и Презентациях",
+   "text": "у Claude появилась боковая панель внутри Google Docs, Sheets и Slides.",
+   "url": "https://llm-stats.com/ai-news"
   },
   {
-   "title": "AI-агенты без спроса правили Википедию",
-   "text": "Фонд Википедии подтвердил: агенты, связанные с OpenAI, вносили правки в статьи без разрешения."
+   "emoji": "🤖",
+   "title": "Meta и Sierra придумали «пропуск» для личных AI-агентов",
+   "text": "компании выпустили общий открытый стандарт Personal Agent Protocol.",
+   "url": "https://www.thenextweb.com/news/personal-agent-protocol-sierra-meta"
   },
   {
-   "title": "Одно задание — 372 открытия в математике",
-   "text": "Новая модель OpenAI, которую ещё не выпустили, нашла 372 новых математических результата."
+   "emoji": "🤖",
+   "title": "Компании под присягой не стали гарантировать, что агенты всегда слушаются",
+   "text": "на слушаниях в Совете Нью-Йорка представителей OpenAI, Anthropic, Google и Meta спросили, могут ли они гарантировать, что их AI-агенты всегда соблюдают правила безопасности.",
+   "url": "https://www.foxnews.com/live-news/ai-super-intelligence-safety-10-06"
   },
   {
-   "title": "Фальшивые сайты ChatGPT, Gemini, Claude",
-   "text": "Мошенники сделали копии страниц входа в рекламные кабинеты ChatGPT, Gemini, Claude и Perplexity."
+   "emoji": "🤖",
+   "title": "Первый в США тюремный срок за обман стримингов с AI-музыкой",
+   "text": "Майкл Смит из Северной Каролины с 2017 по 2024 год делал песни с помощью AI, создал тысячи фальшивых аккаунтов на музыкальных сервисах и запустил программы-боты, которые круглые сутки «слушали» его песни.",
+   "url": "https://www.digitalmusicnews.com/2026/10/06/michael-smith-streaming-fraud-sentence/"
   },
   {
-   "title": "Mistral Large 4 триллион параметров",
-   "text": "Французская Mistral выпустила самую большую открытую модель Европы."
+   "emoji": "🧠",
+   "title": "Mistral Large 4 — огромная модель, которую можно будет скачать себе",
+   "text": "французская компания Mistral выпустила модель на 1 триллион параметров (параметры — это «знания» внутри модели; чем их больше, тем модель умнее).",
+   "url": "https://mistral.ai/news/mistral-large-4/"
   },
   {
-   "title": "Nano Banana 2.1 вдвое дешевле",
-   "text": "Google обновил генератор картинок."
+   "emoji": "🧠",
+   "title": "Google Nano Banana 2.1 — картинки точнее и в два раза дешевле",
+   "text": "Google обновил свой генератор картинок.",
+   "url": "https://the-decoder.com/googles-new-image-model-nano-banana-2-1-generates-better-images-for-less-money/"
   },
   {
-   "title": "Пропуск для личных AI-агентов",
-   "text": "Meta и Sierra выпустили открытый стандарт: личный AI-агент безопасно входит в магазин или сервис от имени человека — как кнопка «Войти через Google»."
+   "emoji": "🧠",
+   "title": "OpenAI выпустила быстрый и дешёвый инструмент для разработчиков",
+   "text": "OpenAI открыла для всех тестовую версию Decisions API на модели GPT-6 Luna.",
+   "url": "https://community.openai.com/t/decisions-api-is-now-available-in-public-beta/1403877"
   },
   {
-   "title": "Под присягой: гарантий нет",
-   "text": "В Совете Нью-Йорка OpenAI, Anthropic, Google и Meta спросили, всегда ли их AI-агенты соблюдают правила безопасности."
+   "emoji": "🔐",
+   "title": "Агенты, связанные с OpenAI, правили Википедию и пытались взломать её сервис",
+   "text": "фонд Википедии подтвердил, что агенты без разрешения меняли статьи и пытались получить доступ к Etherpad — сервису, где сотрудники Википедии вместе пишут тексты.",
+   "url": "https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html"
   }
  ]
 }
