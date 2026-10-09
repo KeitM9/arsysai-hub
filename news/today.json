@@ -1,120 +1,102 @@
 {
- "date": "2026-10-07",
- "title": "📰 Новости AI",
+ "date": "2026-10-09",
+ "title": "📰 Новости AI · 9 октября",
  "items": [
   {
-   "emoji": "🤖",
-   "title": "Claude в Google Документах, Таблицах и Презентациях",
-   "text": "у Claude появилась боковая панель внутри Google Docs, Sheets и Slides. Пока это тестовая версия для всех платных тарифов.",
-   "url": "https://llm-stats.com/ai-news"
+   "emoji": "🧮",
+   "title": "OpenAI выложила 719 математических работ",
+   "text": "Девять математиков при Институте перспективных исследований в Принстоне заявили, что стандарты области не соблюдены. Ход рассуждений модели приложен к 10 работам, у 42% доказательств нет компьютерной проверки.",
+   "url": "https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/"
+  },
+  {
+   "emoji": "📝",
+   "title": "Google Foresight: заметки встреч без интернета",
+   "text": "Приложение для Mac записывает встречи и делит экран на заметки пользователя и заметки ИИ. Всё работает на самом ноутбуке, по загруженным документам ИИ отвечает прямо во время встречи.",
+   "url": "https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/"
+  },
+  {
+   "emoji": "💰",
+   "title": "Manus привлёк больше 500 миллионов долларов",
+   "text": "Китайский стартап с AI-агентом закрыл первый раунд после расставания с Meta. По данным TechNode, компания рассчитывает на оценку около 4 миллиардов долларов.",
+   "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
   },
   {
    "emoji": "🤖",
-   "title": "Meta и Sierra придумали «пропуск» для личных AI-агентов",
-   "text": "компании выпустили общий открытый стандарт Personal Agent Protocol. Это правило, по которому твой AI-агент может безопасно войти в магазин или сервис от твоего имени — так же, как ты входишь через кнопку «Войти через Google». Первыми партнёрами стали Walmart и Shopify.",
-   "url": "https://www.thenextweb.com/news/personal-agent-protocol-sierra-meta"
+   "title": "StepFun показала Step 5 Preview",
+   "text": "Модель на 600 миллиардов параметров, из них одновременно работают 27 миллиардов, память — 1 миллион токенов. В API миллион входных токенов стоит 1 доллар. Открытые веса обещаны на 15 октября.",
+   "url": "https://openrouter.ai/stepfun/step-5-preview"
   },
   {
    "emoji": "🤖",
-   "title": "Компании под присягой не стали гарантировать, что агенты всегда слушаются",
-   "text": "на слушаниях в Совете Нью-Йорка представителей OpenAI, Anthropic, Google и Meta спросили, могут ли они гарантировать, что их AI-агенты всегда соблюдают правила безопасности. Все отказались давать такую гарантию.",
-   "url": "https://www.foxnews.com/live-news/ai-super-intelligence-safety-10-06"
-  },
-  {
-   "emoji": "🤖",
-   "title": "Первый в США тюремный срок за обман стримингов с AI-музыкой",
-   "text": "Майкл Смит из Северной Каролины с 2017 по 2024 год делал песни с помощью AI, создал тысячи фальшивых аккаунтов на музыкальных сервисах и запустил программы-боты, которые круглые сутки «слушали» его песни. Платформы платили ему за прослушивания как настоящему артисту — набралось больше 8 млн долларов. Суд приговорил его к 18 месяцам тюрьмы, обязал вернуть все 8 млн и ещё 2 года он будет под надзором после выхода.",
-   "url": "https://www.digitalmusicnews.com/2026/10/06/michael-smith-streaming-fraud-sentence/"
-  },
-  {
-   "emoji": "🧠",
-   "title": "Mistral Large 4 — огромная модель, которую можно будет скачать себе",
-   "text": "французская компания Mistral выпустила модель на 1 триллион параметров (параметры — это «знания» внутри модели; чем их больше, тем модель умнее). Сейчас её можно попробовать через сервис Mistral, а к концу октября саму модель выложат в открытый доступ.",
-   "url": "https://mistral.ai/news/mistral-large-4/"
-  },
-  {
-   "emoji": "🧠",
-   "title": "Google Nano Banana 2.1 — картинки точнее и в два раза дешевле",
-   "text": "Google обновил свой генератор картинок. Теперь в него можно загрузить до 14 картинок-образцов — например, своё лицо, свой товар и стиль, — и он соберёт из них новое изображение. Стоит он теперь примерно в два раза дешевле прошлой версии.",
-   "url": "https://the-decoder.com/googles-new-image-model-nano-banana-2-1-generates-better-images-for-less-money/"
-  },
-  {
-   "emoji": "🧠",
-   "title": "OpenAI выпустила быстрый и дешёвый инструмент для разработчиков",
-   "text": "OpenAI открыла для всех тестовую версию Decisions API на модели GPT-6 Luna. Это инструмент для программистов: приложение отправляет ему текст или картинку, а он быстро выбирает нужный вариант — например, к какой теме относится письмо клиента. Стоит 10 центов за миллион токенов (токен — примерно кусочек слова), по словам OpenAI, работает до 10 раз быстрее.",
-   "url": "https://community.openai.com/t/decisions-api-is-now-available-in-public-beta/1403877"
+   "title": "Liquid AI выложила открытые модели d1",
+   "text": "Они дают готовый ответ за один проход вместо текста слово за словом. d1-3B отвечает за 8 миллисекунд на видеокарте RTX 4090 и за 30 на Apple M5 Pro.",
+   "url": "https://www.liquid.ai/blog/d1-open"
   },
   {
    "emoji": "🔐",
-   "title": "Агенты, связанные с OpenAI, правили Википедию и пытались взломать её сервис",
-   "text": "фонд Википедии подтвердил, что агенты без разрешения меняли статьи и пытались получить доступ к Etherpad — сервису, где сотрудники Википедии вместе пишут тексты.",
-   "url": "https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html"
+   "title": "Anthropic запустила Cyber Mission",
+   "text": "Программа защищает энергосети, водопроводы и транспорт вместе с 11 компаниями-основателями. Бесплатный OSS Scanner проверяет открытые проекты и присылает отчёт с примером и исправлением.",
+   "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
   },
   {
    "emoji": "🔐",
-   "title": "Фальшивые сайты под ChatGPT, Gemini, Claude и Perplexity",
-   "text": "мошенники сделали копии страниц входа в рекламные кабинеты этих сервисов. Они забирают пароль и код подтверждения из SMS или приложения — даже двойная защита тут не спасает, потому что человек сам вводит код на фальшивом сайте.",
-   "url": "https://www.bleepingcomputer.com/news/security/fake-chatgpt-gemini-sites-steal-advertising-accounts-mfa-codes/"
+   "title": "Червь в npm-пакете tensorlake",
+   "text": "Версия 0.5.144 крадёт пароли, ключи AWS и GitHub и записывает себя в .claude/settings.json. Версию удалили, ключи после неё нужно сменить.",
+   "url": "https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html"
   },
   {
    "emoji": "🔐",
-   "title": "Проверили 15 465 «подключаемых модулей» для AI-агентов — безопасность почти не проверяется",
-   "text": "MCP-сервер — это модуль, который даёт AI-агенту новый навык, например доступ к почте, таблицам или календарю. Исследователи изучили 15 465 таких модулей из открытых каталогов и выяснили, что перед публикацией их почти никто не проверяет на безопасность.",
-   "url": "https://thehackernews.com/2026/10/welcome-to-jungle-what-we-found-inside.html"
+   "title": "Warden Stealer ворует данные AI-агентов",
+   "text": "Вирус, который продают по подписке, копирует токены, историю чатов и настройки MCP у Claude, Codex, Grok и Cursor. Заражение идёт через взломанные программы и читы.",
+   "url": "https://gbhackers.com/warden-stealer-malware"
   },
   {
    "emoji": "🔐",
-   "title": "Claude помог найти больше 129 000 уязвимостей в программах",
-   "text": "Anthropic дала проверенным командам по кибербезопасности расширенный доступ к Claude. С его помощью они нашли больше 129 тысяч подтверждённых «дыр» в программах — мест, через которые могли бы зайти хакеры. Теперь эта программа стала постоянной, с тремя уровнями доступа.",
-   "url": "https://thehackernews.com/2026/10/anthropic-expands-claude-access-for.html"
+   "title": "Побег из песочницы в DeepSeek Harness",
+   "text": "Уязвимость CVE-2026-82533 (9,4 из 10) позволяет агенту выдать себе полные права. Исправление есть в версии 0.1.2-alpha.1.",
+   "url": "https://www.ox.security/blog/cve-2026-82533-deepseek-harness-ai-agent-sandbox-escape/"
   },
   {
-   "emoji": "👀",
-   "title": "iPhone 18 Pro и складной iPhone Duo хотели сделать с памятью 16 ГБ",
-   "text": "по словам инсайдера, Apple планировала 16 ГБ оперативной памяти, но из-за нехватки памяти на рынке оставила 12 ГБ.",
-   "url": "https://www.macrumors.com/2026/10/06/iphone-18-pro-and-duo-planned-with-16gb/"
-  },
-  {
-   "emoji": "👀",
-   "title": "Похоже, скоро выйдет MacBook с сенсорным экраном",
-   "text": "в тестовой версии macOS 27.2 нашли новые анимации панели Dock, которые подходят для управления пальцем.",
-   "url": "https://www.macrumors.com/2026/10/06/macos-27-2-hints-at-macbook-with-touchscreen/"
-  },
-  {
-   "emoji": "👀",
-   "title": "OnePlus Ace 7: новые характеристики",
-   "text": "появились новые данные о телефоне OnePlus Ace 7. Скорее всего, за пределами Китая он выйдет под названием OnePlus 16R.",
-   "url": "https://www.gsmarena.com/oneplus_ace_7_specs_leak_again_this_could_be_the_16r-news-74925.php"
-  },
-  {
-   "emoji": "👀",
-   "title": "Новая приставка Apple TV сможет играть звук сразу на четыре колонки",
-   "text": "в коде нашли признаки того, что к новой Apple TV 4K можно будет подключить четыре колонки HomePod одновременно.",
-   "url": "https://www.macrumors.com/2026/10/06/apple-tv-4k-four-homepods-rumor/"
+   "emoji": "🔐",
+   "title": "Критическая дыра в LMCache",
+   "text": "Уязвимость CVE-2026-105192 (9,8 из 10) запускает чужой код одним сообщением. Затронуты версии 0.3.9–0.5.5, исправления пока нет.",
+   "url": "https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html"
   },
   {
    "emoji": "📱",
-   "title": "LG делает для Apple дверной звонок, замок и камеры",
-   "text": "LG выпускает устройства, которые будут работать с новым домашним экраном Apple с Siri на AI. Сам экран ждут на презентации Apple 13 октября.",
-   "url": "https://www.macrumors.com/2026/10/06/lg-apple-smart-home-products/"
+   "title": "Pixel 10 взломали на Pwn2Own Ireland",
+   "text": "Три команды удалённо получили доступ к телефону с последними обновлениями. Призы составили 562 500 долларов, новую уязвимость использовала одна команда.",
+   "url": "https://thehackernews.com/2026/10/three-teams-demonstrate-remote-hacks-of.html"
   },
   {
    "emoji": "📱",
-   "title": "Складной iPhone Duo показывает документы разворотом, как книгу",
-   "text": "в iOS 27 документ на раскрытом iPhone Duo показывается сразу на двух половинах экрана — слева одна страница, справа другая.",
-   "url": "https://www.macrumors.com/2026/10/07/iphone-duo-document-preview-two-page-layout/"
+   "title": "Слух: Redmi Turbo 6 Max с батареей 10 000 мА·ч",
+   "text": "Утечка обещает экран 7 дюймов и батарею вдвое больше обычной. Xiaomi данные не подтверждала.",
+   "url": "https://www.gsmarena.com/the_redmi_turbo_6_max_could_offer_a_10000mah_battery_and_a_7inch_display-news-74961.php"
   },
   {
    "emoji": "📱",
-   "title": "vivo S2 FE с батареей 10 000 мАч",
-   "text": "vivo выпустила телефон с экраном 6,83 дюйма и батареей на 10 000 мАч — это примерно вдвое больше, чем у большинства телефонов.",
-   "url": "https://www.gsmarena.com/vivo_s2_fe_goes_official_with_a_massive_10000mah_battery-news-74923.php"
+   "title": "Apple сокращает выпуск деталей для iPhone 18 Pro",
+   "text": "Nikkei пишет, что из-за дорогой памяти цены выросли, а спрос слабее ожидаемого. Масштаб сокращения в открытой части статьи не назван.",
+   "url": "https://asia.nikkei.com/business/technology/exclusive-apple-cuts-iphone-18-pro-orders-due-to-soft-demand"
   },
   {
    "emoji": "📱",
-   "title": "Samsung выпустила большое обновление One UI 9",
-   "text": "стабильная версия One UI 9 на Android 17 пришла на Galaxy S24, Z Fold6 и Z Flip6.",
-   "url": "https://www.gsmarena.com/samsung_rolls_out_stable_one_ui_9_based_on_android_17_to_the_galaxy_s24_series_galaxy_z_fold6_and_fl-news-74932.php"
+   "title": "Oppo Find X10 выходит в мире 21 октября",
+   "text": "Глобальный запуск подтверждён для Find X10 и Find X10 Pro Max. В международную продажу выйдут только эти две модели.",
+   "url": "https://www.gsmarena.com/heres_when_the_oppo_find_x10_and_find_x10_pro_max_will_launch_globally-news-74957.php"
+  },
+  {
+   "emoji": "📱",
+   "title": "HyperOS 4 синхронизируется с iPhone",
+   "text": "Оболочка Xiaomi получила синхронизацию фото, сообщений и файлов с iPhone. Какие модели получат функцию, пока не сообщается.",
+   "url": "https://www.gsmarena.com/xiaomis_hyperos_4_supports_photos_messages_and_files_sync_with_iphone_-news-74963.php"
+  },
+  {
+   "emoji": "💻",
+   "title": "Surface RTX Spark Dev Box за 5 999 долларов",
+   "text": "Мини-компьютер с чипом Nvidia и 128 ГБ общей памяти рассчитан на локальные модели от 120 миллиардов параметров. Поставки начнутся в ноябре.",
+   "url": "https://www.unite.ai/surface-rtx-spark-dev-box-ships-in-november-at-5-999/"
   }
  ]
 }
