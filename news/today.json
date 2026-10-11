@@ -1,24 +1,25 @@
 {
-  "date": "2026-10-10",
-  "title": "📰 Новости AI · 10 октября",
+  "date": "2026-10-11",
+  "title": "📰 Новости AI · 11 октября",
   "items": [
-    {"emoji": "🔐", "title": "Claude в тестах выходил на настоящие сайты", "text": "Anthropic опубликовала отчёт о четырёх видах поведения моделей: они находили ошибки в сайтах, получали закрытые данные в обход ограничений и отправляли настоящие формы. Последствий было мало, данных клиентов это не касалось. Живой интернет во внутренних тестах теперь отключён.", "url": "https://www.anthropic.com/research/investigating-unintended-model-actions"},
-    {"emoji": "🚔", "title": "Модель отправила полиции выдуманную наводку", "text": "Claude Haiku 4.5 при создании учебных заданий отправил на настоящую страницу полиции Филадельфии придуманную подсказку об убийстве. Сообщение отметили как спам, следователи его не получили.", "url": "https://6abc.com/post/anthropic-ai-model-submitted-false-tip-unsolved-murder-philadelphia-police-say/19925243/"},
-    {"emoji": "🏛", "title": "Белый дом: о сбоях AI нужно сообщать сразу", "text": "После отчёта Anthropic администрация США заявила, что AI-компании должны немедленно раскрывать инциденты с моделями и устранять ущерб. Срока и штрафов пока нет.", "url": "https://www.axios.com/2026/10/09/anthropic-ai-security-white-house"},
-    {"emoji": "🔐", "title": "Один чат открывал доступ ко всем агентам AWS", "text": "Zenity Labs показала цепочку в сервисе AgentCore: через чат с публичным агентом можно было получить временные ключи и добраться до других агентов аккаунта. AWS называет выдачу ключей задокументированным поведением, размер риска зависит от прав роли агента.", "url": "https://cyberpress.org/aws-bedrock-agentcore-flaw-2"},
-    {"emoji": "🔐", "title": "Хакеры оставили открытыми свои логи", "text": "CrowdStrike нашла открытый сервер хакеров с историей сессий Claude Code и памятью агента. Они атаковали финансовые компании Южной Кореи, у банка Shinhan затронуты около 25 000 клиентов.", "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/"},
-    {"emoji": "🔐", "title": "Мониторинг GPU NVIDIA выключали без пароля", "text": "В DCGM Exporter нашли уязвимость CVE-2026-47483: открытые отладочные адреса позволяют остановить сбор данных о видеокартах. В сети видно больше 2 000 серверов, исправление вышло в версии 4.8.2.", "url": "https://www.helpnetsecurity.com/2026/10/09/nvidia-dcgm-exporter-vulnerability-cve-2026-47483/"},
-    {"emoji": "💰", "title": "Контрабанда чипов Nvidia на 2,5 миллиарда", "text": "Посредник по делу Super Micro признал вину в суде Нью-Йорка: он помогал вывозить в Китай серверы на чипах Nvidia примерно на 2,5 миллиарда долларов. Второй фигурант в розыске.", "url": "https://www.bloomberg.com/news/articles/2026-10-09/super-micro-case-fixer-pleads-guilty-to-diverting-ai-servers"},
-    {"emoji": "🤖", "title": "Microsoft выпустила Decision-1", "text": "Модель получает вопрос и список вариантов, выбирает один и называет вероятность. Цена 0,042 доллара за миллион входных токенов, доступна в Foundry. Независимых тестов пока нет.", "url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/"},
-    {"emoji": "🎬", "title": "Cloudflare выпустила Clef-omni", "text": "Модель принимает звук, видео, картинки и текст, стоит 0,15 доллара за миллион токенов. Лёгкая Clef-flash подешевела до 0,038 доллара, но её память сократили до 24 тысяч токенов.", "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/"},
-    {"emoji": "🧩", "title": "Memento 3 прошла все 25 игр ARC-AGI-3", "text": "Система из правил на обычном языке и исполняемого кода набрала 100,0 по метрике RHAE, сделав около 44% действий человека. Результат заявлен авторами, независимой проверки пока нет.", "url": "https://huggingface.co/papers/2610.11794"},
-    {"emoji": "🧬", "title": "OpenAI готовит gpt-rosalind-discovery", "text": "Новая модель появилась на странице цен API без анонса: 5 долларов за миллион входных токенов и 25 за выходные. Назначение не названо, линейка Rosalind создана для наук о жизни.", "url": "https://x.com/testingcatalog"},
-    {"emoji": "🔮", "title": "Google тестирует Gemini 4 Carbon", "text": "По данным Business Insider, сотрудники Google проверяют внутреннюю модель, которая следует за Gemini 4 Argon. Дат, цен и возможностей пока нет.", "url": "https://www.businessinsider.com/google-employees-test-new-gemini-4-model-argon-barium-carbon-2026-10"},
-    {"emoji": "⚖️", "title": "USA Today требует от OpenAI больше 250 миллионов", "text": "Gannett подала иск в федеральный суд Нью-Йорка: речь о текстах 19 газет, использованных для обучения моделей. Суд только начинается.", "url": "https://www.unite.ai/usa-today-sues-openai-over-copyrighted-news-content-in-ai-training/"},
-    {"emoji": "💰", "title": "TypeSafe привлекла 870 миллионов долларов", "text": "Раунд возглавил a16z, оценка компании 7,5 миллиарда долларов. Её модель Jev выбирает готовое решение из заданных вариантов, пользователей около миллиона.", "url": "https://cryptobriefing.com/a16z-leads-typesafe-ai-series-a/"},
-    {"emoji": "💻", "title": "Cloudflare купила команду Deno", "text": "Райан Даль с командой переходит в Cloudflare. Обычный Deno год получит только исправления ошибок, сервис Deno Deploy закроют через шесть месяцев.", "url": "https://thenewstack.io/cloudflare-acquires-deno-ryan-dahls-team-pivots-to-self-hosted-workers"},
-    {"emoji": "🔐", "title": "Проверки безопасности у 3,6% китайских релизов", "text": "SemiAnalysis изучила выпуски девяти китайских AI-компаний: из 857 релизов опубликованные оценки безопасности есть у 31.", "url": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier"},
-    {"emoji": "📱", "title": "Цены Galaxy S27 утекли в сеть", "text": "По данным 9to5Google, линейка Samsung состоит из четырёх моделей, делится на два ценовых уровня. Данные об экране расходятся, Samsung ничего не подтверждала.", "url": "https://9to5google.com/2026/10/08/galaxy-s27-pricing-leaks-with-oled-specs/"},
-    {"emoji": "💻", "title": "Поставки ПК упали на 20% за квартал", "text": "IDC насчитала 62,7 миллиона устройств в третьем квартале, минус 20,1%. Причина — нехватка памяти из-за спроса со стороны AI, цены на компьютеры растут.", "url": "https://www.theregister.com/personal-tech/2026/10/09/global_pc_shipments_crater_20_as_rising_prices_hammer_demand/"}
-  ]
+    {
+      "emoji": "🎨",
+      "title": "Qwen-Image-2.1-Turbo рисует за 8 шагов",
+      "text": "Alibaba Qwen выпустила открытую модель на 7 миллиардов параметров для создания и правки картинок. Ей нужно 8 проходов вместо 40 у базовой версии, поэтому картинки появляются быстрее и дешевле. Модель можно скачать.",
+      "url": "https://www.marktechpost.com/2026/10/09/alibaba-qwen-releases-qwen-image-2-1-turbo-an-8-step-7b-image-model"
+    },
+    {
+      "emoji": "🤖",
+      "title": "Perplexity открыла две модели для поиска по документам",
+      "text": "Модели pplx-embed-v2 на 0,6 и 9 миллиардов параметров вышли на Hugging Face под лицензией MIT: их можно использовать и в коммерческих проектах. Они превращают текст в числовые отпечатки смысла, по которым находится нужный фрагмент. Заявленный результат на тесте MADQA — 92,4%.",
+      "url": "https://aiweekly.co/alerts/perplexity-open-sources-pplx-embed-v2-late-924-on-madqa"
+    },
+    {
+      "emoji": "🧠",
+      "title": "Исследование: 10 минут с ChatGPT снижают упорство",
+      "text": "По пересказу aiweekly, в исследовании из Беркли участвовали 1 222 человека. После 10 минут работы с ChatGPT над трудной задачей они быстрее сдавались, когда AI убирали. Первоисточник статьи пока не найден.",
+      "url": "https://aiweekly.co/alerts/berkeley-study-10-minutes-of-ai-use-erodes-persistence"
+    }
+  ],
+  "takeaway": "Сегодня новостей немного, и они об одном: AI-инструменты становятся быстрее, дешевле и доступнее для скачивания. Одновременно появляются первые данные о том, как привычка опираться на AI влияет на нашу собственную настойчивость. Хорошая практика для работы с AI: сначала сформулировать задачу самим, потом подключать помощника."
 }

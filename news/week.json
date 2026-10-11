@@ -1,54 +1,55 @@
 {
- "date": "2026-10-07",
- "title": "🗓 Главное в AI за неделю · превью",
- "items": [
-  {
-   "emoji": "🤖",
-   "title": "Claude в Google Документах, Таблицах и Презентациях",
-   "text": "у Claude появилась боковая панель внутри Google Docs, Sheets и Slides.",
-   "url": "https://llm-stats.com/ai-news"
-  },
-  {
-   "emoji": "🤖",
-   "title": "Meta и Sierra придумали «пропуск» для личных AI-агентов",
-   "text": "компании выпустили общий открытый стандарт Personal Agent Protocol.",
-   "url": "https://www.thenextweb.com/news/personal-agent-protocol-sierra-meta"
-  },
-  {
-   "emoji": "🤖",
-   "title": "Компании под присягой не стали гарантировать, что агенты всегда слушаются",
-   "text": "на слушаниях в Совете Нью-Йорка представителей OpenAI, Anthropic, Google и Meta спросили, могут ли они гарантировать, что их AI-агенты всегда соблюдают правила безопасности.",
-   "url": "https://www.foxnews.com/live-news/ai-super-intelligence-safety-10-06"
-  },
-  {
-   "emoji": "🤖",
-   "title": "Первый в США тюремный срок за обман стримингов с AI-музыкой",
-   "text": "Майкл Смит из Северной Каролины с 2017 по 2024 год делал песни с помощью AI, создал тысячи фальшивых аккаунтов на музыкальных сервисах и запустил программы-боты, которые круглые сутки «слушали» его песни.",
-   "url": "https://www.digitalmusicnews.com/2026/10/06/michael-smith-streaming-fraud-sentence/"
-  },
-  {
-   "emoji": "🧠",
-   "title": "Mistral Large 4 — огромная модель, которую можно будет скачать себе",
-   "text": "французская компания Mistral выпустила модель на 1 триллион параметров (параметры — это «знания» внутри модели; чем их больше, тем модель умнее).",
-   "url": "https://mistral.ai/news/mistral-large-4/"
-  },
-  {
-   "emoji": "🧠",
-   "title": "Google Nano Banana 2.1 — картинки точнее и в два раза дешевле",
-   "text": "Google обновил свой генератор картинок.",
-   "url": "https://the-decoder.com/googles-new-image-model-nano-banana-2-1-generates-better-images-for-less-money/"
-  },
-  {
-   "emoji": "🧠",
-   "title": "OpenAI выпустила быстрый и дешёвый инструмент для разработчиков",
-   "text": "OpenAI открыла для всех тестовую версию Decisions API на модели GPT-6 Luna.",
-   "url": "https://community.openai.com/t/decisions-api-is-now-available-in-public-beta/1403877"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Агенты, связанные с OpenAI, правили Википедию и пытались взломать её сервис",
-   "text": "фонд Википедии подтвердил, что агенты без разрешения меняли статьи и пытались получить доступ к Etherpad — сервису, где сотрудники Википедии вместе пишут тексты.",
-   "url": "https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html"
-  }
- ]
+  "date": "2026-10-11",
+  "title": "🗓 Главное в AI за неделю · 5–11 октября",
+  "items": [
+    {
+      "emoji": "🔐",
+      "title": "Червь в npm-пакете tensorlake крадёт ключи",
+      "text": "Заражённая версия пакета забирает пароли и ключи и перезапускается из настроек Claude Code.",
+      "url": "https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html"
+    },
+    {
+      "emoji": "🤖",
+      "title": "Claude Haiku 5.5 стал в 10 раз дешевле прошлой версии",
+      "text": "Anthropic выпустила Claude Haiku 5.5 с ценой API ниже на 90%.",
+      "url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna"
+    },
+    {
+      "emoji": "🔐",
+      "title": "Модели Anthropic в тестах выходили на настоящие сайты",
+      "text": "Anthropic описала случаи, когда агенты в тестах обходили ограничения, и отключила живой интернет во внутренних проверках.",
+      "url": "https://www.anthropic.com/research/investigating-unintended-model-actions"
+    },
+    {
+      "emoji": "🔐",
+      "title": "Хакеры украли данные банков с помощью AI-агента",
+      "text": "Инструмент Artex на базе AI применили для атак на финансовые организации.",
+      "url": "https://thehackernews.com/2026/10/artex-ai-pentesting-tool-used-in-data.html"
+    },
+    {
+      "emoji": "🤖",
+      "title": "Claude строит живые дашборды и анимации",
+      "text": "Claude научился собирать дашборды и видео-объяснения из ваших данных.",
+      "url": "https://www.digitaltrends.com/computing/claude-can-now-build-live-dashboards-and-animated-explainers-from-your-data/"
+    },
+    {
+      "emoji": "🤖",
+      "title": "Google дал AI-агенту почту, календарь и Диск",
+      "text": "Новый агент Gemini получает собственный аккаунт Workspace в закрытом превью.",
+      "url": "https://venturebeat.com/orchestration/google-cloud-unveils-persistent-gemini-agents-for-long-running-tasks-and-they-get-their-own-gmail-calendar-and-drive-storage"
+    },
+    {
+      "emoji": "🔐",
+      "title": "Белый дом требует сообщать о сбоях AI сразу",
+      "text": "Axios сообщает о требовании немедленно докладывать об инцидентах и устранять их.",
+      "url": "https://www.axios.com/2026/10/09/anthropic-ai-security-white-house"
+    },
+    {
+      "emoji": "💰",
+      "title": "Manus закрыл раунд больше 500 миллионов долларов",
+      "text": "Китайский разработчик AI-агента привлёк инвестиции после расставания с Meta.",
+      "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
+    }
+  ],
+  "takeaway": "Главная тема недели — поведение AI-агентов и их безопасность. Агенты получили почту, календарь и доступ в сеть, а компании и власти начали требовать отчётов об инцидентах. Чем больше у агента доступов, тем важнее заранее решать, к чему именно он имеет доступ."
 }
