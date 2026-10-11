@@ -1,0 +1,26 @@
+{
+  "lang": "en",
+  "date": "2026-10-11",
+  "title": "📰 AI news · October 11",
+  "items": [
+    {
+      "emoji": "🎨",
+      "title": "Qwen-Image-2.1-Turbo draws in 8 steps",
+      "text": "Alibaba Qwen released an open 7-billion-parameter model for creating and editing images. It needs 8 passes instead of 40 for the base version, so images appear faster and cost less. The model is free to download.",
+      "url": "https://www.marktechpost.com/2026/10/09/alibaba-qwen-releases-qwen-image-2-1-turbo-an-8-step-7b-image-model"
+    },
+    {
+      "emoji": "🤖",
+      "title": "Perplexity open-sources two models for document search",
+      "text": "The pplx-embed-v2 models, with 0.6 and 9 billion parameters, are out on Hugging Face under the MIT license, so they can be used in commercial projects too. They turn text into numeric fingerprints of meaning, which is how the right passage gets found. The reported score on the MADQA test is 92.4%.",
+      "url": "https://aiweekly.co/alerts/perplexity-open-sources-pplx-embed-v2-late-924-on-madqa"
+    },
+    {
+      "emoji": "🧠",
+      "title": "Study: 10 minutes with ChatGPT lowers persistence",
+      "text": "According to an aiweekly summary, 1,222 people took part in a Berkeley study. After 10 minutes of working on a hard task with ChatGPT, they gave up sooner once the AI was taken away. The original paper hasn't been found yet.",
+      "url": "https://aiweekly.co/alerts/berkeley-study-10-minutes-of-ai-use-erodes-persistence"
+    }
+  ],
+  "takeaway": "There's little news today, and it all points one way: AI tools are getting faster, cheaper and easier to download. At the same time, the first data is appearing on how leaning on AI affects our own persistence. A good habit when working with AI: put the task into words yourself first, then bring in the assistant."
+}
