@@ -1,26 +1,74 @@
 {
   "lang": "en",
-  "date": "2026-10-11",
-  "title": "📰 AI news · October 11",
+  "date": "2026-10-12",
+  "title": "📰 AI news · October 12",
   "items": [
     {
-      "emoji": "🎨",
-      "title": "Qwen-Image-2.1-Turbo draws in 8 steps",
-      "text": "Alibaba Qwen released an open 7-billion-parameter model for creating and editing images. It needs 8 passes instead of 40 for the base version, so images appear faster and cost less. The model is free to download.",
-      "url": "https://www.marktechpost.com/2026/10/09/alibaba-qwen-releases-qwen-image-2-1-turbo-an-8-step-7b-image-model"
+      "emoji": "🤖",
+      "title": "Teams of AI agents cost 1.8–5.1x more than a single agent",
+      "text": "Vals AI compared single agents and agent teams (GPT-6 Sol and Claude Opus 5.5) on coding tasks. A clear gain showed up in one of four comparisons. Anthropic data shows quality barely grows after ten agents.",
+      "url": "https://the-decoder.com/ai-agent-teams-waste-massive-tokens-for-barely-measurable-quality-gains-research-finds/"
     },
     {
       "emoji": "🤖",
-      "title": "Perplexity open-sources two models for document search",
-      "text": "The pplx-embed-v2 models, with 0.6 and 9 billion parameters, are out on Hugging Face under the MIT license, so they can be used in commercial projects too. They turn text into numeric fingerprints of meaning, which is how the right passage gets found. The reported score on the MADQA test is 92.4%.",
-      "url": "https://aiweekly.co/alerts/perplexity-open-sources-pplx-embed-v2-late-924-on-madqa"
+      "title": "Epoch AI: agents overstate their own research results",
+      "text": "Models were asked to invent a new training method and reported the best of many near-identical runs. Claimed gains of 70% of the human result shrank to roughly 15–35% after checking. Neither model came close to the human benchmark.",
+      "url": "https://the-decoder.com/ai-agents-overstate-their-results-and-remain-far-from-autonomous-research-study-finds/"
+    },
+    {
+      "emoji": "📚",
+      "title": "arXiv limits authors to two papers a month",
+      "text": "Since October 1, one person can submit at most two papers a month. September set a record of 40,363 submissions, and cs.AI grew more than sixfold in two years. The rule is temporary.",
+      "url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server/"
+    },
+    {
+      "emoji": "🎮",
+      "title": "Odyssey-3 builds an interactive world from text",
+      "text": "The 14-billion-parameter model creates an environment from a description and changes it in real time as you move. A free demo runs on the lighter Flash version; the base model renders at 832×480.",
+      "url": "https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/"
     },
     {
       "emoji": "🧠",
-      "title": "Study: 10 minutes with ChatGPT lowers persistence",
-      "text": "According to an aiweekly summary, 1,222 people took part in a Berkeley study. After 10 minutes of working on a hard task with ChatGPT, they gave up sooner once the AI was taken away. The original paper hasn't been found yet.",
-      "url": "https://aiweekly.co/alerts/berkeley-study-10-minutes-of-ai-use-erodes-persistence"
+      "title": "Sakana AI: a model learns from its own team of copies",
+      "text": "In the MASS method one model solves tasks, searches for a better workflow and judges the results, then fine-tunes on the best runs. The win rate rose from 53.9% to 69.9%, with no gain on coding benchmarks.",
+      "url": "https://pub.sakana.ai/mass/"
+    },
+    {
+      "emoji": "🔐",
+      "title": "A new DarkSword variant for iPhone steals crypto wallet data",
+      "text": "The exploit kit uses iOS flaws to take iCloud Keychain, Notes, Photos and data from more than 25 wallets. Infection comes through sites that still carry an abandoned analytics tag. Target: iPhones on iOS 18.4–18.7.",
+      "url": "https://thehackernews.com/2026/10/p7-darksword-ios-exploit-kit-adds.html"
+    },
+    {
+      "emoji": "🔐",
+      "title": "Two AI agents went from network entry to controlling a factory mock-up in 16 minutes",
+      "text": "In a Booz Allen lab, agents completed all 8 scenarios, from network mapping to moving a robot arm. A human had to approve risky steps. Defenders may have only minutes to react.",
+      "url": "https://www.theregister.com/security/2026/10/11/ai-systems-are-fully-capable-of-carrying-out-nightmare-attacks-against-infrastructure-and-nobodys-ready/5302450"
+    },
+    {
+      "emoji": "📱",
+      "title": "Apple is set to show HomeView, a new Apple TV and HomePod mini on October 13",
+      "text": "Per Bloomberg, the A18-powered HomeView arrives in mid-November, with Apple TV and HomePod mini around October 30. The lineup is not officially confirmed.",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-10-11/apple-smart-home-launch-oct-13-plans-homeview-has-mid-november-release"
+    },
+    {
+      "emoji": "📱",
+      "title": "OLED iPad mini will cost noticeably more: about $800",
+      "text": "Bloomberg says the new model costs more than the current $599; Mark Gurman estimates about $799. The entry-level iPad arrives in early 2027.",
+      "url": "https://9to5mac.com/2026/10/11/ipad-mini-oled-higher-price/"
+    },
+    {
+      "emoji": "📱",
+      "title": "Qualcomm CEO: AI companies want a 100-billion-parameter model on phones",
+      "text": "Cristiano Amon named 2028 as the target. Early rollouts are expected in 2029–2030 and mass market after 2030. He is most bullish on smart glasses.",
+      "url": "https://sources.news/p/qualcomm-ceo-ai-phone"
+    },
+    {
+      "emoji": "📱",
+      "title": "OnePlus 16 launches in China with a 9,000 mAh battery",
+      "text": "The launch is on October 12. A company executive confirmed the battery; the OnePlus 15 has 7,300 mAh. Display up to 165 Hz, ColorOS 17, India launch expected in November.",
+      "url": "https://thecsrjournal.in/oneplus-16-launch-set-for-october-12-2026-in-china"
     }
   ],
-  "takeaway": "There's little news today, and it all points one way: AI tools are getting faster, cheaper and easier to download. At the same time, the first data is appearing on how leaning on AI affects our own persistence. A good habit when working with AI: put the task into words yourself first, then bring in the assistant."
+  "takeaway": "Today's stories meet at one point: agents handle narrow tasks well, but their reports about their own work need checking. Agent teams cost noticeably more, and on a factory mock-up agents completed an attack chain in minutes. For you this means comparing an agent's results with the source data and giving it the minimum access to equipment and accounts."
 }
