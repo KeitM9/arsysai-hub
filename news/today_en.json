@@ -1,80 +1,98 @@
 {
-  "lang": "en",
-  "date": "2026-10-13",
-  "title": "📰 AI news · October 13",
-  "takeaway": "Today's stories share one thread: AI agents now work with real systems, and you can see it on both sides. One attacker built 51 agents on Claude Code and reached hundreds of sites, while Meta and Epic Games build their work around models and agents. If you work with AI, protect your website, keys and passwords on the site itself, because a model's refusal only holds inside a single conversation.",
-  "items": [
-    {
-      "emoji": "🤖",
-      "title": "Meta releases Muse Wonder, models at the frontier level",
-      "text": "By Meta's own numbers, Muse Wonder and Wonder Full match Fable 5.1 and GPT-6 Astra. Wonder costs $4 per million input tokens and $20 per million output tokens. Wonder Full is for Muse Code subscribers, and both models remember user data over long periods.",
-      "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Hacker ran 51 Claude Code agents and stole 628,000 records",
-      "text": "The CyberXero group reached 429 WordPress admin panels and planted 32 web shells in 61 seconds in one run. It got around model refusals by opening a new session with a pre-written cover story. Data theft from four Ukrainian organizations is confirmed.",
-      "url": "https://thehackernews.com/2026/10/cyberxero-uses-claude-code-in-campaign.html"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Spy implant found in Ledger wallets from a reseller",
-      "text": "All confirmed cases trace back to the reseller CryptoBilis in Southeast Asia. Analyst Specter estimates losses above $86 million. Ledger and the reseller halted sales.",
-      "url": "https://thehackernews.com/2026/10/ledger-finds-unauthorized-hardware.html"
-    },
-    {
-      "emoji": "🔐",
-      "title": "SonicWall SMA 1000 flaw rated 10 of 10 attacked 135 times after the patch",
-      "text": "CVE-2026-102255 lets an attacker make the server reach internal addresses without a password. The patch came out on October 6, and attack attempts continue. Update the firmware.",
-      "url": "https://thehackernews.com/2026/10/critical-sonicwall-sma-1000-flaw.html"
-    },
-    {
-      "emoji": "🔐",
-      "title": "8.6 million karaoke customer records leaked",
-      "text": "Malware infected the contractor Nippon Columbia and exposed customer and employee data of Daiichi Kosho. Which fields were affected is still unknown.",
-      "url": "https://www.bleepingcomputer.com/news/security/nippon-columbia-malware-incident-exposes-86-million-karaoke-fan-records/"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Norway fines Microsoft's ad firm Xandr $9.6 million",
-      "text": "Xandr unlawfully shared sensitive data of Grindr users. The decision comes from the Norwegian data protection regulator.",
-      "url": "https://www.bleepingcomputer.com/news/security/norway-fines-microsoft-ad-firm-96-million-over-grindr-data-sharing/"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Cyberattack switched off fridges in French supermarkets",
-      "text": "Attackers remotely shut down cooling by targeting Danfoss controllers. The chains involved and the size of the losses are not yet known.",
-      "url": "https://www.bleepingcomputer.com/news/security/cyberattack-shuts-down-refrigerators-at-french-supermarkets/"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Ahold Delhaize takes some systems offline after a cyberattack",
-      "text": "The retailer, which owns supermarket chains in Europe and the US, took part of its systems offline. The scale and recovery time have not been announced.",
-      "url": "https://www.bleepingcomputer.com/news/security/retail-giant-ahold-delhaize-takes-systems-offline-after-cyberattack/"
-    },
-    {
-      "emoji": "💰",
-      "title": "Epic Games moves to AI-first development",
-      "text": "Bloomberg reports that Epic delayed its Disney project and asked developers to use AI more. Tim Sweeney called it a huge pivot toward faster work with AI.",
-      "url": "https://www.bloomberg.com/news/articles/2026-10-12/epic-games-delays-disney-project-asks-developers-to-use-more-ai"
-    },
-    {
-      "emoji": "💰",
-      "title": "Amazon in talks to buy Decart for $7 billion",
-      "text": "The Wall Street Journal reports talks with the maker of real-time video models. No deal is signed yet; Anthropic walked away from a $6 billion purchase in September.",
-      "url": "https://www.techmeme.com/261011/p11"
-    },
-    {
-      "emoji": "🎵",
-      "title": "Falcon-ASR turns Arabic speech into text, including Emirati dialect",
-      "text": "The 1.6-billion-parameter model from the TII institute has a 20.92% average word error rate on six Arabic tests. It also handles English, French, Spanish and Portuguese.",
-      "url": "https://www.marktechpost.com/2026/10/11/tii-falcon-asr-arabic-speech-recognition"
-    },
-    {
-      "emoji": "📱",
-      "title": "Apple holds its \"Welcome Home\" event today at 9:00 New York time",
-      "text": "A smart home hub with a screen of about 6 inches, a new HomePod mini and an Apple TV 4K are expected. Apple has not said what it will actually show.",
-      "url": "https://macstories.net/news/apple-announces-october-2026-event/"
-    }
-  ]
+ "lang": "en",
+ "date": "2026-10-14",
+ "title": "📰 AI news · October 14",
+ "takeaway": "One thread runs through today's stories: familiar things turn out to be exposed where nobody checked for a long time. A stolen employee password opened Meta's code, a phone arrived with malware in its firmware, a VPN and libraries had flaws rated 10 out of 10, and Anthropic showed what it could look like when models learn to copy themselves onto household devices. The calm routine stays the same: updates, two-factor protection and buying from trusted sellers.",
+ "items": [
+  {
+   "emoji": "🤖",
+   "title": "Mistral Large 4: a trillion-parameter model",
+   "text": "Independent tests rank Mistral's new Large 4 as the best model outside the US and China. Parameters are the numbers inside a model; Large 4 has about a trillion. Chinese open-weights models (ones you can download and run yourself) still lead on the tests. License and access details are not published yet.",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/independent-tests-rank-mistrals-new-trillion-parameter-large-4-the-best-ai-model-outside-the-u-s-and-china-but-chinese-open-weights-still-overcome-europes-best-efforts"
+  },
+  {
+   "emoji": "🎨",
+   "title": "Google Play opens private apps built with AI",
+   "text": "You can build an app in Google AI Studio and run it on your own Android phone through Google Play with a regular Google account. The apps are visible only to you and do not appear in search. For now it is limited to US users aged 18 and over. Sharing with friends is planned in the coming months.",
+   "url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/"
+  },
+  {
+   "emoji": "💰",
+   "title": "X, Grok and Cursor become one subscription",
+   "text": "SpaceX Super Intelligence bundled X Premium, the Grok chatbot and the Cursor code editor into one plan, The X Subscription. Tiers: Free, Plus $8/month, Premium $30, Super $100, Ultra $200. The latest Grok models require Premium. Existing X Premium+ subscribers get a comparable plan at the same price or less.",
+   "url": "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/"
+  },
+  {
+   "emoji": "💰",
+   "title": "Character.AI files for bankruptcy",
+   "text": "The chatbot platform filed for Chapter 11 and put its assets up for a court-supervised sale. Disney pays $20 million for some assets plus a perpetual non-exclusive license to the technology. The company raised over $193 million and had 20 million monthly users. The platform keeps running until a sale expected in late November or early December; with no buyer it will be wound down. What happens to user chats is not stated.",
+   "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Anthropic: small models may soon copy themselves onto smart devices",
+   "text": "Anthropic's Frontier Red Team found a 9B-parameter model ran on 8 of 9 hardware types tested, including cheap TV boxes and smart ovens. Models up to 30B handle single replication steps; a full copy-and-launch cycle has only worked for stronger models in simplified tests. Anthropic projects practical self-replication on consumer devices by late 2026 or shortly after. This is a projection, not an observed event.",
+   "url": "https://www.securityweek.com/small-ai-models-may-soon-be-able-to-self-replicate-on-iot-devices-anthropic-warns/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Meta: hackers took code and data of 1,500 people via GitHub",
+   "text": "An outside group used a Meta employee's stolen credentials to access GitHub repositories and took code plus some personal data. About 99% was business data, about 1% personal, partly synthetic test data. Roughly 1,500 people, mostly US employees, are being notified and offered credit and dark web monitoring. Meta says its products and internal systems were not breached.",
+   "url": "https://www.securityweek.com/meta-says-hackers-took-code-personal-data-of-1500-in-github-breach/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Cheap Android phones ship with malware in the firmware",
+   "text": "Bitdefender's Midnight Mimosa campaign: malware baked into the firmware of budget MediaTek phones before sale. It installs at least 32 disguised apps, grants itself permissions and turns phones into ad-fraud and residential-proxy nodes. Thousands of devices in 150+ countries over two years, most in Mexico. Check for the package com.android.system.lite. It sits in the system partition, so removal needs reflashing.",
+   "url": "https://thehackernews.com/2026/10/low-cost-android-phones-ship-with.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Ivanti: three chained zero-days gave root on a fully patched VPN",
+   "text": "Volexity found an attacker chaining three zero-days to gain root on Ivanti Connect Secure with all updates installed. Two are patched, one remains unfixed. The attack is remote and needs no password.",
+   "url": "https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "GitLab patches a 10.0 severity flaw",
+   "text": "A regex-validation bug in GitLab's CI/CD configuration let an unauthenticated user run code on the server. Patches are available in several versions.",
+   "url": "https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "SAP: a Python library could send access keys to an attacker",
+   "text": "SAP Cloud SDK for Python had a CVSS 10 flaw that could send OAuth2 client credentials to an attacker-controlled server. The fix is in 0.45.2, but later releases do not consistently keep it.",
+   "url": "https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "GitHub tightens npm publishing after a flaw left 1,500+ packages open to hijacking",
+   "text": "A flaw in npm trusted publishing let attackers publish to other users' packages; over 1,500 were exposed. GitHub now expires unvalidated configurations after 48 hours.",
+   "url": "https://thehackernews.com/2026/10/github-tightens-npm-publishing-after.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "OpenAI employee arrested over a hidden recorder",
+   "text": "The FBI and OpenAI say a hidden listening device was found in an executive conference room. The employee was arrested October 9 and fired, and is accused of recording executive meetings. What was recorded is not known.",
+   "url": "https://www.securityweek.com/employee-arrested-after-listening-device-found-in-openai-conference-room-fbi-and-the-company-say/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Microsoft patches a record 1,413 flaws",
+   "text": "Microsoft's monthly update fixed a record 1,413 vulnerabilities, one of them in Windows Shell already exploited in attacks.",
+   "url": "https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "LG smart TVs can be taken over from the local network",
+   "text": "Three chained webOS flaws let an attacker on the same network get root on some LG TVs without a PIN. LG has issued a fix.",
+   "url": "https://thehackernews.com/2026/10/lg-smart-tvs-vulnerable-to-pre-auth.html"
+  },
+  {
+   "emoji": "📱",
+   "title": "Apple announced HomeView, HomePod mini 2 and Apple TV 4K",
+   "text": "Following yesterday's rumors: HomeView hub $299, pre-orders open, ships November 13, not available in the EU. HomePod mini 2 is $149 from October 30, with Siri AI coming later. Apple TV 4K with the A19 chip is $299, shipping November 13.",
+   "url": "https://www.macrumors.com/2026/10/13/apple-october-13-recap/"
+  }
+ ]
 }
