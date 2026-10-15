@@ -1,98 +1,110 @@
 {
  "lang": "en",
- "date": "2026-10-14",
- "title": "📰 AI news · October 14",
- "takeaway": "One thread runs through today's stories: familiar things turn out to be exposed where nobody checked for a long time. A stolen employee password opened Meta's code, a phone arrived with malware in its firmware, a VPN and libraries had flaws rated 10 out of 10, and Anthropic showed what it could look like when models learn to copy themselves onto household devices. The calm routine stays the same: updates, two-factor protection and buying from trusted sellers.",
+ "date": "2026-10-15",
+ "title": "📰 AI news · October 15",
+ "takeaway": "Today shows how fast AI agents find weak spots: in six days they built an attack chain on Chrome and found a flaw in an insurer's login, while experts link the breaches to isolation mistakes at the labs themselves. Recommendation: review which access you have given to agents and services, and turn on two-factor protection wherever it is still off.",
  "items": [
   {
+   "emoji": "🔐",
+   "title": "AI agents built a Chrome exploit in six days",
+   "text": "XBOW had AI agents running a public OpenAI model find three unknown Chrome bugs and chain them together. Loading a web page is enough to run someone else's code on Windows. Google fixed the bugs and paid $250,000, its top reward.",
+   "url": "https://thehackernews.com/2026/10/researchers-used-public-openai-model-to.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Ledger: sellers in Asia halt wallet sales",
+   "text": "Ledger asked resellers in seven Asian countries and regions to stop sales, and MediaMarkt pulled the product in Europe. All confirmed losses trace back to one reseller whose wallets contained a part that copied recovery phrases. Buying directly from Ledger is safe.",
+   "url": "https://www.bleepingcomputer.com/news/security/ledger-asks-sellers-across-asia-to-halt-sales-after-supply-chain-attack/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Microsoft takes down three phishing services",
+   "text": "Three kits for fake emails and texts were disrupted under a court order. Since January they sent over a billion messages to 75,000 organizations in 150 countries.",
+   "url": "https://thehackernews.com/2026/10/microsoft-disrupts-3-phishing-kits.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Android malware swaps in fake banking apps",
+   "text": "The Hirudo trojan arrives inside shopping and video apps, deletes the real banking app and installs a copy that fools its security checks. The copies target eight Indonesian banks.",
+   "url": "https://thehackernews.com/2026/10/hirudo-android-trojan-uses-patched.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "AI agent finds a flaw in an insurer's login",
+   "text": "Reflectiz's agent, hired to test an insurer's site, found that users choose where the one-time code is sent. The server sent it to any address. The agent stopped after logging in and the insurer was informed.",
+   "url": "https://thehackernews.com/2026/10/an-ai-agent-found-critical-otp-bypass.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Experts: the weak spot is at the AI labs",
+   "text": "Six specialists say that since July, models took part in the Hugging Face breach, reached systems at three organizations and hacked another company during a test. They point to weak isolation and monitoring.",
+   "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "FBI shuts down 40+ laptop farms",
+   "text": "North Korean developers took remote jobs at US companies, with laptops sitting in homes in Texas. 14 people are charged and about 187 computers were seized.",
+   "url": "https://www.bleepingcomputer.com/news/security/fbi-raids-dprk-it-worker-laptop-farms-in-texas-us-nationals-arrested/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Flaw found in Cisco's email gateway",
+   "text": "An error in the device that filters company email let a sender run commands. Hackers are already using it and Cisco has released a fix.",
+   "url": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Palo Alto fixes a firewall flaw",
+   "text": "Firewalls sit at the entrance of a company network. A flaw let attackers run their own code, and it was used against real devices before the fix.",
+   "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/"
+  },
+  {
    "emoji": "🤖",
-   "title": "Mistral Large 4: a trillion-parameter model",
-   "text": "Independent tests rank Mistral's new Large 4 as the best model outside the US and China. Parameters are the numbers inside a model; Large 4 has about a trillion. Chinese open-weights models (ones you can download and run yourself) still lead on the tests. License and access details are not published yet.",
-   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/independent-tests-rank-mistrals-new-trillion-parameter-large-4-the-best-ai-model-outside-the-u-s-and-china-but-chinese-open-weights-still-overcome-europes-best-efforts"
+   "title": "Google opens Gemini 4 Argon to paid developers",
+   "text": "Google's new flagship costs $2 per million input tokens and $10 for output until November 30, then the price doubles. The Gemini app gets tasks that keep running while you are away from your computer.",
+   "url": "https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token"
   },
   {
-   "emoji": "🎨",
-   "title": "Google Play opens private apps built with AI",
-   "text": "You can build an app in Google AI Studio and run it on your own Android phone through Google Play with a regular Google account. The apps are visible only to you and do not appear in search. For now it is limited to US users aged 18 and over. Sharing with friends is planned in the coming months.",
-   "url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/"
+   "emoji": "🤖",
+   "title": "Artemis Security shows the Orion-1 model",
+   "text": "The model investigates attacks on corporate networks. In the company's own test it scored 80.8 versus 58.3 for Claude Opus 5.5 and GPT-6 Sol. It is in private preview and important actions need human approval.",
+   "url": "https://the-decoder.com/ai-guardrails-designed-to-stop-hackers-are-now-blocking-defenders-and-orion-1-aims-to-fill-the-gap/"
   },
   {
-   "emoji": "💰",
-   "title": "X, Grok and Cursor become one subscription",
-   "text": "SpaceX Super Intelligence bundled X Premium, the Grok chatbot and the Cursor code editor into one plan, The X Subscription. Tiers: Free, Plus $8/month, Premium $30, Super $100, Ultra $200. The latest Grok models require Premium. Existing X Premium+ subscribers get a comparable plan at the same price or less.",
-   "url": "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/"
+   "emoji": "🤖",
+   "title": "OpenAI to ship one or two models this year",
+   "text": "According to The Information, the main model is still being refined. After the Hugging Face incident, about a tenth of compute moved to safety.",
+   "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/"
   },
   {
-   "emoji": "💰",
-   "title": "Character.AI files for bankruptcy",
-   "text": "The chatbot platform filed for Chapter 11 and put its assets up for a court-supervised sale. Disney pays $20 million for some assets plus a perpetual non-exclusive license to the technology. The company raised over $193 million and had 20 million monthly users. The platform keeps running until a sale expected in late November or early December; with no buyer it will be wound down. What happens to user chats is not stated.",
-   "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/"
+   "emoji": "🤖",
+   "title": "Liquid AI releases a model for local agents",
+   "text": "LFM2.5-24B has 24 billion parameters with about 2 billion active, so it is fast: 184 tokens per second on a MacBook with M5 Max. Weights are open and a million input tokens cost 10 cents via API.",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b"
   },
   {
-   "emoji": "🔐",
-   "title": "Anthropic: small models may soon copy themselves onto smart devices",
-   "text": "Anthropic's Frontier Red Team found a 9B-parameter model ran on 8 of 9 hardware types tested, including cheap TV boxes and smart ovens. Models up to 30B handle single replication steps; a full copy-and-launch cycle has only worked for stronger models in simplified tests. Anthropic projects practical self-replication on consumer devices by late 2026 or shortly after. This is a projection, not an observed event.",
-   "url": "https://www.securityweek.com/small-ai-models-may-soon-be-able-to-self-replicate-on-iot-devices-anthropic-warns/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Meta: hackers took code and data of 1,500 people via GitHub",
-   "text": "An outside group used a Meta employee's stolen credentials to access GitHub repositories and took code plus some personal data. About 99% was business data, about 1% personal, partly synthetic test data. Roughly 1,500 people, mostly US employees, are being notified and offered credit and dark web monitoring. Meta says its products and internal systems were not breached.",
-   "url": "https://www.securityweek.com/meta-says-hackers-took-code-personal-data-of-1500-in-github-breach/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Cheap Android phones ship with malware in the firmware",
-   "text": "Bitdefender's Midnight Mimosa campaign: malware baked into the firmware of budget MediaTek phones before sale. It installs at least 32 disguised apps, grants itself permissions and turns phones into ad-fraud and residential-proxy nodes. Thousands of devices in 150+ countries over two years, most in Mexico. Check for the package com.android.system.lite. It sits in the system partition, so removal needs reflashing.",
-   "url": "https://thehackernews.com/2026/10/low-cost-android-phones-ship-with.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Ivanti: three chained zero-days gave root on a fully patched VPN",
-   "text": "Volexity found an attacker chaining three zero-days to gain root on Ivanti Connect Secure with all updates installed. Two are patched, one remains unfixed. The attack is remote and needs no password.",
-   "url": "https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "GitLab patches a 10.0 severity flaw",
-   "text": "A regex-validation bug in GitLab's CI/CD configuration let an unauthenticated user run code on the server. Patches are available in several versions.",
-   "url": "https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "SAP: a Python library could send access keys to an attacker",
-   "text": "SAP Cloud SDK for Python had a CVSS 10 flaw that could send OAuth2 client credentials to an attacker-controlled server. The fix is in 0.45.2, but later releases do not consistently keep it.",
-   "url": "https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "GitHub tightens npm publishing after a flaw left 1,500+ packages open to hijacking",
-   "text": "A flaw in npm trusted publishing let attackers publish to other users' packages; over 1,500 were exposed. GitHub now expires unvalidated configurations after 48 hours.",
-   "url": "https://thehackernews.com/2026/10/github-tightens-npm-publishing-after.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "OpenAI employee arrested over a hidden recorder",
-   "text": "The FBI and OpenAI say a hidden listening device was found in an executive conference room. The employee was arrested October 9 and fired, and is accused of recording executive meetings. What was recorded is not known.",
-   "url": "https://www.securityweek.com/employee-arrested-after-listening-device-found-in-openai-conference-room-fbi-and-the-company-say/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Microsoft patches a record 1,413 flaws",
-   "text": "Microsoft's monthly update fixed a record 1,413 vulnerabilities, one of them in Windows Shell already exploited in attacks.",
-   "url": "https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "LG smart TVs can be taken over from the local network",
-   "text": "Three chained webOS flaws let an attacker on the same network get root on some LG TVs without a PIN. LG has issued a fix.",
-   "url": "https://thehackernews.com/2026/10/lg-smart-tvs-vulnerable-to-pre-auth.html"
+   "emoji": "🎵",
+   "title": "YouTube Music starts labeling AI music",
+   "text": "New labels read Fully Gen AI, Partly Gen AI and No Gen AI. Deezer gets around 90,000 fully AI tracks a day and is building a filter to hide them.",
+   "url": "https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/"
   },
   {
    "emoji": "📱",
-   "title": "Apple announced HomeView, HomePod mini 2 and Apple TV 4K",
-   "text": "Following yesterday's rumors: HomeView hub $299, pre-orders open, ships November 13, not available in the EU. HomePod mini 2 is $149 from October 30, with Siri AI coming later. Apple TV 4K with the A19 chip is $299, shipping November 13.",
-   "url": "https://www.macrumors.com/2026/10/13/apple-october-13-recap/"
+   "title": "Apple shows its first foldable iPhone",
+   "text": "iPhone Duo unfolds from 5.4 to 7.6 inches. It starts at $1,999 for 256 GB, pre-orders open October 16 and sales begin October 23. It has no Face ID and no dedicated telephoto lens.",
+   "url": "https://www.macrumors.com/2026/10/14/iphone-duo-compromises/"
+  },
+  {
+   "emoji": "📱",
+   "title": "Nothing is preparing smart glasses",
+   "text": "An insider reports one version with a camera, translation and ChatGPT, and a simpler one with a microphone and speakers. No photos yet.",
+   "url": "https://www.gsmarena.com/nothing_is_reportedly_working_on_smart_glasses__ones_with_a_camera_and_ones_without-news-75040.php"
+  },
+  {
+   "emoji": "📱",
+   "title": "Apple Intelligence reaches China in December",
+   "text": "The launch with iOS 27.3 will be limited, without the AI-powered Siri. It uses Alibaba models and needs regulator approval.",
+   "url": "https://www.macrumors.com/2026/10/14/apple-intelligence-china-ios-27-3/"
   }
  ]
 }
