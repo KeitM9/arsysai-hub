@@ -1,109 +1,62 @@
 {
- "date": "2026-10-15",
- "title": "📰 Новости AI · 15 октября",
- "takeaway": "Сегодня видно, как быстро AI-агенты находят слабые места: за шесть дней они собрали цепочку атаки на Chrome и нашли дыру во входе на сайт страховой, а эксперты связывают взломы с ошибками изоляции у самих лабораторий. Рекомендация: проверьте, какие доступы вы выдали агентам и сервисам, и включите двухфакторную защиту там, где её ещё нет.",
+ "date": "2026-10-16",
+ "title": "📰 Новости AI · 16 октября",
+ "takeaway": "Сегодня видно, где у проектов лежат ключи: GitHub-проекты искали по ключам AI-сервисов, а платформу для агентов Langflow атакуют через настройки подключений. Рекомендация: проверьте, где хранятся ключи вашего проекта и бота, и замените те, что не менялись давно.",
+ "cta": "🔐 Проверить, где лежат мои ключи",
  "items": [
   {
    "emoji": "🔐",
-   "title": "AI-агенты собрали взлом Chrome за шесть дней",
-   "text": "Команда XBOW поручила AI-агентам на публичной модели OpenAI найти три неизвестные ошибки в Chrome и соединить их в цепочку. Достаточно открыть страницу, и на Windows запускается чужой код. Google закрыл ошибки и выплатил 250 тысяч долларов, максимальную награду.",
-   "url": "https://thehackernews.com/2026/10/researchers-used-public-openai-model-to.html"
+   "title": "Взломали около 1900 аккаунтов GitHub",
+   "text": "Хакеры добавляли в проекты файл с названием вроде «security-audit», он искал пароли, облачные доступы и ключи AI-сервисов. Если вы храните проект на GitHub, ключи в нём главная цель, а старые ключи остаются под угрозой. Проверьте, где лежат ключи вашего проекта: в коде, в заметках или в чатах. Бесплатный гайд «Защита кода одним промптом» — напишите в бот слово «защита».",
+   "url": "https://thehackernews.com/2026/10/ghostaction-compromises-about-1900.html"
   },
   {
    "emoji": "🔐",
-   "title": "Ledger: магазины в Азии останавливают продажи",
-   "text": "Ledger попросила продавцов в семи странах и регионах Азии остановить продажи, а MediaMarkt убрала товар в Европе. Все подтверждённые потери связаны с кошельками одного магазина, где деталь внутри копировала секретные слова. Напрямую у Ledger покупки безопасны.",
-   "url": "https://www.bleepingcomputer.com/news/security/ledger-asks-sellers-across-asia-to-halt-sales-after-supply-chain-attack/"
+   "title": "Платформу для AI-агентов Langflow уже взламывают",
+   "text": "В Langflow любой вошедший пользователь мог запустить команды на сервере, добавив свой MCP-сервер. С 19 сентября зафиксировано 1423 попытки атаки: из настроек пытались забрать секретный ключ и пароль администратора. Если вы собираете агентов, ваши ключи лежат в таких же настройках. Проверьте версию платформы: исправление в 1.9.0.",
+   "url": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html"
   },
   {
    "emoji": "🔐",
-   "title": "Microsoft остановила три сервиса фишинга",
-   "text": "Три набора для поддельных писем и SMS отключены по решению суда. С января через них ушло больше миллиарда сообщений в 75 тысяч организаций из 150 стран.",
-   "url": "https://thehackernews.com/2026/10/microsoft-disrupts-3-phishing-kits.html"
+   "title": "Шпионскую программу доставляли через рекламу",
+   "text": "Исследователи Citizen Lab показали: в рекламу встроили скрипт, который отправлял адрес и рекламный идентификатор устройства, а нужным целям присылал атаку, клик не требовался. Заражены не меньше 45 устройств Al Jazeera. Если вы работаете с важными данными, проверьте, что телефон и браузер обновлены.",
+   "url": "https://thehackernews.com/2026/10/citizen-lab-traces-zero-click-candiru.html"
   },
   {
    "emoji": "🔐",
-   "title": "Вирус для Android подменяет банковские приложения",
-   "text": "Троянец Hirudo приходит в приложениях про шопинг и видео, удаляет настоящее банковское приложение и ставит копию, которая обманывает проверки безопасности. Копии сделаны для восьми банков Индонезии.",
-   "url": "https://thehackernews.com/2026/10/hirudo-android-trojan-uses-patched.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "AI-агент нашёл дыру во входе на сайт страховой",
-   "text": "Агент компании Reflectiz по её заказу проверял сайт страховой и увидел, что пользователь сам указывает, куда слать одноразовый код. Сервер отправлял код на любой адрес. Агент остановился после входа, о находке сообщили страховой.",
-   "url": "https://thehackernews.com/2026/10/an-ai-agent-found-critical-otp-bypass.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Эксперты: слабое место у AI-лабораторий",
-   "text": "Шесть специалистов говорят: с июля модели участвовали во взломе Hugging Face, получили доступ к системам трёх организаций и взломали чужую компанию во время теста. По их мнению, причина в слабой изоляции и контроле.",
-   "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "ФБР закрыло более 40 ферм ноутбуков",
-   "text": "Северокорейские программисты устраивались на удалёнку в американские компании, а ноутбуки стояли в домах в Техасе. Обвинения предъявлены 14 людям, изъято около 187 компьютеров.",
-   "url": "https://www.bleepingcomputer.com/news/security/fbi-raids-dprk-it-worker-laptop-farms-in-texas-us-nationals-arrested/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "В почтовом шлюзе Cisco нашли дыру",
-   "text": "Через ошибку в устройстве, которое фильтрует почту в компаниях, отправитель письма мог запускать команды. Хакеры уже используют её, Cisco выпустила исправление.",
-   "url": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Palo Alto закрыла дыру в межсетевых экранах",
-   "text": "В системе экранов, которые стоят на входе в сеть компании, нашли ошибку для запуска чужого кода. Её применяли против реальных устройств до выхода исправления.",
-   "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/"
+   "title": "Android получает AI-защиту от мошенников",
+   "text": "Google Messages разберёт подозрительные переписки с помощью Gemini, ссылки от незнакомцев проверит Gemini Nano на телефоне, а приложения больше не смогут тихо включать переадресацию звонков. Проверка звонков банка уже остановила больше 3 миллионов мошеннических вызовов. Загляните в настройки Google Messages: облачный разбор включается вручную.",
+   "url": "https://www.bleepingcomputer.com/news/security/android-gets-ai-defenses-against-messaging-scams-fake-calls/"
   },
   {
    "emoji": "🤖",
-   "title": "Google открыла Gemini 4 Argon для платных разработчиков",
-   "text": "Новая главная модель Google до 30 ноября стоит 2 доллара за миллион входных токенов и 10 за выходные, потом цена вырастет вдвое. В приложении Gemini появились задачи, которые работают, пока вас нет за компьютером.",
-   "url": "https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token"
+   "title": "Meta выпустила открытую модель Muse Spark Open",
+   "text": "В ней 816 миллиардов параметров, одновременно работают 42 миллиарда, контекст — миллион токенов. Создана для кода и задач агентов, веса открыты на Hugging Face. Запускается на двух Mac Studio по 512 гигабайт памяти.",
+   "url": "https://the-decoder.com/muse-spark-open-is-metas-answer-to-qwen-glm-and-kimi-in-the-open-weight-race/"
   },
   {
    "emoji": "🤖",
-   "title": "Artemis Security показала модель Orion-1",
-   "text": "Модель разбирает атаки на корпоративные сети. В тесте самой компании она набрала 80,8 балла против 58,3 у Claude Opus 5.5 и GPT-6 Sol. Модель в закрытом тестировании, важные действия выполняет после подтверждения человека.",
-   "url": "https://the-decoder.com/ai-guardrails-designed-to-stop-hackers-are-now-blocking-defenders-and-orion-1-aims-to-fill-the-gap/"
+   "title": "GPT-6-Astra решила 49 из 50 задач по физике",
+   "text": "Тридцать пять исследователей собрали 50 новых задач с проверяемыми ответами. Astra набрала 98%, Opus 5.5 в Claude Code — 92%. Решение стоило в среднем меньше трёх долларов.",
+   "url": "https://the-decoder.com/gpt-6-astra-solves-49-of-50-physics-research-problems-at-2-40-apiece/"
   },
   {
-   "emoji": "🤖",
-   "title": "OpenAI выпустит одну-две модели в этом году",
-   "text": "По данным The Information, главная модель ещё дорабатывается. После истории с Hugging Face около десятой части мощностей перешло на безопасность.",
-   "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/"
+   "emoji": "🎨",
+   "title": "FLUX 3 Klein запускается на обычной видеокарте",
+   "text": "Открытая модель создаёт и редактирует картинки в 4K, принимает до десяти референсов. Сжатая версия работает на 8 гигабайтах видеопамяти и готовит картинку меньше чем за 9 секунд на RTX 4070.",
+   "url": "https://the-decoder.com/black-forest-labs-open-weights-image-model-flux-3-image-klein-runs-on-consumer-gpus-with-just-8-gb-of-vram/"
   },
   {
-   "emoji": "🤖",
-   "title": "Liquid AI выпустила модель для агентов на своём компьютере",
-   "text": "В LFM2.5-24B 24 миллиарда параметров, а работают около двух миллиардов, поэтому она быстрая: 184 токена в секунду на MacBook с M5 Max. Веса открыты, миллион входных токенов через API стоит 10 центов.",
-   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b"
-  },
-  {
-   "emoji": "🎵",
-   "title": "YouTube Music начинает помечать AI-музыку",
-   "text": "Появились метки Fully Gen AI, Partly Gen AI и No Gen AI. Deezer получает около 90 тысяч полностью AI-треков в день и готовит фильтр, который позволит скрыть такую музыку.",
-   "url": "https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/"
+   "emoji": "💰",
+   "title": "Google запустила Universal Cart в США",
+   "text": "Общая корзина для Поиска и Gemini собирает товары из разных магазинов, сообщает о падении цены и подсказывает промокоды. Оплата работает на протоколе, который помогает AI-агентам и магазинам работать вместе.",
+   "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/"
   },
   {
    "emoji": "📱",
-   "title": "Apple показала первый складной iPhone",
-   "text": "iPhone Duo раскрывается из 5,4 дюйма в 7,6. Цена от 1999 долларов за 256 гигабайт, предзаказ с 16 октября, продажи с 23 октября. Face ID и отдельной телекамеры нет.",
-   "url": "https://www.macrumors.com/2026/10/14/iphone-duo-compromises/"
-  },
-  {
-   "emoji": "📱",
-   "title": "Nothing готовит умные очки",
-   "text": "По слухам от инсайдера, будет версия с камерой, переводом и ChatGPT и версия попроще с микрофоном и динамиками. Фотографий пока нет.",
-   "url": "https://www.gsmarena.com/nothing_is_reportedly_working_on_smart_glasses__ones_with_a_camera_and_ones_without-news-75040.php"
-  },
-  {
-   "emoji": "📱",
-   "title": "Apple Intelligence придёт в Китай в декабре",
-   "text": "Запуск с iOS 27.3 будет ограниченным, без Siri с AI. Используются модели Alibaba, нужно одобрение регуляторов.",
-   "url": "https://www.macrumors.com/2026/10/14/apple-intelligence-china-ios-27-3/"
+   "title": "Amazon выпустила два AI-устройства Bee",
+   "text": "Bee Frontier за 74,99 доллара носят на запястье или на одежде, он слушает разговоры и делает пересказ, список дел и приглашения в календарь. Bee Eclipse за 99,99 доллара крепится к телефону и выйдет позже.",
+   "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/"
   }
  ]
 }
