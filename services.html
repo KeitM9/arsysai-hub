@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Telegram Mini App под ключ · ArchitectSystemsAI</title>
+<meta name="description" content="Мини-приложение внутри Telegram под ключ: витрина, материалы, заявки, оплата и AI-ассистент. От $399.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap">
+<style>
+/* Мини-сайт услуги «Mini App под ключ» — стиль мини-приложения ASA: графит, мятный главный, оранжевый мелкими акцентами, Oswald */
+:root{--bg:#E4E2E3;--card:#F7F6F6;--white:#fff;--ink:#414143;--gray:#676769;--orange:#FE640C;--mint:#B4FAB2;--graphite:#2c3341;
+  --f:"Oswald","Arial Narrow",Arial,sans-serif;--shadow:0 10px 24px rgba(65,65,67,.14),0 2px 4px rgba(65,65,67,.08);color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.5;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:1040px;margin:0 auto;padding:16px}
+h1,h2,h3{font-weight:700;text-transform:uppercase;margin:0;text-wrap:balance;letter-spacing:.005em}
+p{margin:0}
+.g{color:var(--mint);-webkit-text-stroke:1.5px var(--graphite);paint-order:stroke fill}
+.dk .g{-webkit-text-stroke:0}
+
+/* шапка */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--graphite);color:var(--white);border-radius:999px;padding:7px 7px 7px 20px;box-shadow:var(--shadow)}
+.brand{font-weight:600;font-size:18px}.brand b{color:var(--mint);font-weight:600}
+.lang{display:flex;background:rgba(255,255,255,.1);border-radius:999px;padding:3px}
+.lang button{padding:5px 12px;border-radius:999px;font-weight:600;font-size:13px;letter-spacing:.06em;color:#b9bdbf}
+.lang button.on{background:var(--mint);color:var(--graphite)}
+
+/* первый экран */
+.hero{display:grid;gap:28px;align-items:center;padding:40px 4px 24px}
+@media(min-width:860px){.hero{grid-template-columns:1.15fr .85fr}}
+.kick{font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.hero h1{font-size:clamp(38px,7vw,68px);line-height:1.08;margin:10px 0 14px}
+.lead{font-size:20px;font-weight:300;max-width:46ch}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 24px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:16px;box-shadow:var(--shadow)}
+.btn.m{background:var(--mint);color:var(--graphite)}
+.btn.d{background:var(--graphite);color:var(--white)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;color:var(--gray);font-size:15px}
+.facts b{color:var(--ink);font-weight:600}
+/* телефон с живым приложением */
+.phone{justify-self:center;width:min(300px,78vw);aspect-ratio:9/18.5;background:var(--graphite);border-radius:44px;padding:10px;box-shadow:0 30px 60px rgba(44,51,65,.35)}
+.phone iframe{width:100%;height:100%;border:0;border-radius:34px;background:var(--bg)}
+
+/* секции */
+section{padding:44px 4px 8px}
+.sh{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.sh h2{font-size:clamp(28px,4.5vw,42px);line-height:1.1}
+.sh p{color:var(--gray);font-weight:300;font-size:18px;max-width:60ch}
+
+/* пакеты */
+.plans{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.plan{background:var(--card);border-radius:24px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.plan.hot{background:var(--graphite);color:var(--white)}
+.plan h3{font-size:22px}
+.tag{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--mint);color:var(--graphite);border-radius:999px;padding:3px 10px}
+.price{font-size:40px;font-weight:700;line-height:1}
+.price small{font-size:16px;font-weight:400;color:var(--gray)}
+.hot .price small{color:#b9bdbf}
+.term{font-size:14px;color:var(--gray);text-transform:uppercase;letter-spacing:.06em}
+.hot .term{color:#b9bdbf}
+.plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:300}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li::before{content:"";flex:none;width:16px;height:16px;margin-top:4px;border-radius:50%;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%232c3341' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.plan .btn{margin-top:auto;justify-content:center}
+.support{margin-top:14px;background:var(--card);border-radius:20px;padding:16px 20px;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between}
+.support b{font-size:20px}
+
+/* шаги */
+.steps{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.step{background:var(--card);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.step .n{font-size:44px;font-weight:700;line-height:1;color:var(--graphite)}
+.step .n i{font-style:normal;color:var(--orange)}
+.step h3{font-size:19px;margin:8px 0 6px}
+.step p{color:var(--gray);font-weight:300;font-size:16px}
+
+/* в каждом пакете */
+.all{display:flex;flex-wrap:wrap;gap:10px}
+.all span{background:var(--card);border-radius:999px;padding:9px 16px;box-shadow:var(--shadow);font-weight:500;font-size:15px;text-transform:uppercase;letter-spacing:.04em}
+
+/* исследование */
+.research{background:var(--graphite);color:var(--white);border-radius:28px;padding:28px;display:grid;gap:16px;box-shadow:var(--shadow)}
+@media(min-width:760px){.research{grid-template-columns:1.4fr .6fr;align-items:center}}
+.research h2{font-size:clamp(24px,3.6vw,34px)}
+.research p{color:#d9dde3;font-weight:300;font-size:18px;margin-top:8px}
+
+/* вопросы */
+.faq{display:flex;flex-direction:column;gap:10px}
+details{background:var(--card);border-radius:18px;padding:16px 20px;box-shadow:var(--shadow)}
+summary{cursor:pointer;font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.02em;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--orange);font-size:24px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin-top:10px;color:var(--gray);font-weight:300}
+
+footer{padding:40px 4px 60px;text-align:center;color:var(--gray);font-size:14px}
+footer .brand{color:var(--ink);font-size:20px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">ArchitectSystems<b>AI</b></div>
+    <div class="lang"><button data-l="ru">RU</button><button data-l="en">EN</button></div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="kick" data-t="kick"></span>
+      <h1 data-h="h1"></h1>
+      <p class="lead" data-t="lead"></p>
+      <div class="ctas">
+        <a class="btn m" data-href="order" target="_blank" rel="noopener" data-t="cta"></a>
+        <a class="btn d" href="#plans" data-t="seeplans"></a>
+      </div>
+      <div class="facts" data-h="facts"></div>
+    </div>
+    <div class="phone"><iframe src="app.html" title="Example" loading="lazy"></iframe></div>
+  </div>
+
+  <section id="plans">
+    <div class="sh"><span class="kick" data-t="plansKick"></span><h2 data-t="plansH"></h2><p data-t="plansP"></p></div>
+    <div class="plans" id="planlist"></div>
+    <div class="support"><span><b data-t="supH"></b> · <span data-t="supP"></span></span><b>$50–150 <small data-t="perMonth"></small></b></div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="kick" data-t="allKick"></span><h2 data-t="allH"></h2></div>
+    <div class="all" id="all"></div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="kick" data-t="howKick"></span><h2 data-t="howH"></h2></div>
+    <div class="steps" id="steps"></div>
+  </section>
+
+  <section>
+    <div class="research dk">
+      <div><span class="kick" data-t="resKick"></span><h2 data-t="resH"></h2><p data-t="resP"></p></div>
+      <a class="btn m" data-href="order" target="_blank" rel="noopener" data-t="resCta" style="justify-self:start"></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="kick" data-t="faqKick"></span><h2 data-t="faqH"></h2></div>
+    <div class="faq" id="faq"></div>
+  </section>
+
+  <footer>
+    <div class="brand">ArchitectSystems<b class="g">AI</b></div>
+    <p data-t="foot"></p>
+    <p><a href="https://legal.arsysai.com" data-t="docs" style="text-decoration:underline"></a></p>
+  </footer>
+</div>
+
+<script>
+// RU и EN рядом: правишь одно — правишь второе
+const ORDER={ru:"https://t.me/sysarchitect_bot",en:"https://t.me/sysarchitect_bot?start=en"};
+const T={
+ru:{kick:"Telegram Mini App под ключ",
+ h1:'Ваше приложение <span class="g">внутри Telegram</span>',
+ lead:"Витрина, материалы, заявки, оплата и AI-ассистент в одном окне, там, где уже живёт ваша аудитория. Открывается за секунду кнопкой в вашем боте.",
+ cta:"Обсудить проект",seeplans:"Смотреть цены",
+ facts:"<span><b>от $399</b> стоимость</span><span><b>от 3 дней</b> запуск</span><span><b>RU / EN</b> два языка</span>",
+ plansKick:"Пакеты",plansH:"Цена зависит от объёма",plansP:"Начинаем с витрины и растём вместе с задачей. Точную стоимость и срок фиксируем до старта.",
+ supH:"Поддержка",supP:"правки, новые материалы, обновления",perMonth:"в месяц",
+ allKick:"В каждом пакете",allH:"Что вы получаете всегда",
+ howKick:"Как работаем",howH:"От заявки до запуска",
+ resKick:"Если сомневаетесь в бюджете",resH:"Сделаем исследование рынка под вашу задачу",
+ resP:"Покажем, сколько такое приложение стоит у студий и фрилансеров, какие есть варианты и сроки. Отчёт остаётся у вас, решение принимаете вы.",resCta:"Заказать исследование",
+ faqKick:"Вопросы",faqH:"Коротко о главном",
+ foot:"Architect Systems AI · Екатерина · системы управления AI",docs:"Документы",order:"Оформить"},
+en:{kick:"Telegram Mini App, turnkey",
+ h1:'Your app <span class="g">inside Telegram</span>',
+ lead:"A showcase, materials, requests, payments and an AI assistant in one window, right where your audience already lives. Opens in a second with a button in your bot.",
+ cta:"Discuss your project",seeplans:"See pricing",
+ facts:"<span><b>from $399</b> price</span><span><b>from 3 days</b> launch</span><span><b>EN / RU</b> two languages</span>",
+ plansKick:"Packages",plansH:"Price follows scope",plansP:"Start with a showcase and grow with your needs. The exact price and timeline are fixed before we start.",
+ supH:"Support",supP:"edits, new materials, updates",perMonth:"per month",
+ allKick:"In every package",allH:"What you always get",
+ howKick:"How we work",howH:"From request to launch",
+ resKick:"Unsure about the budget",resH:"We'll research the market for your task",
+ resP:"We show what an app like yours costs at studios and freelancers, with options and timelines. The report is yours, the decision is yours.",resCta:"Order the research",
+ faqKick:"Questions",faqH:"The essentials",
+ foot:"Architect Systems AI · Ekaterina · AI management systems",docs:"Documents",order:"Order"}
+};
+const PLANS=[
+ {price:399,ru:["Витрина","3 дня",["Ваш бренд и цвета","Материалы, видео, ссылки","Вкладки и поиск по разделам","Один язык","Подключение к вашему боту"]],
+            en:["Showcase","3 days",["Your brand and colors","Materials, video, links","Tabs and sections","One language","Connected to your bot"]]},
+ {price:899,hot:1,ru:["Витрина RU/EN","5 дней",["Всё из «Витрины»","Два языка с переключателем","Новости или блог","Анкета заявки с уведомлением в Telegram"]],
+            en:["Showcase EN/RU","5 days",["Everything in Showcase","Two languages with a switch","News or blog feed","Request form with Telegram alerts"]]},
+ {price:1900,ru:["Продажи","7–10 дней",["Всё из «Витрины RU/EN»","Оплата в Telegram (Stars)","Каталог или платный доступ","Личный кабинет клиента"]],
+            en:["Sales","7–10 days",["Everything in Showcase EN/RU","Payments in Telegram (Stars)","Catalog or paid access","Customer area"]]},
+ {price:3500,ru:["AI под ключ","от 2 недель",["Всё из «Продаж»","AI-ассистент отвечает клиентам","База знаний из ваших материалов","Настройка под ваш голос"]],
+            en:["AI turnkey","from 2 weeks",["Everything in Sales","AI assistant answers your clients","Knowledge base from your materials","Tuned to your voice"]]}
+];
+const ALL={ru:["Работает на телефоне и компьютере","Ваш домен","Код и доступы передаём вам","Проверка на телефонах до запуска","Политика конфиденциальности"],
+           en:["Works on phone and desktop","Your own domain","Code and access handed to you","Tested on phones before launch","Privacy policy"]};
+const STEPS={ru:[["Заявка","Пишете в бот: что у вас есть и что хотите получить."],["Концепт","Показываем первый экран на ваших материалах, вы видите результат до оплаты."],["Сборка","Собираем, вы смотрите и вносите правки."],["Запуск","Подключаем к боту и домену, передаём доступы, дальше поддержка по желанию."]],
+             en:[["Request","Tell the bot what you have and what you want."],["Concept","We show a first screen built on your materials, so you see the result before paying."],["Build","We build, you review and request edits."],["Launch","We connect your bot and domain, hand over access, support if you want it."]]};
+const FAQ={ru:[["Что такое Mini App?","Приложение, которое открывается прямо в Telegram кнопкой в боте. Открывается сразу, на любом телефоне и компьютере."],
+               ["Подойдёт ли мне?","Экспертам, авторам курсов и каналов, онлайн-школам, сервисам с записью, магазинам и сообществам, у которых аудитория уже в Telegram."],
+               ["Как посмотреть пример?","Справа на этой странице живое приложение Architect Systems AI. Можно листать и нажимать, всё работает как у ваших клиентов."],
+               ["Можно ли начать с малого?","Да. Начните с витрины, позже добавим языки, оплату и AI-ассистента на той же основе."],
+               ["Кому принадлежит приложение?","Вам. Бот, домен, код и доступы оформляются на вас."]],
+          en:[["What is a Mini App?","An app that opens right inside Telegram with a button in your bot. Opens instantly on any phone and desktop."],
+               ["Is it right for me?","Experts, course and channel creators, online schools, booking services, shops and communities whose audience is already on Telegram."],
+               ["Can I see an example?","On this page you can try the live Architect Systems AI app. Scroll and tap, it works exactly as it would for your clients."],
+               ["Can I start small?","Yes. Start with a showcase and add languages, payments and an AI assistant later on the same foundation."],
+               ["Who owns the app?","You do. The bot, domain, code and access are all registered to you."]]};
+let L=(()=>{try{return localStorage.getItem("asa_lang")}catch(e){return null}})()||((navigator.language||"ru").slice(0,2)==="ru"?"ru":"en");
+const $=s=>document.querySelector(s);
+function render(){
+ const t=T[L]; document.documentElement.lang=L;
+ document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t[e.dataset.t]);
+ document.querySelectorAll("[data-h]").forEach(e=>e.innerHTML=t[e.dataset.h]);
+ document.querySelectorAll("[data-href]").forEach(e=>e.href=ORDER[L]);
+ document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
+ const from=L==="en"?"from":"от";
+ $("#planlist").innerHTML=PLANS.map(p=>{const x=p[L];return `<article class="plan${p.hot?" hot dk":""}">${p.hot?`<span class="tag">${L==="en"?"Most chosen":"Чаще берут"}</span>`:""}
+  <h3>${x[0]}</h3><div class="price"><small>${from}</small> $${p.price.toLocaleString(L==="en"?"en-US":"ru-RU")}</div><span class="term">${x[1]}</span>
+  <ul>${x[2].map(i=>`<li>${i}</li>`).join("")}</ul><a class="btn ${p.hot?"m":"d"}" href="${ORDER[L]}" target="_blank" rel="noopener">${t.order}</a></article>`}).join("");
+ $("#all").innerHTML=ALL[L].map(a=>`<span>${a}</span>`).join("");
+ $("#steps").innerHTML=STEPS[L].map((s,i)=>`<div class="step"><div class="n">0<i>${i+1}</i></div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
+ $("#faq").innerHTML=FAQ[L].map(q=>`<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("");
+ document.title=(L==="en"?"Telegram Mini App, turnkey":"Telegram Mini App под ключ")+" · ArchitectSystemsAI";
+}
+document.addEventListener("click",e=>{const l=e.target.closest(".lang button");if(l){L=l.dataset.l;try{localStorage.setItem("asa_lang",L)}catch(_){}render();}});
+render();
+</script>
+</body>
+</html>
