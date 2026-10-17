@@ -41,10 +41,9 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin:10px -16px 0;padding:6px 16px 14px;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
 .feat{flex:0 0 86%;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
-.kick{font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);display:flex;align-items:center;gap:6px}
-.kick::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--mint);box-shadow:0 0 0 1px rgba(44,51,65,.3)}
-/* бренды: второе слово мятное (на светлом — мятной подложкой), слитно */
-.g{background:var(--mint);color:var(--graphite);padding:0 .08em;border-radius:3px}
+.kick{font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+/* бренды: второе слово — мятные буквы с тонкой графитовой обводкой (как на логотипе), слитно */
+.g{color:var(--mint);-webkit-text-stroke:1.5px var(--graphite);paint-order:stroke fill}
 .feat h2{margin:0;font-size:22px;font-weight:600;text-transform:uppercase;line-height:1.15}
 .feat .sub{color:var(--gray);font-weight:300;font-size:15px}
 .stage{position:relative;aspect-ratio:4/3.2;border-radius:24px;overflow:hidden;background:var(--graphite);box-shadow:var(--shadow)}
@@ -73,7 +72,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 @keyframes up{from{transform:translateY(0)}to{transform:translateY(-100%)}}
 .dots{display:flex;justify-content:center;gap:6px;margin-top:-4px}
 .dots i{width:6px;height:6px;border-radius:50%;background:rgba(65,65,67,.25)}
-.dots i.on{background:var(--graphite);width:18px;border-radius:3px}
+.dots i.on{background:var(--orange);width:18px;border-radius:3px}
 
 /* вкладки */
 .tabs{display:flex;gap:6px;overflow-x:auto;margin:16px -16px 0;padding:0 16px 4px;scrollbar-width:none}
@@ -90,7 +89,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
 .si{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .nav .si{width:18px;height:18px}
-.ic.o{background:var(--mint);color:var(--graphite)}
+.ic.o{background:var(--orange);color:var(--white)}
 .ic.m{background:var(--mint);color:var(--graphite)}
 .it{min-width:0;flex:1}
 .meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);font-weight:600}
