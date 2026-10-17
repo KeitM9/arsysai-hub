@@ -191,7 +191,7 @@ const ICON={shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path 
  spark:'<path d="M12 3v6M12 15v6M3 12h6M15 12h6M6 6l3 3M15 15l3 3M6 18l3-3M15 9l3-3"/>'};
 const svg=k=>`<svg class="si" viewBox="0 0 24 24">${ICON[k]}</svg>`;
 // бренды двухцветно и слитно (Екатерина, 17.10.2026)
-const brand=s=>s.replace(/AgentProof/g,'AGENT<span class="g">PROOF</span>').replace(/PROMPT MASTER/g,'PROMPT <span class="g">MASTER</span>').replace(/AUDIT/g,'<span class="g">AUDIT</span>');
+const brand=s=>s.replace(/AgentProof/g,'AGENT<span class="g">PROOF</span>').replace(/PROMPT MASTER/g,'PROMPT <span class="g">MASTER</span>').replace(/AUDIT/g,'<span class="g">AUDIT</span>');
 const tg=window.Telegram&&Telegram.WebApp; if(tg){tg.ready();tg.expand();}
 const user=tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user;
 let L=(()=>{try{return localStorage.getItem("asa_lang")}catch(e){return null}})()||((user&&user.language_code||navigator.language||"ru").slice(0,2)==="ru"?"ru":"en");
