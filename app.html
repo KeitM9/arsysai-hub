@@ -55,11 +55,16 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .type .txt{color:var(--white);font-size:17px;white-space:nowrap;overflow:hidden;border-right:2px solid var(--mint);animation:typing 3.6s steps(28) infinite alternate,caret .7s step-end infinite}
 @keyframes typing{from{width:0}to{width:28ch}}
 @keyframes caret{50%{border-color:transparent}}
-.shield{position:absolute;inset:0;display:grid;place-items:center}
-.shield i{width:96px;height:112px;background:var(--mint);clip-path:polygon(50% 0,100% 18%,100% 55%,50% 100%,0 55%,0 18%);animation:pulse 2.4s ease-in-out infinite}
-.ring{position:absolute;width:190px;height:190px;border:2px solid var(--orange);border-radius:50%;animation:wave 2.4s ease-out infinite}
-@keyframes pulse{50%{transform:scale(1.06)}}
-@keyframes wave{from{transform:scale(.55);opacity:.9}to{transform:scale(1.25);opacity:0}}
+/* значок AUDIT — весы в мятном круге, качаются влево-вправо */
+.scales{position:absolute;inset:0;display:grid;place-items:center}
+.scales svg{width:62%;height:auto;overflow:visible}
+.scales .st{fill:none;stroke:#d9dde3;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.scales .rg{fill:none;stroke:var(--mint);stroke-width:4;filter:drop-shadow(0 0 6px rgba(180,250,178,.55))}
+.scales .beam{transform-box:view-box;transform-origin:100px 64px;animation:sway 3.2s ease-in-out infinite}
+.scales .pan{transform-box:view-box;animation:hang 3.2s ease-in-out infinite}
+.scales .pl{transform-origin:48px 64px}.scales .pr{transform-origin:152px 64px}
+@keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@keyframes hang{0%,100%{transform:rotate(8deg)}50%{transform:rotate(-8deg)}}
 .ticker{position:absolute;inset:18px 16px 70px;display:flex;flex-direction:column;gap:8px;overflow:hidden;color:var(--white)}
 .ticker div{background:rgba(255,255,255,.08);border-radius:12px;padding:8px 12px;font-size:14px;line-height:1.3;animation:up 9s linear infinite}
 @keyframes up{from{transform:translateY(0)}to{transform:translateY(-100%)}}
@@ -192,7 +197,13 @@ const go=u=>{ if(tg&&/^https:\/\/t\.me\//.test(u)) tg.openTelegramLink(u); else 
 function stage(f){
   if(f.kind==="video") return `<video src="${f.src}" poster="${f.poster}" autoplay muted loop playsinline></video>`;
   if(f.kind==="type") return `<div class="type"><span class="who">Claude</span><span class="txt">${L==="en"?"protect my project from leaks":"защити мой проект от утечек"}</span></div>`;
-  if(f.kind==="shield") return `<div class="shield"><span class="ring"></span><i></i></div>`;
+  if(f.kind==="shield") return `<div class="scales"><svg viewBox="0 0 200 200" aria-hidden="true">
+    <circle class="rg" cx="100" cy="100" r="92"/>
+    <path class="st" d="M100 64V150M74 160h52M82 150h36"/><circle class="st" cx="100" cy="52" r="7"/>
+    <g class="beam"><path class="st" d="M48 64c14-10 34-4 52 0s38 10 52 0"/>
+      <g class="pan pl"><path class="st" d="M48 64L30 112M48 64l18 48M26 112h44c-4 14-14 20-22 20s-18-6-22-20z"/></g>
+      <g class="pan pr"><path class="st" d="M152 64l-18 48M152 64l18 48M130 112h44c-4 14-14 20-22 20s-18-6-22-20z"/></g>
+    </g></svg></div>`;
   return `<div class="ticker" id="tick"></div>`;
 }
 function render(){
