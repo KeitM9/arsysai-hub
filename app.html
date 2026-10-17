@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ARCHITECT SYSTEMS AI</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap">
+<style>
+/* Мини-приложение ASA — стиль гайда security-en (шаблон лид-магнитов 11.10): графит, оранжевый, мятный, Oswald */
+:root{
+  --bg:#E4E2E3;--card:#F7F6F6;--white:#fff;--ink:#414143;--gray:#676769;
+  --orange:#FE640C;--mint:#B4FAB2;--graphite:#2c3341;
+  --f:"Oswald","Arial Narrow",Arial,sans-serif;
+  --shadow:0 10px 24px rgba(65,65,67,.14),0 2px 4px rgba(65,65,67,.08);
+  color-scheme:light;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.45;letter-spacing:.01em;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 0}
+
+/* шапка */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.brand b{color:var(--orange);font-weight:700}
+.lang{display:flex;background:var(--card);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+.lang button{padding:5px 12px;border-radius:999px;font-weight:600;font-size:13px;letter-spacing:.06em;color:var(--gray)}
+.lang button.on{background:var(--graphite);color:var(--white)}
+.hello{display:flex;align-items:center;justify-content:space-between;margin:18px 0 6px;padding-bottom:14px;border-bottom:1px solid rgba(65,65,67,.15)}
+.hello h1{margin:0;font-size:24px;font-weight:500;text-transform:none}
+.hello h1 span{color:var(--gray);font-weight:400}
+.ava{width:44px;height:44px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-weight:700;overflow:hidden;flex:none}
+.ava img{width:100%;height:100%;object-fit:cover}
+
+/* витрина */
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin:10px -16px 0;padding:6px 16px 14px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.feat{flex:0 0 86%;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.kick{font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.feat h2{margin:0;font-size:22px;font-weight:600;text-transform:uppercase;line-height:1.15}
+.feat .sub{color:var(--gray);font-weight:300;font-size:15px}
+.stage{position:relative;aspect-ratio:4/3.2;border-radius:24px;overflow:hidden;background:var(--graphite);box-shadow:var(--shadow)}
+.stage video,.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage .bar{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--white);font-size:14px}
+.open{background:var(--orange);color:var(--white);border-radius:999px;padding:9px 18px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:14px}
+.open.m{background:var(--mint);color:var(--graphite)}
+/* живые заставки без видео */
+.type{position:absolute;left:16px;right:16px;top:40%;display:flex;align-items:center;gap:10px}
+.type .who{background:rgba(255,255,255,.12);color:var(--white);border-radius:999px;padding:8px 14px;font-weight:600}
+.type .txt{color:var(--white);font-size:17px;white-space:nowrap;overflow:hidden;border-right:2px solid var(--mint);animation:typing 3.6s steps(28) infinite alternate,caret .7s step-end infinite}
+@keyframes typing{from{width:0}to{width:28ch}}
+@keyframes caret{50%{border-color:transparent}}
+.shield{position:absolute;inset:0;display:grid;place-items:center}
+.shield i{width:96px;height:112px;background:var(--mint);clip-path:polygon(50% 0,100% 18%,100% 55%,50% 100%,0 55%,0 18%);animation:pulse 2.4s ease-in-out infinite}
+.ring{position:absolute;width:190px;height:190px;border:2px solid var(--orange);border-radius:50%;animation:wave 2.4s ease-out infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+@keyframes wave{from{transform:scale(.55);opacity:.9}to{transform:scale(1.25);opacity:0}}
+.ticker{position:absolute;inset:18px 16px 70px;display:flex;flex-direction:column;gap:8px;overflow:hidden;color:var(--white)}
+.ticker div{background:rgba(255,255,255,.08);border-radius:12px;padding:8px 12px;font-size:14px;line-height:1.3;animation:up 9s linear infinite}
+@keyframes up{from{transform:translateY(0)}to{transform:translateY(-100%)}}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:-4px}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(65,65,67,.25)}
+.dots i.on{background:var(--orange);width:18px;border-radius:3px}
+
+/* вкладки */
+.tabs{display:flex;gap:6px;overflow-x:auto;margin:16px -16px 0;padding:0 16px 4px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;padding:7px 14px;border-radius:999px;font-weight:500;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--gray)}
+.tabs button.on{background:var(--graphite);color:var(--white)}
+.free{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:16px;padding:12px 14px;margin:12px 0;box-shadow:var(--shadow);font-size:15px}
+.free b{background:var(--mint);color:var(--graphite);border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.08em;flex:none}
+
+/* лента */
+.feed{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;gap:12px;background:var(--card);border-radius:20px;padding:14px;box-shadow:var(--shadow);animation:in .4s ease both}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
+.si{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav .si{width:18px;height:18px}
+.ic.o{background:var(--orange);color:var(--white)}
+.ic.m{background:var(--mint);color:var(--graphite)}
+.it{min-width:0;flex:1}
+.meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);font-weight:600}
+.it h3{margin:2px 0 2px;font-size:17px;font-weight:600;text-transform:uppercase;line-height:1.2}
+.it p{margin:0;color:var(--gray);font-weight:300;font-size:14px}
+.go{align-self:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--white);display:grid;place-items:center;box-shadow:var(--shadow);font-size:18px}
+.soon{display:inline-block;white-space:nowrap;font-size:11px;letter-spacing:.06em;background:var(--white);border-radius:999px;padding:2px 8px;color:var(--gray);margin-left:6px;vertical-align:2px}
+
+/* профиль */
+.pf{display:none;flex-direction:column;gap:10px;margin-top:16px}
+.pf a,.pf button{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:16px;padding:16px;box-shadow:var(--shadow);font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:.03em;text-align:left;width:100%}
+.pf .cta{background:var(--orange);color:var(--white)}
+
+/* нижняя панель */
+.nav{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:4px;background:var(--white);border-radius:999px;padding:5px;box-shadow:0 12px 30px rgba(65,65,67,.25)}
+.nav button{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--gray)}
+.nav button.on{background:var(--graphite);color:var(--white)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">Architect <b>Systems</b> AI</div>
+    <div class="lang"><button data-l="ru">RU</button><button data-l="en">EN</button></div>
+  </div>
+  <div class="hello"><h1><span data-t="hi"></span> <b id="nm"></b></h1><div class="ava" id="ava"></div></div>
+
+  <section id="home">
+    <div class="rail" id="rail"></div>
+    <div class="dots" id="dots"></div>
+    <nav class="tabs" id="tabs"></nav>
+    <div class="free"><b data-t="freeB"></b><span data-t="free"></span></div>
+    <div class="feed" id="feed"></div>
+  </section>
+
+  <section class="pf" id="profile"></section>
+</div>
+
+<div class="nav">
+  <button class="on" data-v="home"><svg class="si" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span data-t="home"></span></button>
+  <button data-v="profile"><svg class="si" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span data-t="me"></span></button>
+</div>
+
+<script>
+// Тексты и материалы — RU/EN рядом: правишь одно — правишь второе (правило двуязычия)
+const T={
+ ru:{hi:"Привет,",friend:"друг",freeB:"БЕСПЛАТНО",free:"Все материалы открыты. Бери, пользуйся, делись.",home:"Главная",me:"Профиль",open:"Открыть",soon:"скоро EN",
+     tabs:{all:"Все",guide:"Гайды",prompt:"Промпты",news:"Новости",sec:"Безопасность",agents:"Агенты"},
+     pf:[["cta","Оставить заявку","https://t.me/sysarchitect_bot"],["","Задать вопрос","https://t.me/arsysai_bot?start=ask"],["","Канал","https://t.me/arsysai"],["","Поддержка","https://t.me/supprmaster_bot"],["","Документы","https://legal.arsysai.com"]]},
+ en:{hi:"Hi,",friend:"friend",freeB:"FREE",free:"Everything is open. Take it, use it, share it.",home:"Home",me:"Profile",open:"Open",soon:"RU only",
+     tabs:{all:"All",guide:"Guides",prompt:"Prompts",news:"News",sec:"Security",agents:"Agents"},
+     pf:[["cta","Leave a request","https://t.me/sysarchitect_bot?start=en"],["","Ask a question","https://t.me/arsysai_bot?start=ask"],["","Channel","https://t.me/arsysai"],["","Support","https://t.me/supprmaster_bot"],["","Documents","https://legal.arsysai.com/en.html"]]}
+};
+// витрина: kind = video | type | shield | news
+const FEAT=[
+ {kind:"video",src:"https://agentproof.arsysai.com/hero.mp4",poster:"https://agentproof.arsysai.com/hero.png",url:"https://agentproof.arsysai.com",
+  ru:["Аудит агентов","AgentProof","Карта системы, балл надёжности и план усиления","55 классов сбоев"],
+  en:["Agent audit","AgentProof","System map, reliability score and a hardening plan","55 failure classes"]},
+ {kind:"type",url:"https://securitygit.netlify.app",urlEn:"https://security-en.netlify.app",
+  ru:["Гайд","Защита кода одним промптом","3 промпта: проект, чужой репозиторий, компьютер","3 минуты"],
+  en:["Guide","Code protection in one prompt","3 prompts: your project, a GitHub repo, your computer","3 minutes"]},
+ {kind:"news",url:"https://t.me/arsysai",
+  ru:["Каждый день в 7:00","Новости AI","Главное за сутки со ссылками на источники","канал @arsysai"],
+  en:["Daily at 7:00","AI news","The day's key news with links to sources","@arsysai channel"]},
+ {kind:"shield",url:"https://audit.arsysai.com",
+  ru:["Проверка","AUDIT","Быстрая проверка AI-проекта и документов","за минуты"],
+  en:["Check","AUDIT","A quick check of an AI project and documents","in minutes"]}
+];
+// лента: cat, icon, класс иконки, url, url EN (если есть), RU [title, sub], EN [title, sub]
+const ITEMS=[
+ ["sec","shield","o","https://securitygit.netlify.app","https://security-en.netlify.app",["Защита кода одним промптом","3 готовых промпта для Claude, Codex, Cursor"],["Code protection in one prompt","3 ready prompts for Claude, Codex, Cursor"]],
+ ["agents","agent","","https://agentproof.arsysai.com","https://agentproof.arsysai.com",["AgentProof — аудит мультиагентных систем","Утечки ключей, инъекции, тихие сбои"],["AgentProof — multi-agent system audit","Key leaks, injections, silent failures"]],
+ ["agents","box","m","https://agentproof.arsysai.com/paket.html","",["Подготовка проекта к аудиту","Промпт, который соберёт описание системы"],["Prepare your project for an audit","A prompt that builds your system description"]],
+ ["guide","key","m","https://pm-25keys.netlify.app","",["Лист Мастера: 25 ключей","Нейросеть отвечает по делу"],["Master sheet: 25 keys","Make the model answer to the point"]],
+ ["guide","gear","","https://pm-cowork8.netlify.app","",["Cowork — 8 шагов","Настройка Claude Cowork"],["Cowork in 8 steps","Setting up Claude Cowork"]],
+ ["prompt","pen","o","https://pm-5promtov.netlify.app","",["5 промпт-запросов","Под точный результат"],["5 prompt requests","For a precise result"]],
+ ["prompt","switch","","https://pm-slova.netlify.app","",["Слова-переключатели","Переключают режим модели"],["Switch words","Change the model's mode"]],
+ ["prompt","film","m","https://pm-magiya.netlify.app","",["Магия удержания","Хуки для Shorts и Reels"],["The magic of retention","Hooks for Shorts and Reels"]],
+ ["prompt","gift","o","https://pm-10promptov.netlify.app","",["10 промптов в подарок","Контент, прогрев и продажи"],["10 prompts as a gift","Content, warm-up and sales"]],
+ ["prompt","rocket","","https://pm-zapusk-kursa.netlify.app","",["Запуск онлайн-курса","10 промптов на весь запуск"],["Launching an online course","10 prompts for the whole launch"]],
+ ["prompt","book","m","https://arsysai.com/biblioteka.html","",["Золотая библиотека промптов","Коллекция с поиском"],["Golden prompt library","A searchable collection"]],
+ ["news","news","o","https://t.me/arsysai","https://t.me/arsysai",["Новости AI дня","Каждое утро в 7:00"],["Today's AI news","Every morning at 7:00"]],
+ ["guide","spark","","https://pu.arsysai.com","",["Протокол PROMPT MASTER","Система управления AI"],["PROMPT MASTER protocol","A system for managing AI"]]
+];
+const ICON={shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+ agent:'<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 16h6"/>',
+ box:'<path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/>',
+ key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/>',
+ gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>',
+ pen:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+ switch:'<path d="M4 7h13l-3-3M20 17H7l3 3"/>',
+ film:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
+ gift:'<rect x="4" y="9" width="16" height="11" rx="1"/><path d="M3 9h18M12 9v11M12 9c-2-4-6-4-6-1s6 1 6 1 6 2 6-1-4-3-6 1"/>',
+ rocket:'<path d="M12 3c4 2 6 6 6 10l-3 3H9l-3-3c0-4 2-8 6-10z"/><circle cx="12" cy="10" r="2"/><path d="M9 19l-1 3M15 19l1 3"/>',
+ book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',
+ news:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
+ spark:'<path d="M12 3v6M12 15v6M3 12h6M15 12h6M6 6l3 3M15 15l3 3M6 18l3-3M15 9l3-3"/>'};
+const svg=k=>`<svg class="si" viewBox="0 0 24 24">${ICON[k]}</svg>`;
+const tg=window.Telegram&&Telegram.WebApp; if(tg){tg.ready();tg.expand();}
+const user=tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user;
+let L=(()=>{try{return localStorage.getItem("asa_lang")}catch(e){return null}})()||((user&&user.language_code||navigator.language||"ru").slice(0,2)==="ru"?"ru":"en");
+let tab="all";
+const $=s=>document.querySelector(s);
+const go=u=>{ if(tg&&/^https:\/\/t\.me\//.test(u)) tg.openTelegramLink(u); else if(tg) tg.openLink(u); else window.open(u,"_blank"); };
+
+function stage(f){
+  if(f.kind==="video") return `<video src="${f.src}" poster="${f.poster}" autoplay muted loop playsinline></video>`;
+  if(f.kind==="type") return `<div class="type"><span class="who">Claude</span><span class="txt">${L==="en"?"protect my project from leaks":"защити мой проект от утечек"}</span></div>`;
+  if(f.kind==="shield") return `<div class="shield"><span class="ring"></span><i></i></div>`;
+  return `<div class="ticker" id="tick"></div>`;
+}
+function render(){
+  document.documentElement.lang=L;
+  const t=T[L];
+  document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t[e.dataset.t]);
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
+  $("#nm").textContent=(user&&user.first_name)||t.friend;
+  $("#ava").innerHTML=user&&user.photo_url?`<img src="${user.photo_url}" alt="">`:((user&&user.first_name||"A")[0]);
+  $("#rail").innerHTML=FEAT.map(f=>{const x=f[L];return `<article class="feat"><span class="kick">${x[0]}</span><h2>${x[1]}</h2><span class="sub">${x[2]}</span>
+    <div class="stage">${stage(f)}<div class="bar"><span>${x[3]}</span><button class="open" data-u="${L==="en"&&f.urlEn||f.url}">${t.open}</button></div></div></article>`}).join("");
+  $("#dots").innerHTML=FEAT.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("");
+  $("#tabs").innerHTML=Object.entries(t.tabs).map(([k,v])=>`<button data-k="${k}" class="${k===tab?"on":""}">${v}</button>`).join("");
+  const list=ITEMS.filter(i=>tab==="all"||i[0]===tab);
+  $("#feed").innerHTML=list.map((i,n)=>{const x=L==="en"?i[6]:i[5],u=L==="en"&&i[4]?i[4]:i[3],ru=L==="en"&&!i[4];
+    return `<a class="item" data-u="${u}" style="animation-delay:${n*40}ms"><span class="ic ${i[2]}">${svg(i[1])}</span><span class="it"><span class="meta">${t.tabs[i[0]]}</span>
+    <h3>${x[0]}${ru?`<span class="soon">${t.soon}</span>`:""}</h3><p>${x[1]}</p></span><span class="go">›</span></a>`}).join("");
+  $("#profile").innerHTML=t.pf.map(p=>`<a class="${p[0]}" data-u="${p[2]}"><span>${p[1]}</span><span>›</span></a>`).join("");
+  news();
+}
+// новости дня подтягиваются живьём из news/today.json (тот же сайт)
+async function news(){
+  const box=$("#tick"); if(!box) return;
+  let items=[L==="en"?"AI agents read data with keys from config files":"AI-агенты вошли в системы по ключам из файлов настроек",L==="en"?"Check where your bot keeps its keys":"Проверьте, где лежат ключи вашего бота"];
+  try{const d=await (await fetch(L==="en"?"news/today_en.json":"news/today.json",{cache:"no-store"})).json(); items=d.items.map(i=>i.title);}catch(e){}
+  box.innerHTML=items.concat(items).map(s=>`<div>${s}</div>`).join("");
+}
+document.addEventListener("click",e=>{
+  const l=e.target.closest(".lang button"); if(l){L=l.dataset.l;try{localStorage.setItem("asa_lang",L)}catch(_){}render();return;}
+  const k=e.target.closest(".tabs button"); if(k){tab=k.dataset.k;render();return;}
+  const v=e.target.closest(".nav button"); if(v){document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("on",b===v));
+    $("#home").style.display=v.dataset.v==="home"?"":"none";$("#profile").style.display=v.dataset.v==="profile"?"flex":"none";return;}
+  const u=e.target.closest("[data-u]"); if(u){go(u.dataset.u);}
+});
+$("#rail").addEventListener("scroll",e=>{const r=e.target,i=Math.round(r.scrollLeft/(r.firstElementChild.offsetWidth+12));
+  document.querySelectorAll("#dots i").forEach((d,n)=>d.classList.toggle("on",n===i));},{passive:true});
+render();
+</script>
+</body>
+</html>
