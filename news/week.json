@@ -1,55 +1,67 @@
 {
-  "date": "2026-10-11",
-  "title": "🗓 Главное в AI за неделю · 5–11 октября",
-  "items": [
-    {
-      "emoji": "🔐",
-      "title": "Червь в npm-пакете tensorlake крадёт ключи",
-      "text": "Заражённая версия пакета забирает пароли и ключи и перезапускается из настроек Claude Code.",
-      "url": "https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html"
-    },
-    {
-      "emoji": "🤖",
-      "title": "Claude Haiku 5.5 стал в 10 раз дешевле прошлой версии",
-      "text": "Anthropic выпустила Claude Haiku 5.5 с ценой API ниже на 90%.",
-      "url": "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Модели Anthropic в тестах выходили на настоящие сайты",
-      "text": "Anthropic описала случаи, когда агенты в тестах обходили ограничения, и отключила живой интернет во внутренних проверках.",
-      "url": "https://www.anthropic.com/research/investigating-unintended-model-actions"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Хакеры украли данные банков с помощью AI-агента",
-      "text": "Инструмент Artex на базе AI применили для атак на финансовые организации.",
-      "url": "https://thehackernews.com/2026/10/artex-ai-pentesting-tool-used-in-data.html"
-    },
-    {
-      "emoji": "🤖",
-      "title": "Claude строит живые дашборды и анимации",
-      "text": "Claude научился собирать дашборды и видео-объяснения из ваших данных.",
-      "url": "https://www.digitaltrends.com/computing/claude-can-now-build-live-dashboards-and-animated-explainers-from-your-data/"
-    },
-    {
-      "emoji": "🤖",
-      "title": "Google дал AI-агенту почту, календарь и Диск",
-      "text": "Новый агент Gemini получает собственный аккаунт Workspace в закрытом превью.",
-      "url": "https://venturebeat.com/orchestration/google-cloud-unveils-persistent-gemini-agents-for-long-running-tasks-and-they-get-their-own-gmail-calendar-and-drive-storage"
-    },
-    {
-      "emoji": "🔐",
-      "title": "Белый дом требует сообщать о сбоях AI сразу",
-      "text": "Axios сообщает о требовании немедленно докладывать об инцидентах и устранять их.",
-      "url": "https://www.axios.com/2026/10/09/anthropic-ai-security-white-house"
-    },
-    {
-      "emoji": "💰",
-      "title": "Manus закрыл раунд больше 500 миллионов долларов",
-      "text": "Китайский разработчик AI-агента привлёк инвестиции после расставания с Meta.",
-      "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
-    }
-  ],
-  "takeaway": "Главная тема недели — поведение AI-агентов и их безопасность. Агенты получили почту, календарь и доступ в сеть, а компании и власти начали требовать отчётов об инцидентах. Чем больше у агента доступов, тем важнее заранее решать, к чему именно он имеет доступ."
+ "date": "2026-10-18",
+ "title": "🗓 Главное в AI за неделю · 12–18 октября",
+ "takeaway": "Три вещи, которые стоит проверить на этой неделе: 1) где лежат ключи ваших AI-сервисов и стоит ли у каждого провайдера лимит расходов; 2) нет ли в проектах скрытых файлов и пакетов, которых вы не добавляли; 3) какие права есть у ваших агентов и ботов в облаке.",
+ "items": [
+  {
+   "emoji": "🔐",
+   "title": "Утекли ключи пользователей OpenCode",
+   "text": "Сохранённые ключи OpenAI, Anthropic и Google могли утечь у 1,4% пользователей инструмента.",
+   "url": "https://startupfortune.com/opencode-breach-exposes-stored-openai-and-anthropic-keys-prompts-urgent-key-rotation/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Хакеры взломали около 1900 аккаунтов GitHub",
+   "text": "Скрытый файл в проектах искал пароли для сборки, облачные доступы и ключи AI-сервисов.",
+   "url": "https://thehackernews.com/2026/10/ghostaction-compromises-about-1900.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Обновления AOMEI Backupper подменяли на бэкдор",
+   "text": "С мая по июль на несколько минут файлы на серверах обновления заменяли, заражены организации в 11 странах.",
+   "url": "https://thehackernews.com/2026/10/attackers-tampered-with-aomei.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "У Meta утёк код из-за одного пароля",
+   "text": "Хакеры украли пароль сотрудника и забрали код и данные около 1500 человек.",
+   "url": "https://www.securityweek.com/meta-says-hackers-took-code-personal-data-of-1500-in-github-breach/"
+  },
+  {
+   "emoji": "🤖",
+   "title": "DeepSeek обновила открытую модель Flash",
+   "text": "Модель набрала 77% в тесте на программистские задачи при цене меньше 20 центов за задачу.",
+   "url": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/"
+  },
+  {
+   "emoji": "🤖",
+   "title": "Google открыла Gemini 4 Argon для всех платных разработчиков",
+   "text": "Новая главная модель Google работает с текстом и картинками, до 30 ноября цена вдвое ниже.",
+   "url": "https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token"
+  },
+  {
+   "emoji": "🤖",
+   "title": "ChatGPT стал помощником в Chrome",
+   "text": "Расширение читает открытые вкладки, а в режиме Work заполняет формы и скачивает файлы.",
+   "url": "https://the-decoder.com/chatgpt-becomes-a-full-chrome-browser-assistant-that-reads-and-acts-on-your-open-tabs/"
+  },
+  {
+   "emoji": "🤖",
+   "title": "Mistral выпустила самую сильную модель Европы",
+   "text": "Large 4 на триллион параметров стала лучшей за пределами США и Китая по независимым тестам.",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/independent-tests-rank-mistrals-new-trillion-parameter-large-4-the-best-ai-model-outside-the-u-s-and-china-but-chinese-open-weights-still-overcome-europes-best-efforts"
+  },
+  {
+   "emoji": "📱",
+   "title": "iPhone Duo разобрали за минуты",
+   "text": "Через полчаса после предзаказа доставка сдвинулась на январь 2027 года.",
+   "url": "https://www.macrumors.com/2026/10/16/apple-iphone-duo-demand-extraordinary/"
+  },
+  {
+   "emoji": "🤖",
+   "title": "OpenAI собирается делать человекоподобного робота",
+   "text": "Альтман ответил «We will» и ждёт демо в 2027 году.",
+   "url": "https://www.engadget.com/2285040/openai-humanoid-robot-sam-altman-statement-real-challenge/"
+  }
+ ]
 }
