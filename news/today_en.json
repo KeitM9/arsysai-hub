@@ -1,63 +1,27 @@
 {
  "lang": "en",
- "date": "2026-10-18",
- "title": "📰 AI news · October 18",
- "takeaway": "Keys are in the spotlight again: stored AI-service keys of OpenCode users may have leaked, and a malicious npm package collected keys and passwords from project files. Recommendation: find every place where you saved OpenAI, Anthropic and Google keys, and set a spending limit with each provider.",
- "cta": "🔐 Check where my keys are stored",
+ "date": "2026-10-19",
+ "title": "📰 AI news · October 19",
+ "takeaway": "Today is about access: a home router with a flaw in its Wi-Fi chip opens the door to your network, and your project keys often live behind it. Recommendation: find your router model, check whether updates still come out for it, and move project keys out of open files.",
+ "cta": "🔐 Check access to my project",
  "items": [
   {
    "emoji": "🔐",
-   "title": "OpenCode users' keys may have leaked",
-   "text": "The company behind the OpenCode coding agent reported a breach of its console. Stored OpenAI, Anthropic and Google keys may have leaked for 1.4% of users, and some people see hundreds of dollars in bills for requests they did not make. If you keep AI-service keys in tools like this, check your provider bills and set a spending limit.",
-   "url": "https://startupfortune.com/opencode-breach-exposes-stored-openai-and-anthropic-keys-prompts-urgent-key-rotation/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "A malicious npm package stole wallets and passwords",
-   "text": "The imgdecode package was downloaded 979 times: it runs hidden code on Windows and takes crypto-wallet phrases, key files and browser data. If you build projects from ready-made packages, your .env files sit in the same places. Check whether imgdecode is among your packages. Free guide \"Code protection in one prompt\": send the word \"защита\" to the bot.",
-   "url": "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html"
+   "title": "A 2010 flaw found in Broadcom Wi-Fi chips",
+   "text": "A researcher found a flaw in Broadcom Wi-Fi chips: someone within range can run their own code on the router without a password. In Belgium alone, over 1.5 million provider routers are exposed, with no updates as of October 15. If your projects run from a home network, the router guards the door to your keys. Find your router model and check whether updates are still released for it.",
+   "url": "https://securityaffairs.com/201268/iot/16-year-old-broadcom-wi-fi-bug-lets-attackers-take-over-routers-without-a-password.html"
   },
   {
    "emoji": "🤖",
-   "title": "DeepSeek updated its open Flash model",
-   "text": "The model scored 77% on a programming-task test at under 20 cents per task. Weights are open, and the tests are the company's own. For agent projects it is one more low-cost option.",
-   "url": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/"
+   "title": "Anthropic puts 5% of its shares into a public benefit fund",
+   "text": "The fund will work on projects for the public good: donations and direct payments to groups of people. For every 50% rise in company value, 2% more shares may be added. Details are promised in the coming months.",
+   "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/"
   },
   {
-   "emoji": "🤖",
-   "title": "Claude explained a 25-year-old encryption puzzle",
-   "text": "In 30 minutes Claude showed that the NSA numbers for encryption curves came from a simple random-number generator. The earlier explanation turned out to be wrong. Models are starting to help with old scientific questions.",
-   "url": "https://the-decoder.com/anthropics-claude-cracks-a-25-year-old-nsa-cryptography-mystery-in-under-30-minutes/"
-  },
-  {
-   "emoji": "🤖",
-   "title": "At Anthropic agents work 6 times more hours than people",
-   "text": "The share of juniors in technical roles fell from 21% to 14%, and engineers make 5.1 times more commits. The authors note the company is unusually AI-heavy. It shows how teamwork is changing.",
-   "url": "https://the-decoder.com/anthropic-has-nearly-stopped-hiring-junior-staff-because-ai-agents-now-work-six-times-as-many-hours/"
-  },
-  {
-   "emoji": "🤖",
-   "title": "OpenAI plans to build a humanoid robot",
-   "text": "Asked about a humanoid, Altman answered \"We will\" and expects a demo in 2027. OpenAI's site lists 27 robotics jobs. Looks and price are not yet revealed.",
-   "url": "https://www.engadget.com/2285040/openai-humanoid-robot-sam-altman-statement-real-challenge/"
-  },
-  {
-   "emoji": "📱",
-   "title": "Honor Win2 gets a 2K 185 Hz display",
-   "text": "Panel maker Visionox called it the world's first 2K 185 Hz screen with 0.93 mm bezels. Honor says the series arrives next week. Some specs come from leaks.",
-   "url": "https://www.gsmarena.com/honor_win2_teased_once_again_with_worlds_first_2k_185hz_display-news-75098.php"
-  },
-  {
-   "emoji": "💻",
-   "title": "Data can now be stored in synthetic DNA",
-   "text": "France's Biomemory launched DNA Shield: data is encrypted, written into DNA and kept offline. Suited for copies of encryption keys. Early access for organizations for now.",
-   "url": "https://servernews.ru/1150079"
-  },
-  {
-   "emoji": "💻",
-   "title": "Asus released an Intel Arc graphics card for AI at home",
-   "text": "The UGen Arc Pro B70 has 32 GB of video memory, and four cards make 128 GB. It is built for local models. Price and release date are not announced yet.",
-   "url": "https://3dnews.ru/1150089/asus-vipustila-svoyu-pervuyu-videokartu-intel-arc-no-ona-ne-dlya-geymerov"
+   "emoji": "🎨",
+   "title": "Three aurora models flashed in the OpenAI API",
+   "text": "Red, green and blue appeared in the API and vanished, then showed up in blind image tests on Arena. The community thinks it is GPT-Image-3. OpenAI has confirmed nothing.",
+   "url": "https://www.testingcatalog.com/openai-possibly-testing-gpt-image-3/"
   }
  ]
 }
