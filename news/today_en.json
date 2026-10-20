@@ -1,27 +1,63 @@
 {
  "lang": "en",
- "date": "2026-10-19",
- "title": "📰 AI news · October 19",
- "takeaway": "Today is about access: a home router with a flaw in its Wi-Fi chip opens the door to your network, and your project keys often live behind it. Recommendation: find your router model, check whether updates still come out for it, and move project keys out of open files.",
- "cta": "🔐 Check access to my project",
+ "date": "2026-10-20",
+ "title": "📰 AI news · October 20",
+ "takeaway": "Today is about access: fake emails and packages go after Claude and Gemini keys and agent conversations. Recommendation: open GitHub yourself instead of following an email link, and check which packages and MCP servers are plugged into your agent.",
+ "cta": "🔐 Check my agent",
  "items": [
   {
    "emoji": "🔐",
-   "title": "A 2010 flaw found in Broadcom Wi-Fi chips",
-   "text": "A researcher found a flaw in Broadcom Wi-Fi chips: someone within range can run their own code on the router without a password. In Belgium alone, over 1.5 million provider routers are exposed, with no updates as of October 15. If your projects run from a home network, the router guards the door to your keys. Find your router model and check whether updates are still released for it.",
-   "url": "https://securityaffairs.com/201268/iot/16-year-old-broadcom-wi-fi-bug-lets-attackers-take-over-routers-without-a-password.html"
+   "title": "A fake \"GitHub\" email steals your password and 2FA code",
+   "text": "The GhostAction operator sends fake security notices: a look-alike page captures your password and one-time code. Hijacked projects get a credential stealer disguised as a font file that takes Claude and Gemini keys and npm tokens. If you keep projects on GitHub, your keys sit in the same kind of files. Open GitHub yourself, not through an email link. Free guide \"Code Protection in One Prompt\": send the word \"protect\" to the bot.",
+   "url": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "A fake accelerator steals AI agent conversations",
+   "text": "npm packages offered with \"free Claude and Gemini credits\" route an agent's traffic through the attackers' server, exposing requests, conversations and code. If you run an agent or bot, any third-party package in its settings gets the same access. Check which packages and MCP servers are connected to your agent. Free guide \"Code Protection in One Prompt\": send the word \"protect\" to the bot.",
+   "url": "https://thehackernews.com/2026/10/fake-web3-accelerator-uses-npm-packages.html"
+  },
+  {
+   "emoji": "🔐",
+   "title": "AI agents broke into hundreds of online stores",
+   "text": "Since September 25, more than 1,200 sites in four countries were attacked and over 100 companies breached. The task given to the agent fit in 100 characters, then it worked for hours on its own. If you run a website or take payments, someone can look for your way in the same manner. Check which site and payment credentials sit in plain view.",
+   "url": "https://www.securitylab.ru/news/578968.php"
   },
   {
    "emoji": "🤖",
-   "title": "Anthropic puts 5% of its shares into a public benefit fund",
-   "text": "The fund will work on projects for the public good: donations and direct payments to groups of people. For every 50% rise in company value, 2% more shares may be added. Details are promised in the coming months.",
-   "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/"
+   "title": "NVIDIA releases open Nemotron 3.5 models",
+   "text": "Super VL with 120B parameters is built for enterprise agents, Bolt with 74B runs locally on AI PCs. A small model follows later in October. The comparisons with Anthropic and OpenAI models were made by NVIDIA itself.",
+   "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/"
+  },
+  {
+   "emoji": "🤖",
+   "title": "MiniMax M3.1 Flash costs 15 cents per million tokens",
+   "text": "The new Chinese model is three times faster than the previous one, takes text and images, with up to a million tokens of context. Open weights are promised for October 23.",
+   "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/"
   },
   {
    "emoji": "🎨",
-   "title": "Three aurora models flashed in the OpenAI API",
-   "text": "Red, green and blue appeared in the API and vanished, then showed up in blind image tests on Arena. The community thinks it is GPT-Image-3. OpenAI has confirmed nothing.",
-   "url": "https://www.testingcatalog.com/openai-possibly-testing-gpt-image-3/"
+   "title": "Kling 4.0 makes up to 30 seconds of video in one pass",
+   "text": "The new version adds stereo sound and lip sync in more than 10 languages. The Flash version is faster and cheaper, but caps at 720p and 20 seconds.",
+   "url": "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant/"
+  },
+  {
+   "emoji": "💻",
+   "title": "Apple sets an event for October 28",
+   "text": "Per Bloomberg rumors, expect a MacBook Pro with a touch OLED on M5 Pro and M5 Max chips, an OLED iPad mini and a new iMac. The event is official, the device list is still a rumor.",
+   "url": "https://9to5mac.com/2026/10/19/apple-announces-special-event-for-october-28/"
+  },
+  {
+   "emoji": "📺",
+   "title": "AI agents are scrubbing ads from smart TVs",
+   "text": "The dumbtv and cleanyourtv projects on GitHub are tested on Fire TV and Android TV from Sony, TCL, Philips, Hisense and Xiaomi. Several thousand people used the method in two days. One user turned a TV into a brick.",
+   "url": "https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/"
+  },
+  {
+   "emoji": "📱",
+   "title": "Redmi K100 gets a 10,000 mAh battery",
+   "text": "Launching in China on October 28, pre-orders are open. 6.83-inch AMOLED screen, Snapdragon 8 Elite chip. Most flagships carry 5,000–6,000 mAh.",
+   "url": "https://www.gsmarena.com/redmi_k100_with_10000mah_battery_and_683inch_display_is_launching_next_week-news-75105.php"
   }
  ]
 }
