@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Заявка · ASA</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Мини-приложение заявок @sysarchitect_bot. Дизайн-система «ASA Заявки Mini App», демо — ПРИЛОЖЕНИЯ/zayavki-miniapp-demo */
+:root{--ease:cubic-bezier(.2,.8,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);--f:"Oswald","Arial Narrow",Arial,sans-serif}
+html[data-theme="light"]{--bg:#e4e2e3;--card:#f7f6f6;--ink:#414143;--muted:#676769;--line:#41414329;--graphite:#2c3341;--on-graphite:#fff;--mint:#b4fab2;--on-mint:#2c3341;--orange:#fe640c;--focus:#2c3341;--shadow:0 10px 24px rgba(65,65,67,.14),0 2px 4px rgba(65,65,67,.08);--float:0 12px 30px rgba(65,65,67,.25)}
+html[data-theme="dark"]{--bg:#1c2029;--card:#2c3341;--ink:#f6f6f6;--muted:#b9bdbf;--line:#f6f6f624;--graphite:#11151c;--on-graphite:#f6f6f6;--mint:#b4fab2;--on-mint:#2c3341;--orange:#fe640c;--focus:#b4fab2;--shadow:0 10px 24px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.25);--float:0 12px 30px rgba(0,0,0,.5)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+.app{position:fixed;inset:0;display:flex;flex-direction:column}
+.top{margin:12px 16px 0;display:flex;align-items:center;justify-content:space-between;background:var(--graphite);color:var(--on-graphite);border-radius:999px;padding:6px 6px 6px 18px;box-shadow:var(--shadow)}
+.top .ttl{font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:16px}
+.top .ttl b{color:var(--mint);font-weight:600}
+.seg{position:relative;display:flex;background:#ffffff1a;border-radius:999px;padding:3px}
+.seg::before{content:"";position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:var(--mint);transition:transform .35s var(--spring)}
+.seg[data-v="en"]::before{transform:translateX(100%)}
+.seg button{position:relative;z-index:1;width:42px;padding:5px 0;font-size:13px;font-weight:600;letter-spacing:.06em;color:#b9bdbf;transition:color .25s}
+.seg button[aria-pressed="true"]{color:#2c3341}
+
+.prog{margin:14px 16px 0;display:flex;align-items:center;gap:12px;height:16px;transition:opacity .3s,height .3s,margin .3s}
+.prog.hide{opacity:0;height:0;margin-top:0}
+.prog .track{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.prog .bar{height:100%;width:0;border-radius:3px;background:var(--orange);transition:width .6s var(--ease)}
+.prog .cnt{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:70px;text-align:right}
+
+.views{position:relative;flex:1;overflow:hidden}
+.view{position:absolute;inset:0;overflow-y:auto;padding:16px 16px 130px;opacity:0;transform:translateX(48px);filter:blur(6px);pointer-events:none;visibility:hidden;transition:opacity .45s var(--ease),transform .55s var(--ease),filter .45s var(--ease),visibility 0s .55s;scrollbar-width:none}
+.view::-webkit-scrollbar{display:none}
+.view.left{transform:translateX(-48px)}
+.view.on{opacity:1;transform:none;filter:none;pointer-events:auto;visibility:visible;transition-delay:0s}
+.view.on .st{animation:rise .6s var(--ease) both;animation-delay:calc(var(--i,0)*70ms + 120ms)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+h2{font-size:26px;line-height:1.1;font-weight:600;margin:4px 0 6px;text-transform:uppercase;letter-spacing:.01em}
+.sub{font-size:14px;color:var(--muted);margin:0 0 16px}
+
+.hero{position:relative;height:250px;border-radius:24px;background:var(--graphite);color:var(--on-graphite);overflow:hidden;box-shadow:var(--shadow);padding:22px}
+.hero .hk{position:relative;z-index:2;font-size:30px;line-height:1;font-weight:600;text-transform:uppercase;max-width:170px}
+.hero .hk b{display:block;color:var(--mint);font-weight:600}
+.hero .hs{position:relative;z-index:2;margin-top:10px;font-size:14px;color:#b9bdbf;max-width:150px}
+.hero .free{position:absolute;z-index:2;left:22px;bottom:22px;background:var(--mint);color:var(--on-mint);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.orbit{position:absolute;right:-128px;top:50%;width:300px;height:300px;margin-top:-150px}
+.ring{position:absolute;inset:0;animation:spin 22s linear infinite}
+.ring.r2{inset:60px;animation-duration:14s;animation-direction:reverse}
+.ring span{position:absolute;left:50%;top:50%;height:16px;border-radius:8px;margin:-8px 0 0 -18px;width:36px;background:#f7f6f6;opacity:.9;transform:rotate(var(--a)) translateX(var(--r))}
+.ring span.m{background:var(--mint);opacity:1}
+.ring span.o{background:var(--orange);width:16px;margin-left:-8px;opacity:1}
+.core{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--mint);color:var(--on-mint);display:grid;place-items:center;animation:pulse 2.6s var(--ease) infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #b4fab266}50%{box-shadow:0 0 0 16px #b4fab200}}
+
+.how{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.how .row{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
+.how .n{flex:none;width:42px;height:42px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center;font-weight:600;font-size:18px}
+.how b{display:block;font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+.how small{font-size:13px;color:var(--muted)}
+
+.dirs{display:flex;flex-direction:column;gap:10px}
+.dir{background:var(--card);border-radius:20px;box-shadow:var(--shadow);transition:background .35s var(--ease),transform .2s var(--ease),color .35s}
+.dir:active{transform:scale(.98)}
+.dir .hd{width:100%;display:flex;align-items:center;gap:12px;padding:12px 14px;text-align:left}
+.dir .ic{flex:none;width:44px;height:44px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center;transition:transform .45s var(--spring)}
+.dir .t{flex:1;font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
+.dir .rd{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;transition:border-color .3s}
+.dir .rd::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--on-mint);transform:scale(0);transition:transform .35s var(--spring)}
+.dir .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.dir .bd>div{overflow:hidden}
+.dir .bd p{margin:0;padding:0 16px 14px 70px;font-size:14px;line-height:1.45;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .4s var(--ease)}
+.dir.sel{background:var(--mint);color:var(--on-mint)}
+.dir.sel .ic{transform:rotate(-8deg) scale(1.06);background:#2c3341}
+.dir.sel .rd{border-color:var(--on-mint)}
+.dir.sel .rd::after{transform:scale(1)}
+.dir.sel .bd{grid-template-rows:1fr}
+.dir.sel .bd p{opacity:1;transform:none;transition-delay:.12s}
+
+.fld{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.fld label{font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.fld label i{color:var(--orange);font-style:normal}
+.fld textarea,.fld input{font:400 16px/1.45 var(--f);color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .3s;width:100%}
+.fld textarea{resize:none;height:104px}
+.fld textarea::placeholder,.fld input::placeholder{color:var(--muted)}
+.fld textarea:focus,.fld input:focus{outline:none;border-color:var(--focus)}
+.fld .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.fld .meta .ok{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 14px;font-size:14px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;transition:background .3s,color .3s,transform .35s var(--spring),border-color .3s}
+.chip[aria-pressed="true"]{background:var(--mint);color:var(--on-mint);border-color:var(--mint);transform:scale(1.04);font-weight:600}
+
+.cons{display:flex;flex-direction:column;gap:10px}
+.con{background:var(--card);border-radius:16px;box-shadow:var(--shadow)}
+.con .hd{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 14px}
+.box{flex:none;width:26px;height:26px;border-radius:8px;border:1.5px solid var(--muted);display:grid;place-items:center;transition:background .25s,border-color .25s,transform .35s var(--spring)}
+.box path{stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .35s var(--ease) .05s}
+.con.ck .box{background:var(--mint);border-color:var(--mint);transform:scale(1.08)}
+.con.ck .box path{stroke-dashoffset:0}
+.con .tx{flex:1;font-size:14px;line-height:1.35;text-align:left}
+.con .tx small{color:var(--muted)}
+.con .mo{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:transform .4s var(--ease)}
+.con.open .mo{transform:rotate(180deg)}
+.con .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.con .bd>div{overflow:hidden}
+.con .bd p{margin:0;padding:0 16px 14px 52px;font-size:13px;line-height:1.45;color:var(--muted)}
+.con .bd a{color:var(--ink)}
+.con.open .bd{grid-template-rows:1fr}
+
+.done{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:40px}
+.mark{position:relative;width:112px;height:112px;border-radius:50%;background:var(--mint);color:var(--on-mint);display:grid;place-items:center;margin-bottom:22px;transform:scale(0)}
+.view.on .mark{animation:pop .7s var(--spring) .15s forwards}
+.mark path{stroke-dasharray:40;stroke-dashoffset:40}
+.view.on .mark path{animation:draw .5s var(--ease) .6s forwards}
+.mark::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid var(--mint);opacity:0}
+.view.on .mark::before{animation:ring 1.2s var(--ease) .5s}
+@keyframes pop{to{transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes ring{0%{opacity:.9;transform:scale(.8)}100%{opacity:0;transform:scale(1.5)}}
+.bit{position:absolute;left:50%;top:50%;height:12px;width:26px;border-radius:6px;pointer-events:none;animation:fly 1.1s var(--ease) forwards}
+@keyframes fly{from{transform:translate(-50%,-50%) rotate(0);opacity:1}to{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--rot));opacity:0}}
+.done h2{font-size:28px}
+.done .sub{max-width:280px}
+
+.mb{position:fixed;left:0;right:0;bottom:0;padding:14px 16px calc(18px + env(safe-area-inset-bottom));display:flex;justify-content:center;background:linear-gradient(to top,var(--bg) 65%,transparent);z-index:5;transition:transform .5s var(--ease)}
+.mb.hide{transform:translateY(130%)}
+.mainbtn{position:relative;height:54px;width:100%;border-radius:999px;background:var(--mint);color:var(--on-mint);font-size:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;box-shadow:var(--float);overflow:hidden;transition:width .45s var(--ease),opacity .3s,transform .2s var(--ease)}
+.mainbtn:active{transform:scale(.97)}
+.mainbtn.off{opacity:.5}
+.mainbtn .lbl{display:inline-flex;align-items:center;gap:8px;transition:opacity .2s}
+.mainbtn.load{width:54px}
+.mainbtn.load .lbl{opacity:0}
+.mainbtn .spin{position:absolute;inset:15px;border-radius:50%;border:3px solid #2c334133;border-top-color:#2c3341;opacity:0;animation:spin .8s linear infinite}
+.mainbtn.load .spin{opacity:1;transition:opacity .2s .25s}
+.toast{position:fixed;left:50%;bottom:calc(98px + env(safe-area-inset-bottom));transform:translate(-50%,12px);background:var(--graphite);color:var(--on-graphite);border-radius:999px;padding:9px 16px;font-size:13px;letter-spacing:.03em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s,transform .35s var(--spring);z-index:6}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <span class="ttl"><span data-t="t1"></span> <b data-t="t2"></b></span>
+    <div class="seg" id="seg" data-v="ru"><button data-l="ru" aria-pressed="true">RU</button><button data-l="en" aria-pressed="false">EN</button></div>
+  </div>
+  <div class="prog hide" id="prog"><div class="track"><div class="bar" id="bar"></div></div><span class="cnt" id="cnt"></span></div>
+
+  <div class="views">
+    <section class="view on" data-v="0">
+      <div class="hero st" style="--i:0">
+        <div class="hk"><span data-t="hk1"></span><b data-t="hk2"></b></div>
+        <div class="hs" data-t="hs"></div>
+        <span class="free" data-t="free"></span>
+        <div class="orbit" aria-hidden="true">
+          <div class="ring" id="r1"></div>
+          <div class="ring r2" id="r2"></div>
+          <div class="core"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></div>
+        </div>
+      </div>
+      <div class="how">
+        <div class="row st" style="--i:1"><span class="n">1</span><div><b data-t="h1"></b><small data-t="h1s"></small></div></div>
+        <div class="row st" style="--i:2"><span class="n">2</span><div><b data-t="h2"></b><small data-t="h2s"></small></div></div>
+        <div class="row st" style="--i:3"><span class="n">3</span><div><b data-t="h3"></b><small data-t="h3s"></small></div></div>
+      </div>
+    </section>
+
+    <section class="view" data-v="1">
+      <h2 class="st" style="--i:0" data-t="s1"></h2>
+      <p class="sub st" style="--i:1" data-t="s1h"></p>
+      <div class="dirs" id="dirs"></div>
+    </section>
+
+    <section class="view" data-v="2">
+      <h2 class="st" style="--i:0" data-t="s2"></h2>
+      <p class="sub st" style="--i:1" data-t="s2h"></p>
+      <div class="fld st" style="--i:2" id="fGoal">
+        <label for="goal"><span data-t="goal"></span> <i>*</i></label>
+        <textarea id="goal" maxlength="500"></textarea>
+        <div class="meta"><span data-t="goalH"></span><span id="cc">0 / 500</span></div>
+      </div>
+      <div class="fld st" style="--i:3"><label for="nm" data-t="name"></label><input id="nm" maxlength="80" autocomplete="given-name"></div>
+      <div class="fld st" style="--i:4" id="fTg"><label for="tgn"><span data-t="tg"></span> <i>*</i></label><input id="tgn" maxlength="64"></div>
+      <div class="fld st" style="--i:5"><label data-t="when"></label><div class="chips" id="when"></div></div>
+    </section>
+
+    <section class="view" data-v="3">
+      <h2 class="st" style="--i:0" data-t="s3"></h2>
+      <p class="sub st" style="--i:1" data-t="s3h"></p>
+      <div class="cons" id="cons"></div>
+    </section>
+
+    <section class="view" data-v="4">
+      <div class="done">
+        <div class="mark" id="mark"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h2 class="st" style="--i:6" data-t="dT"></h2>
+        <p class="sub st" style="--i:7" data-t="dS"></p>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<div class="mb" id="mb"><button class="mainbtn" id="main"><span class="lbl"><span id="mainTx"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="spin"></span></button></div>
+
+<script>
+const tg=window.Telegram&&Telegram.WebApp&&Telegram.WebApp.initData?Telegram.WebApp:null;
+const qs=new URLSearchParams(location.search);
+const T={
+ru:{t1:'Оставить',t2:'заявку',hk1:'Заявка',hk2:'за минуту',hs:'Прямо здесь, в Telegram',free:'Ответ лично от Екатерины',
+h1:'Выбери направление',h1s:'Семь вариантов, есть «пока не знаю»',h2:'Опиши задачу',h2s:'Парой фраз, детали уточним',h3:'Получи ответ',h3s:'Екатерина напишет сюда, в Telegram',
+start:'Начать',next:'Далее',send:'Отправить заявку',step:'Шаг',of:'из',
+s1:'Что нужно сделать?',s1h:'Выбери одно направление, нажми ещё раз, чтобы свернуть',
+s2:'Расскажи о задаче',s2h:'Можно коротко, детали уточним в переписке',goal:'Что должно получиться в итоге?',goalH:'Минимум 10 символов',name:'Как к тебе обращаться',tg:'Твой Telegram',when:'Когда нужно',
+s3:'Последний шаг',s3h:'Три пункта обязательны, четвёртый по желанию. Стрелка раскрывает суть документа.',opt:'по желанию',full:'Полный текст',
+need1:'Выбери направление',need2:'Опиши задачу и оставь Telegram',need3:'Отметь три обязательных пункта',
+dT:'Заявка у Екатерины',dS:'Ответ придёт в чат с ботом.',
+ex:['Агент, который отвечает клиентам в Telegram','Проверить, что бот бережёт данные клиентов','Мини-приложение для записи клиентов','Команда агентов для контента']},
+en:{t1:'Send a',t2:'request',hk1:'A request',hk2:'in a minute',hs:'Right here, in Telegram',free:'Personal reply from Ekaterina',
+h1:'Pick a direction',h1s:'Seven options, including “not sure yet”',h2:'Describe the task',h2s:'A couple of lines, we’ll clarify details',h3:'Get a reply',h3s:'Ekaterina writes back here, in Telegram',
+start:'Start',next:'Next',send:'Send request',step:'Step',of:'of',
+s1:'What do you need?',s1h:'Pick one direction, tap again to collapse',
+s2:'Tell us about the task',s2h:'Short is fine, we’ll clarify in chat',goal:'What should the result be?',goalH:'At least 10 characters',name:'Your name',tg:'Your Telegram',when:'Timing',
+s3:'Last step',s3h:'Three items are required, the fourth is optional. The arrow opens a short summary.',opt:'optional',full:'Full text',
+need1:'Pick a direction',need2:'Describe the task and leave your Telegram',need3:'Tick the three required items',
+dT:'Ekaterina has your request',dS:'The reply comes to your chat with the bot.',
+ex:['An agent that answers clients in Telegram','Check that the bot keeps client data safe','A Mini App for client bookings','A team of agents for content']}};
+
+const I={shield:'<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/>',
+bot:'<rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13v1M15 13v1M9 17h6"/>',
+multi:'<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M11 7.3l-4.8 8.4M13 7.3l4.8 8.4M7.5 18h9"/>',
+scales:'<path d="M12 4v16M7 20h10M4 8h16M7 8l-3 6a3 3 0 0 0 6 0zM17 8l-3 6a3 3 0 0 0 6 0z"/>',
+phone:'<rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 18h4M9 7h6M9 10.5h6M9 14h3"/>',
+site:'<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01M7 13h6M7 16h9"/>',
+spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/>'};
+// id совпадают с APP_DIRS в bot.py — бот сам подставляет название направления
+const DIRS=[
+ {id:'security',ic:'shield',ru:['Безопасность AI','Проверим, где агент или бот может раскрыть данные, и укрепим эти места.'],en:['AI security','We find where an agent or bot could expose data and reinforce those spots.']},
+ {id:'agent',ic:'bot',ru:['Агент под заказ','Агент берёт на себя рутину: ответы клиентам, заявки, отчёты.'],en:['Custom agent','An agent takes over routine work: client replies, requests, reports.']},
+ {id:'multi',ic:'multi',ru:['Мультиагентная система','Команда агентов: каждый делает свою часть, координатор собирает итог.'],en:['Multi-agent system','A team of agents: each does its part, a coordinator assembles the result.']},
+ {id:'audit',ic:'scales',ru:['Аудит любой сложности','Отчёт по промпту, сайту, воронке или продукту с приоритетами.'],en:['Audit of any complexity','A report on a prompt, site, funnel or product, with priorities.']},
+ {id:'miniapp',ic:'phone',ru:['Мини-приложение под ключ','Такое же приложение в Telegram для твоего бизнеса: запись, заявки, каталог.'],en:['Telegram Mini App, turnkey','An app like this one for your business: bookings, requests, a catalog.']},
+ {id:'site',ic:'site',ru:['Сайт или лендинг','Страница, которая объясняет продукт и ведёт человека к заявке.'],en:['Website or landing','A page that explains the product and leads people to a request.']},
+ {id:'general',ic:'spark',ru:['Пока не знаю','Опиши задачу своими словами, подскажем, с чего начать.'],en:['Not sure yet','Describe the task in your words, we’ll suggest where to start.']}];
+const WHEN={ru:['Как можно скорее','В этом месяце','Спокойно, без спешки'],en:['As soon as possible','This month','No rush']};
+const LEGAL='https://legal.arsysai.com';
+const CONS=[
+ {req:1,ru:['Принимаю Политику конфиденциальности','Какие данные собираем, где храним и как удалить.','/privacy.html'],en:['I accept the Privacy Policy','What data we collect, where it is stored and how to delete it.','/en.html#policy']},
+ {req:1,ru:['Даю согласие на обработку данных','Имя, Telegram и текст заявки используем для ответа на заявку.','/consent-bot.html'],en:['I consent to data processing','Your name, Telegram and request text are used to reply to you.','/en.html#consent-bot']},
+ {req:1,ru:['Принимаю Условия оплаты и возврата','Цену и порядок оплаты согласуем в переписке, до начала работы.','/offer.html'],en:['I accept the Payment & refund terms','Price and payment are agreed in chat, before work starts.','/en.html#terms']},
+ {req:0,ru:['Хочу получать сообщения','Иногда пришлём новости и полезные материалы. Отписка в один клик.','/consent.html#ads'],en:['Send me messages','Occasional news and useful materials. Unsubscribe in one tap.','/en.html#ads']}];
+
+const user=tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user||{};
+const startLang=qs.get('lang')||((user.language_code||'ru').slice(0,2)==='en'?'en':'ru');
+// согласие уже дано в боте (?c=1) — шаг с галочками пропускаем
+const consented=qs.get('c')==='1';
+const S={lang:startLang==='en'?'en':'ru',step:0,dir:null,when:0,cons:consented?[1,1,1,0]:[0,0,0,0],open:-1};
+const FLOW=consented?[0,1,2,4]:[0,1,2,3,4];
+const LAST=FLOW[FLOW.length-2];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const t=k=>T[S.lang][k];
+const svg=(p,s=22)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const hap=k=>{try{if(tg)k==='err'?tg.HapticFeedback.notificationOccurred('error'):k==='ok'?tg.HapticFeedback.notificationOccurred('success'):tg.HapticFeedback.selectionChanged();else navigator.vibrate&&navigator.vibrate(8)}catch(e){}};
+
+if(tg){tg.ready();tg.expand();try{tg.setHeaderColor(tg.colorScheme==='dark'?'#1c2029':'#e4e2e3');tg.setBackgroundColor(tg.colorScheme==='dark'?'#1c2029':'#e4e2e3')}catch(e){}}
+document.documentElement.dataset.theme=tg&&tg.colorScheme==='dark'?'dark':(qs.get('theme')==='dark'?'dark':'light');
+$('#nm').value=user.first_name||'';
+$('#tgn').value=user.username?'@'+user.username:'';
+
+[[$('#r1'),12,118],[$('#r2'),8,70]].forEach(([el,n,r],k)=>{for(let i=0;i<n;i++){const s=document.createElement('span');s.style.setProperty('--a',(360/n*i)+'deg');s.style.setProperty('--r',r+'px');if(i%4===1)s.className='m';if(k&&i%4===3)s.className='o';el.appendChild(s)}});
+
+function renderDirs(){
+ $('#dirs').innerHTML=DIRS.map((d,i)=>`<div class="dir st${S.dir===d.id?' sel':''}" style="--i:${i+2}" data-id="${d.id}"><button class="hd" aria-expanded="${S.dir===d.id}"><span class="ic">${svg(I[d.ic])}</span><span class="t">${d[S.lang][0]}</span><span class="rd"></span></button><div class="bd"><div><p>${d[S.lang][1]}</p></div></div></div>`).join('');
+ $$('.dir').forEach(el=>el.querySelector('.hd').onclick=()=>{const id=el.dataset.id;S.dir=S.dir===id?null:id;$$('.dir').forEach(x=>{const on=x.dataset.id===S.dir;x.classList.toggle('sel',on);x.querySelector('.hd').setAttribute('aria-expanded',on)});hap();sync()});
+}
+function renderWhen(){
+ $('#when').innerHTML=WHEN[S.lang].map((w,i)=>`<button class="chip" aria-pressed="${S.when===i}">${w}</button>`).join('');
+ $$('#when .chip').forEach((c,i)=>c.onclick=()=>{S.when=i;$$('#when .chip').forEach((x,j)=>x.setAttribute('aria-pressed',j===i));hap()});
+}
+function renderCons(){
+ $('#cons').innerHTML=CONS.map((c,i)=>`<div class="con st${S.cons[i]?' ck':''}${S.open===i?' open':''}" style="--i:${i+2}"><div class="hd"><button class="box" role="checkbox" aria-checked="${!!S.cons[i]}" aria-label="${c[S.lang][0]}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2c3341" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button><button class="tx">${c[S.lang][0]}${c.req?' <i style="color:var(--orange);font-style:normal">*</i>':` <small>· ${t('opt')}</small>`}</button><button class="mo" aria-label="${t('full')}">${svg('<path d="M6 9l6 6 6-6"/>',18)}</button></div><div class="bd"><div><p>${c[S.lang][1]} <a href="${LEGAL+c[S.lang][2]}" data-doc>${t('full')}</a></p></div></div></div>`).join('');
+ $$('.con').forEach((el,i)=>{
+  const tog=()=>{S.cons[i]^=1;el.classList.toggle('ck',!!S.cons[i]);el.querySelector('.box').setAttribute('aria-checked',!!S.cons[i]);hap();sync()};
+  el.querySelector('.box').onclick=tog;el.querySelector('.tx').onclick=tog;
+  el.querySelector('.mo').onclick=()=>{S.open=S.open===i?-1:i;$$('.con').forEach((x,j)=>x.classList.toggle('open',j===S.open))};
+ });
+ $$('[data-doc]').forEach(a=>a.onclick=e=>{if(tg){e.preventDefault();tg.openLink(a.href)}});
+}
+function texts(){
+ document.documentElement.lang=S.lang;
+ $$('[data-t]').forEach(el=>el.textContent=t(el.dataset.t));
+ renderDirs();renderWhen();renderCons();sync();
+}
+const tgOk=()=>/^@?[A-Za-z0-9_]{4,32}$/.test($('#tgn').value.trim());
+const valid=()=>({0:true,1:!!S.dir,2:$('#goal').value.trim().length>=10&&tgOk(),3:!!(S.cons[0]&&S.cons[1]&&S.cons[2])})[S.step];
+function sync(){
+ const s=S.step,pos=FLOW.indexOf(s),total=FLOW.length-2;
+ $('#mainTx').textContent=s===0?t('start'):s===LAST?t('send'):t('next');
+ $('#main').classList.toggle('off',s<4&&!valid());
+ $('#mb').classList.toggle('hide',s===4);
+ $('#prog').classList.toggle('hide',s===0||s===4);
+ $('#bar').style.width=(pos/total*100)+'%';
+ $('#cnt').textContent=`${t('step')} ${Math.min(pos,total)} ${t('of')} ${total}`;
+ const n=$('#goal').value.length;$('#cc').textContent=n+' / 500';$('#cc').className=n>=10?'ok':'';
+ if(tg){s>0&&s<4?tg.BackButton.show():tg.BackButton.hide()}
+}
+function go(n){
+ S.step=n;
+ $$('.view').forEach(v=>{const k=+v.dataset.v;v.classList.toggle('on',k===n);v.classList.toggle('left',k<n);if(k===n)v.scrollTop=0});
+ if(n===4)setTimeout(burst,650);
+ sync();
+}
+const next=d=>FLOW[FLOW.indexOf(S.step)+d];
+let tt;function toast(m){const el=$('#toast');el.textContent=m;el.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('on'),1800)}
+function nudge(){
+ const tgt=[null,$('#dirs'),$('#goal').value.trim().length<10?$('#fGoal'):$('#fTg'),$('#cons')][S.step];
+ toast(t('need'+S.step));
+ [tgt,$('#main')].forEach(e=>{if(!e)return;e.classList.remove('shake');void e.offsetWidth;e.classList.add('shake')});
+ hap('err');
+}
+function payload(){
+ const tgv=$('#tgn').value.trim();
+ return JSON.stringify({v:1,dir:S.dir,goal:$('#goal').value.trim().slice(0,500),name:$('#nm').value.trim().slice(0,80),
+  tg:tgv&&tgv[0]!=='@'?'@'+tgv:tgv,when:S.when,cons:S.cons,lang:S.lang});
+}
+$('#main').onclick=()=>{
+ if(S.step<4&&!valid())return nudge();
+ if(S.step!==LAST)return go(next(1));
+ const b=$('#main');b.classList.add('load');
+ setTimeout(()=>{b.classList.remove('load');go(4);hap('ok');
+  // sendData закрывает приложение — даём досмотреть галочку
+  if(tg)setTimeout(()=>tg.sendData(payload()),1500);
+ },600);
+};
+if(tg)tg.BackButton.onClick(()=>{if(S.step>0&&S.step<4)go(next(-1))});
+function burst(){
+ const m=$('#mark'),cols=['#b4fab2','#fe640c','#f7f6f6','#2c3341'];
+ for(let i=0;i<16;i++){const b=document.createElement('span');b.className='bit';const a=Math.PI*2*i/16+Math.random()*.4,r=90+Math.random()*70;
+  b.style.cssText=`background:${cols[i%4]};--x:${Math.cos(a)*r}px;--y:${Math.sin(a)*r}px;--rot:${Math.random()*360}deg;width:${i%3?26:12}px`;
+  m.appendChild(b);setTimeout(()=>b.remove(),1200)}
+}
+$('#goal').oninput=sync;$('#tgn').oninput=sync;
+function setLang(l){S.lang=l;$('#seg').dataset.v=l;$$('#seg button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.l===l));texts()}
+$$('#seg button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+let ei=0,ci=0,del=false;
+setInterval(()=>{const g=$('#goal');if(g.value||document.activeElement===g)return;const s=T[S.lang].ex[ei%4];
+ if(!del){ci++;if(ci>s.length+12)del=true}else{ci-=3;if(ci<=0){ci=0;del=false;ei++}}
+ g.placeholder=s.slice(0,Math.min(ci,s.length))+(ci<=s.length?'|':'')},70);
+
+setLang(S.lang);
+</script>
+</body>
+</html>
