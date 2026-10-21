@@ -1,63 +1,69 @@
 {
  "lang": "en",
- "date": "2026-10-20",
- "title": "📰 AI news · October 20",
- "takeaway": "Today is about access: fake emails and packages go after Claude and Gemini keys and agent conversations. Recommendation: open GitHub yourself instead of following an email link, and check which packages and MCP servers are plugged into your agent.",
- "cta": "🔐 Check my agent",
+ "date": "2026-10-21",
+ "title": "📰 AI news · October 21",
+ "takeaway": "Today keys leaked through things people trust: a hosting service, an official GitHub tool and a site management service. Recommendation: replace your AI and database keys if you haven't in a while, and check where they are stored.",
+ "cta": "🔐 Check where my keys live",
  "items": [
   {
    "emoji": "🔐",
-   "title": "A fake \"GitHub\" email steals your password and 2FA code",
-   "text": "The GhostAction operator sends fake security notices: a look-alike page captures your password and one-time code. Hijacked projects get a credential stealer disguised as a font file that takes Claude and Gemini keys and npm tokens. If you keep projects on GitHub, your keys sit in the same kind of files. Open GitHub yourself, not through an email link. Free guide \"Code Protection in One Prompt\": send the word \"protect\" to the bot.",
-   "url": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html"
+   "title": "Zeabur hosting breached a second time, now shutting down",
+   "text": "An attacker logged in with internal passwords stored in plain text and took about 3.2 million records of project settings. Those settings usually hold keys for AI, databases and payments. If your bot or site runs on someone else's hosting, your keys sit in the same kind of settings. Check when you last replaced your project's keys.",
+   "url": "https://www.bleepingcomputer.com/news/security/zeabur-shutting-down-after-second-security-breach-in-two-months/"
   },
   {
    "emoji": "🔐",
-   "title": "A fake accelerator steals AI agent conversations",
-   "text": "npm packages offered with \"free Claude and Gemini credits\" route an agent's traffic through the attackers' server, exposing requests, conversations and code. If you run an agent or bot, any third-party package in its settings gets the same access. Check which packages and MCP servers are connected to your agent. Free guide \"Code Protection in One Prompt\": send the word \"protect\" to the bot.",
-   "url": "https://thehackernews.com/2026/10/fake-web3-accelerator-uses-npm-packages.html"
+   "title": "A key stealer was planted in OVHcloud's tool on GitHub",
+   "text": "The attacker swapped the download files in five releases and even replaced the checksums, so verification looked fine. The tool pulled secrets from the computer. If you install tools from GitHub, any of them could arrive this way. Look at what you installed in the last few days and from where. Free guide «Protect your code with one prompt» — send the word «защита» to the bot.",
+   "url": "https://thehackernews.com/2026/10/hackers-hijack-five-ovhcloud-cli.html"
   },
   {
    "emoji": "🔐",
-   "title": "AI agents broke into hundreds of online stores",
-   "text": "Since September 25, more than 1,200 sites in four countries were attacked and over 100 companies breached. The task given to the agent fit in 100 characters, then it worked for hours on its own. If you run a website or take payments, someone can look for your way in the same manner. Check which site and payment credentials sit in plain view.",
-   "url": "https://www.securitylab.ru/news/578968.php"
+   "title": "Stolen keys opened the door to WordPress sites",
+   "text": "After UpdraftCentral was breached, attackers use stolen keys to add hidden plugins and new admins to sites. Around 400,000 sites may be at risk. If your WordPress site connects to outside services, those connection keys give the same access. Check the list of admins and plugins on your site. Free guide «Protect your code with one prompt» — send the word «защита» to the bot.",
+   "url": "https://www.bleepingcomputer.com/news/security/stolen-updraftcentral-keys-used-to-backdoor-wordpress-sites/"
+  },
+  {
+   "emoji": "🔐",
+   "title": "Hidden instructions for an AI bot found in WhatsApp help pages",
+   "text": "Help pages carried invisible text for the support chatbot, including a request not to suggest contacting a regulator. Researchers found 102 such blocks; WhatsApp removed them and called it a bug. If you have a bot, it also reads text people never see. Check which pages and documents your bot reads.",
+   "url": "https://thehackernews.com/2026/10/whatsapp-hid-instructions-in-help-pages.html"
   },
   {
    "emoji": "🤖",
-   "title": "NVIDIA releases open Nemotron 3.5 models",
-   "text": "Super VL with 120B parameters is built for enterprise agents, Bolt with 74B runs locally on AI PCs. A small model follows later in October. The comparisons with Anthropic and OpenAI models were made by NVIDIA itself.",
-   "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/"
+   "title": "ChatGPT now lets you lock chats with a PIN or Face ID",
+   "text": "Locked chats move to a separate section with their own memory. Resetting the PIN deletes them for good. It's available on every plan, including free.",
+   "url": "https://techcrunch.com/2026/10/20/chatgpt-now-lets-you-lock-your-chats/"
   },
   {
    "emoji": "🤖",
-   "title": "MiniMax M3.1 Flash costs 15 cents per million tokens",
-   "text": "The new Chinese model is three times faster than the previous one, takes text and images, with up to a million tokens of context. Open weights are promised for October 23.",
-   "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/"
+   "title": "GPT-6.1 Sol rewrites old code almost without errors",
+   "text": "The model converts COBOL programs, the language of 1960s banking systems, into modern languages with up to 97.9% accuracy. The previous version managed 5.4%.",
+   "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-61-sol-is-dramatically-better-at-migrating-legacy-code/"
   },
   {
-   "emoji": "🎨",
-   "title": "Kling 4.0 makes up to 30 seconds of video in one pass",
-   "text": "The new version adds stereo sound and lip sync in more than 10 languages. The Flash version is faster and cheaper, but caps at 720p and 20 seconds.",
-   "url": "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant/"
-  },
-  {
-   "emoji": "💻",
-   "title": "Apple sets an event for October 28",
-   "text": "Per Bloomberg rumors, expect a MacBook Pro with a touch OLED on M5 Pro and M5 Max chips, an OLED iPad mini and a new iMac. The event is official, the device list is still a rumor.",
-   "url": "https://9to5mac.com/2026/10/19/apple-announces-special-event-for-october-28/"
-  },
-  {
-   "emoji": "📺",
-   "title": "AI agents are scrubbing ads from smart TVs",
-   "text": "The dumbtv and cleanyourtv projects on GitHub are tested on Fire TV and Android TV from Sony, TCL, Philips, Hisense and Xiaomi. Several thousand people used the method in two days. One user turned a TV into a brick.",
-   "url": "https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/"
+   "emoji": "🎵",
+   "title": "Mistral and ElevenLabs release models for voice agents",
+   "text": "Mistral's Voxtral 3 listens in 50+ languages and can book an appointment mid-conversation. ElevenLabs' Eleven Realtime answers by voice in 0.57 seconds.",
+   "url": "https://the-decoder.com/mistral-ai-launches-voxtral-3-a-full-voice-agent-stack-that-listens-thinks-and-talks-in-real-time/"
   },
   {
    "emoji": "📱",
-   "title": "Redmi K100 gets a 10,000 mAh battery",
-   "text": "Launching in China on October 28, pre-orders are open. 6.83-inch AMOLED screen, Snapdragon 8 Elite chip. Most flagships carry 5,000–6,000 mAh.",
-   "url": "https://www.gsmarena.com/redmi_k100_with_10000mah_battery_and_683inch_display_is_launching_next_week-news-75105.php"
+   "title": "Meta's Muse AI assistant hits 10 million downloads in 40 days",
+   "text": "Only 11 apps have grown this fast. ChatGPT had 3.7 million US downloads over the same period.",
+   "url": "https://techcrunch.com/2026/10/20/metas-muse-hits-10m-u-s-downloads-in-40-days-a-milestone-reached-by-only-11-other-apps/"
+  },
+  {
+   "emoji": "📱",
+   "title": "Yelp now calls the restaurant to check the wait for you",
+   "text": "You enter your party size, an AI agent calls by voice and texts you the answer. Voice agents are moving into everyday life.",
+   "url": "https://techcrunch.com/2026/10/20/yelp-can-now-call-on-your-behalf-to-check-wait-times-at-a-restaurant/"
+  },
+  {
+   "emoji": "🌱",
+   "title": "AI learns to read plant signals",
+   "text": "A sensor on the stem picks up the plant's faint electrical signals, and the Bombadil model turns them into advice for growers. It knows about 125 species.",
+   "url": "https://techcrunch.com/2026/10/20/plants-can-speak-using-electricity-so-this-startup-built-an-ai-model-to-decipher-their-language/"
   }
  ]
 }
