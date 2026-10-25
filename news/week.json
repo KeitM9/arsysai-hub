@@ -1,67 +1,17 @@
 {
- "date": "2026-10-18",
- "title": "🗓 Главное в AI за неделю · 12–18 октября",
- "takeaway": "Три вещи, которые стоит проверить на этой неделе: 1) где лежат ключи ваших AI-сервисов и стоит ли у каждого провайдера лимит расходов; 2) нет ли в проектах скрытых файлов и пакетов, которых вы не добавляли; 3) какие права есть у ваших агентов и ботов в облаке.",
- "items": [
-  {
-   "emoji": "🔐",
-   "title": "Утекли ключи пользователей OpenCode",
-   "text": "Сохранённые ключи OpenAI, Anthropic и Google могли утечь у 1,4% пользователей инструмента.",
-   "url": "https://startupfortune.com/opencode-breach-exposes-stored-openai-and-anthropic-keys-prompts-urgent-key-rotation/"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Хакеры взломали около 1900 аккаунтов GitHub",
-   "text": "Скрытый файл в проектах искал пароли для сборки, облачные доступы и ключи AI-сервисов.",
-   "url": "https://thehackernews.com/2026/10/ghostaction-compromises-about-1900.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "Обновления AOMEI Backupper подменяли на бэкдор",
-   "text": "С мая по июль на несколько минут файлы на серверах обновления заменяли, заражены организации в 11 странах.",
-   "url": "https://thehackernews.com/2026/10/attackers-tampered-with-aomei.html"
-  },
-  {
-   "emoji": "🔐",
-   "title": "У Meta утёк код из-за одного пароля",
-   "text": "Хакеры украли пароль сотрудника и забрали код и данные около 1500 человек.",
-   "url": "https://www.securityweek.com/meta-says-hackers-took-code-personal-data-of-1500-in-github-breach/"
-  },
-  {
-   "emoji": "🤖",
-   "title": "DeepSeek обновила открытую модель Flash",
-   "text": "Модель набрала 77% в тесте на программистские задачи при цене меньше 20 центов за задачу.",
-   "url": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/"
-  },
-  {
-   "emoji": "🤖",
-   "title": "Google открыла Gemini 4 Argon для всех платных разработчиков",
-   "text": "Новая главная модель Google работает с текстом и картинками, до 30 ноября цена вдвое ниже.",
-   "url": "https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token"
-  },
-  {
-   "emoji": "🤖",
-   "title": "ChatGPT стал помощником в Chrome",
-   "text": "Расширение читает открытые вкладки, а в режиме Work заполняет формы и скачивает файлы.",
-   "url": "https://the-decoder.com/chatgpt-becomes-a-full-chrome-browser-assistant-that-reads-and-acts-on-your-open-tabs/"
-  },
-  {
-   "emoji": "🤖",
-   "title": "Mistral выпустила самую сильную модель Европы",
-   "text": "Large 4 на триллион параметров стала лучшей за пределами США и Китая по независимым тестам.",
-   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/independent-tests-rank-mistrals-new-trillion-parameter-large-4-the-best-ai-model-outside-the-u-s-and-china-but-chinese-open-weights-still-overcome-europes-best-efforts"
-  },
-  {
-   "emoji": "📱",
-   "title": "iPhone Duo разобрали за минуты",
-   "text": "Через полчаса после предзаказа доставка сдвинулась на январь 2027 года.",
-   "url": "https://www.macrumors.com/2026/10/16/apple-iphone-duo-demand-extraordinary/"
-  },
-  {
-   "emoji": "🤖",
-   "title": "OpenAI собирается делать человекоподобного робота",
-   "text": "Альтман ответил «We will» и ждёт демо в 2027 году.",
-   "url": "https://www.engadget.com/2285040/openai-humanoid-robot-sam-altman-statement-real-challenge/"
-  }
- ]
+  "date": "2026-10-25",
+  "title": "🗓 Главное в AI за неделю · 19–25 октября",
+  "items": [
+    {"emoji": "🔐", "title": "Забытый ключ открыл дорогу вредоносной версии LiteLLM", "text": "Ключ из открытого репозитория не отозвали, и 21 октября вышла версия, которая крала ключи.", "url": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html"},
+    {"emoji": "🔐", "title": "У ИИ-агентов с платежами не было лимита трат", "text": "В коде x402 нашли 25 ошибок, и агент мог отдать весь баланс токенов.", "url": "https://thehackernews.com/2026/10/critical-x402-sdk-flaw-could-let.html"},
+    {"emoji": "🔐", "title": "Ошибка в Brotli затронула Node.js, Bun и Python", "text": "Подготовленные данные могли запустить чужой код, исправления уже вышли.", "url": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html"},
+    {"emoji": "🔐", "title": "Старое приложение Popcorn Time открывало доступ к компьютерам", "text": "Обновления шли без проверки подписи, под угрозой были миллионы компьютеров.", "url": "https://www.bleepingcomputer.com/news/security/abandoned-popcorn-time-app-exposed-millions-of-device-to-rce-attacks/"},
+    {"emoji": "🤖", "title": "OpenAI перестанет учить модели на живом интернете", "text": "Компания перейдёт на кэшированные и смоделированные копии сети из-за рисков.", "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/"},
+    {"emoji": "🗣", "title": "Block выпустила голосовую модель Dessa", "text": "Модель работает на устройстве без облака и говорит и слушает одновременно.", "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/"},
+    {"emoji": "📢", "title": "Google: данные Gmail и Фото могут влиять на рекламу", "text": "Новая политика с 16 октября разрешает использовать данные других сервисов в AI-поиске.", "url": "https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html"},
+    {"emoji": "📱", "title": "iPhone Duo поступил в продажу в 70 странах", "text": "Первый складной iPhone от Apple начал отправляться покупателям.", "url": "https://www.gsmarena.com/iphone_duo_is_now_shipping-news-75182.php"},
+    {"emoji": "💻", "title": "Apple назначила событие на 28 октября", "text": "Ждут первый MacBook с сенсорным OLED-экраном, Apple это не подтверждала.", "url": "https://www.gsmarena.com/oppo_find_x10_and_x10_pro_max_go_global_oled_macbook_coming_on_oct_28-news-75191.php"},
+    {"emoji": "🦆", "title": "Робот Microduck: 20 000 предзаказов за день", "text": "Открытый робот-утёнок выполняет голосовые команды, доставку обещают к Рождеству.", "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/"}
+  ],
+  "takeaway": "Три вещи, которые стоит проверить на этой неделе: 1. Найдите в проекте старые ключи и отзовите ненужные. 2. Задайте предел трат для агента, который платит сам. 3. Посмотрите, какие программы на вашем компьютере давно не обновлялись."
 }
