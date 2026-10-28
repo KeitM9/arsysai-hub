@@ -226,8 +226,7 @@ html[data-theme="light"] .dir .bd p{color:#111}
 
     <section class="view" data-v="dir">
       <h2 class="st" style="--i:0" data-t="s1"></h2>
-      <p class="sub st" style="--i:1" data-t="s1h"></p>
-      <div class="dirs" id="dirs"></div>
+     <div class="dirs" id="dirs"></div>
     </section>
 
     <section class="view" data-v="task">
@@ -300,8 +299,8 @@ m1:'Оставить заявку',m1s:'Направление, задача, с
 note:'Ответы приходят в чат с ботом. Приложение можно держать открытым.',
 tHome:['Architect Systems','AI'],tReq:['Оставить','заявку'],tAsk:['Задать','вопрос'],tDocs:['Документы',''],tDone:['Готово',''],
 next:'Далее',check:'Проверить заявку',sendQ:'Отправить вопрос',step:'Шаг',of:'из',
-s1:'Что нужно сделать',s1h:'Выбери одно направление, нажми ещё раз, чтобы свернуть',
-s2:'Расскажи о задаче',s2h:'Можно коротко, детали уточним в переписке',goal:'Что должно получиться в итоге?',goalH:'Минимум 10 символов',name:'Как к тебе обращаться',tg:'Твой Telegram',when:'Когда нужно',
+s1:'Выбирай направление',
+s2:'Расскажи о задаче',s2h:'Можно коротко, детали уточним в переписке',goal:'Что должно получиться в итоге',goalH:'Минимум 10 символов',name:'Как к тебе обращаться',tg:'Твой Telegram',when:'Когда нужно',
 s3:'Согласия',s3h:'Один раз: три пункта обязательны, четвёртый по желанию. Стрелка раскрывает суть документа.',opt:'по желанию',full:'Открыть полный текст',
 a1:'Вопрос Екатерине',a1h:'Про услуги, сроки, цену или то, что пока непонятно',a2:'Твой вопрос',a2h:'Ответ придёт в чат с ботом',
 d1:'Документы',d1h:'Нажми, чтобы открыть текст прямо здесь',
@@ -315,8 +314,8 @@ m1:'Send a request',m1s:'Direction, task, timing',m2:'Ask a question',m2s:'Ekate
 note:'Replies come to your chat with the bot. You can keep the app open.',
 tHome:['Architect Systems','AI'],tReq:['Send a','request'],tAsk:['Ask a','question'],tDocs:['Documents',''],tDone:['Done',''],
 next:'Next',check:'Review request',sendQ:'Send question',step:'Step',of:'of',
-s1:'What do you need',s1h:'Pick one direction, tap again to collapse',
-s2:'Tell us about the task',s2h:'Short is fine, we’ll clarify in chat',goal:'What should the result be?',goalH:'At least 10 characters',name:'Your name',tg:'Your Telegram',when:'Timing',
+s1:'Choose your direction',
+s2:'Tell us about the task',s2h:'Short is fine, we’ll clarify in chat',goal:'What should the result be',goalH:'At least 10 characters',name:'Your name',tg:'Your Telegram',when:'Timing',
 s3:'Consents',s3h:'Once only: three items are required, the fourth is optional. The arrow opens a short summary.',opt:'optional',full:'Open full text',
 a1:'Question for Ekaterina',a1h:'About services, timing, price or anything unclear',a2:'Your question',a2h:'The reply comes to your chat with the bot',
 d1:'Documents',d1h:'Tap to open the text right here',
@@ -356,7 +355,7 @@ const DOCS=[['Политика конфиденциальности','Privacy Po
 
 const user=tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user||{};
 const S={lang:(qs.get('lang')||((user.language_code||'ru').slice(0,2)==='en'?'en':'ru'))==='en'?'en':'ru',
- stack:['home'],mode:'req',dir:null,when:0,cons:[0,0,0,0],consented:qs.get('c')==='1',open:-1};
+ stack:['home'],mode:'req',dirs:[],when:0,cons:[0,0,0,0],consented:qs.get('c')==='1',open:-1};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const t=k=>T[S.lang][k];
 const view=()=>S.stack[S.stack.length-1];
@@ -374,8 +373,8 @@ $$('[data-ic]').forEach(e=>e.innerHTML=svg(I[e.dataset.ic],e.classList.contains(
 [[$('#r1'),12,118],[$('#r2'),8,70]].forEach(([el,n,r],k)=>{for(let i=0;i<n;i++){const s=document.createElement('span');s.style.setProperty('--a',(360/n*i)+'deg');s.style.setProperty('--r',r+'px');if(i%4===1)s.className='m';if(k&&i%4===3)s.className='o';el.appendChild(s)}});
 
 function renderDirs(){
- $('#dirs').innerHTML=DIRS.map((d,i)=>`<div class="dir st${S.dir===d.id?' sel':''}" style="--i:${i+2}" data-id="${d.id}"><button class="hd" aria-expanded="${S.dir===d.id}"><span class="ic">${svg(I[d.ic])}</span><span class="t">${d[S.lang][0]}</span><span class="rd"></span></button><div class="bd"><div><p>${d[S.lang][1]}</p></div></div></div>`).join('');
- $$('.dir').forEach(el=>el.querySelector('.hd').onclick=()=>{const id=el.dataset.id;S.dir=S.dir===id?null:id;$$('.dir').forEach(x=>{const on=x.dataset.id===S.dir;x.classList.toggle('sel',on);x.querySelector('.hd').setAttribute('aria-expanded',on)});hap();sync()});
+ $('#dirs').innerHTML=DIRS.map((d,i)=>`<div class="dir st${S.dirs.includes(d.id)?' sel':''}" style="--i:${i+2}" data-id="${d.id}"><button class="hd" aria-expanded="${S.dirs.includes(d.id)}"><span class="ic">${svg(I[d.ic])}</span><span class="t">${d[S.lang][0]}</span><span class="rd"></span></button><div class="bd"><div><p>${d[S.lang][1]}</p></div></div></div>`).join('');
+ $$('.dir').forEach(el=>el.querySelector('.hd').onclick=()=>{const id=el.dataset.id;S.dirs=S.dirs.includes(id)?S.dirs.filter(x=>x!==id):[...S.dirs,id];$$('.dir').forEach(x=>{const on=S.dirs.includes(x.dataset.id);x.classList.toggle('sel',on);x.querySelector('.hd').setAttribute('aria-expanded',on)});hap();sync()});
 }
 function renderWhen(){
  $('#when').innerHTML=WHEN[S.lang].map((w,i)=>`<button class="chip" aria-pressed="${S.when===i}">${w}</button>`).join('');
@@ -425,8 +424,10 @@ $$('[data-go]').forEach(b=>b.onclick=()=>{hap();const g=b.dataset.go;if(g==='doc
 $('#toHome').onclick=home;
 $('#closeApp').onclick=()=>tg?tg.close():home();
 
-const tgOk=()=>/^@?[A-Za-z0-9_]{4,32}$/.test($('#tgn').value.trim());
-const valid=v=>({dir:!!S.dir,task:$('#goal').value.trim().length>=10&&tgOk(),cons:!!(S.cons[0]&&S.cons[1]&&S.cons[2]),ask:$('#q').value.trim().length>=3})[v];
+// Telegram принимаем в любом виде: @ник, ник или ссылка t.me/ник — дальше работаем с чистым ником
+const tgNick=()=>$('#tgn').value.trim().replace(/^(https?:\/\/)?(www\.)?(t|telegram)\.me\//i,'').replace(/^@/,'').replace(/[/?#].*$/,'');
+const tgOk=()=>/^[A-Za-z0-9_]{4,32}$/.test(tgNick());
+const valid=v=>({dir:S.dirs.length>0,task:$('#goal').value.trim().length>=10&&tgOk(),cons:!!(S.cons[0]&&S.cons[1]&&S.cons[2]),ask:$('#q').value.trim().length>=3})[v];
 const TITLE={home:'tHome',dir:'tReq',task:'tReq',cons:null,ask:'tAsk',docs:'tDocs',done:'tDone'};
 function sync(){
  const v=view(),f=flow(),pos=f.indexOf(v),inFlow=pos>-1;
@@ -459,14 +460,14 @@ $('#main').onclick=()=>{
 };
 
 function payload(action){
- const tgv=$('#tgn').value.trim();
+ const tgv=tgNick();
  return action==='question'
   ?{action,text:$('#q').value.trim(),name:$('#nm').value.trim()||user.first_name||'',tg:user.username?'@'+user.username:tgv,cons:S.cons,lang:S.lang}
-  :{action,dir:S.dir,goal:$('#goal').value.trim(),name:$('#nm').value.trim(),tg:tgv&&tgv[0]!=='@'?'@'+tgv:tgv,when:S.when,cons:S.cons,lang:S.lang};
+  :{action,dir:S.dirs,goal:$('#goal').value.trim(),name:$('#nm').value.trim(),tg:tgv&&tgv[0]!=='@'?'@'+tgv:tgv,when:S.when,cons:S.cons,lang:S.lang};
 }
 function confirmReq(){
- const p=payload('zayavka'),d=DIRS.find(x=>x.id===S.dir);
- const rows=[[t('sDir'),d[S.lang][0]],[t('sGoal'),p.goal],[t('sName'),p.name||'—'],[t('sTg'),p.tg],[t('sWhen'),WHEN[S.lang][S.when]]];
+ const p=payload('zayavka'),dn=DIRS.filter(x=>S.dirs.includes(x.id)).map(x=>x[S.lang][0]).join(', ');
+ const rows=[[t('sDir'),dn],[t('sGoal'),p.goal],[t('sName'),p.name||'—'],[t('sTg'),p.tg],[t('sWhen'),WHEN[S.lang][S.when]]];
  sheet(t('confT'),`<dl class="sum">${rows.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl><div class="btns"><button class="btn mint" id="shSend"><span class="lbl">${esc(t('send'))}</span><span class="spin"></span></button><button class="btn ghost" id="shEdit">${esc(t('edit'))}</button></div>`);
  $('#shEdit').onclick=closeSheet;
  $('#shSend').onclick=()=>send('zayavka',$('#shSend'));
@@ -490,7 +491,7 @@ async function send(action,btn){
   if(sheetOn())closeSheet();
   S.consented=true;
   $('#dT').textContent=t(action==='question'?'qT':'dT');$('#dS').textContent=t(action==='question'?'qS':'dS');
-  if(action==='question')$('#q').value='';else{S.dir=null;$('#goal').value='';S.when=0;renderDirs();renderWhen()}
+  if(action==='question')$('#q').value='';else{S.dirs=[];$('#goal').value='';S.when=0;renderDirs();renderWhen()}
   hap('success');S.stack=['home','done'];render();
  }catch(e){toast(t(e.message==='slow'?'slow':'err'));hap('error')}
  finally{busy=false;btn.classList.remove('load')}
