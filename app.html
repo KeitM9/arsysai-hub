@@ -170,10 +170,10 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 <script>
 // Тексты и материалы — RU/EN рядом: правишь одно — правишь второе (правило двуязычия)
 const T={
- ru:{hi:"Привет,",friend:"друг",freeB:"БЕСПЛАТНО",free:"Все материалы открыты. Бери, пользуйся, делись.",home:"Главная",me:"Профиль",open:"Открыть",soon:"скоро EN",
+ ru:{hi:"Привет",friend:"друг",freeB:"БЕСПЛАТНО",free:"Все материалы открыты. Бери, пользуйся, делись.",home:"Главная",me:"Профиль",open:"Открыть",soon:"скоро EN",
      tabs:{all:"Все",sec:"Безопасность",agents:"Агенты",news:"Новости",guide:"Гайды",prompt:"Промпты"},
      pf:[["cta","Оставить заявку","https://t.me/sysarchitect_bot"],["","Задать вопрос","https://t.me/arsysai_bot?start=ask"],["","Канал","https://t.me/arsysai"],["","Поддержка","https://t.me/supprmaster_bot"],["","Документы","https://legal.arsysai.com"]]},
- en:{hi:"Hi,",friend:"friend",freeB:"FREE",free:"Everything is open. Take it, use it, share it.",home:"Home",me:"Profile",open:"Open",soon:"RU only",
+ en:{hi:"Hi",friend:"friend",freeB:"FREE",free:"Everything is open. Take it, use it, share it.",home:"Home",me:"Profile",open:"Open",soon:"RU only",
      tabs:{all:"All",sec:"Security",agents:"Agents",news:"News",guide:"Guides",prompt:"Prompts"},
      pf:[["cta","Leave a request","https://t.me/sysarchitect_bot?start=en"],["","Ask a question","https://t.me/arsysai_bot?start=ask"],["","Channel","https://t.me/arsysai"],["","Support","https://t.me/supprmaster_bot"],["","Documents","https://legal.arsysai.com/en.html"]]}
 };
@@ -205,17 +205,17 @@ const FEAT=[
  {id:"order",url:"https://t.me/sysarchitect_bot",urlEn:"https://t.me/sysarchitect_bot?start=en",
   logo:()=>`<span class="lg-asa">ArchitectSystems<b>AI</b></span>`,
   ru:{kick:"На заказ · под ваш проект",top:"Что собираем",foot:"оставить заявку",
-   chips:["AI-агенты под задачу","Мультиагентные системы","Telegram Mini App","Боты заявок и продаж","Безопасность AI-проекта","Сайты и лендинги"]},
+   chips:["Безопасность AI","AI-агенты под заказ","Аудит любой сложности","Мини-приложение под ключ","Гайд или мини-сайт"]},
   en:{kick:"Custom · for your project",top:"What we build",foot:"leave a request",
-   chips:["AI agents for any task","Multi-agent systems","Telegram Mini App","Lead and sales bots","AI project security","Websites and landings"]}}
+   chips:["AI security","Custom AI agents","Audit of any complexity","Telegram Mini App, turnkey","Guide or mini-site"]}}
 ];
 // лента: cat, icon, класс иконки, url, url EN (если есть), RU [title, sub], EN [title, sub]
 const ITEMS=[
- ["sec","shield","o","https://securitygit.netlify.app","https://securitygit.netlify.app/?lang=en",["Защита компьютера, кода и доступов","Проверка и рекомендации для Claude, Codex, Cursor"],["Protect your computer, code and access","Checks and recommendations for Claude, Codex, Cursor"]],
- ["agents","agent","","https://agentproof.arsysai.com","https://agentproof.arsysai.com",["AgentProof — аудит мультиагентных систем","Утечки ключей, инъекции, тихие сбои"],["AgentProof — multi-agent system audit","Key leaks, injections, silent failures"]],
+ ["sec","shield","o","https://securitygit.netlify.app","https://securitygit.netlify.app/?lang=en",["Защита компьютера кода и доступов","Проверка и рекомендации для Claude, Codex, Cursor"],["Protect your computer and code access","Checks and recommendations for Claude, Codex, Cursor"]],
+ ["agents","agent","","https://agentproof.arsysai.com","https://agentproof.arsysai.com",["AgentProof аудит мультиагентных систем","Утечки ключей, инъекции, тихие сбои"],["AgentProof multi-agent system audit","Key leaks, injections, silent failures"]],
  ["agents","box","m","https://agentproof.arsysai.com/paket.html","",["Подготовка проекта к аудиту","Промпт, который соберёт описание системы"],["Prepare your project for an audit","A prompt that builds your system description"]],
  ["guide","key","m","https://pm-25keys.netlify.app","",["Лист Мастера: 25 ключей","Нейросеть отвечает по делу"],["Master sheet: 25 keys","Make the model answer to the point"]],
- ["guide","gear","","https://pm-cowork8.netlify.app","",["Cowork — 8 шагов","Настройка Claude Cowork"],["Cowork in 8 steps","Setting up Claude Cowork"]],
+ ["guide","gear","","https://pm-cowork8.netlify.app","",["Cowork за 8 шагов","Настройка Claude Cowork"],["Cowork in 8 steps","Setting up Claude Cowork"]],
  ["prompt","pen","o","https://pm-5promtov.netlify.app","",["5 промпт-запросов","Под точный результат"],["5 prompt requests","For a precise result"]],
  ["prompt","switch","","https://pm-slova.netlify.app","",["Слова-переключатели","Переключают режим модели"],["Switch words","Change the model's mode"]],
  ["prompt","film","m","https://pm-magiya.netlify.app","",["Магия удержания","Хуки для Shorts и Reels"],["The magic of retention","Hooks for Shorts and Reels"]],
