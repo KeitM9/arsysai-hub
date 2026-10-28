@@ -40,38 +40,71 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 /* витрина */
 .rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin:10px -16px 0;padding:6px 16px 14px;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
-.feat{flex:0 0 86%;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
-.kick{font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
-/* бренды: второе слово — мятные буквы с тонкой графитовой обводкой (как на логотипе), слитно */
-.g{color:var(--mint);-webkit-text-stroke:1.5px var(--graphite);paint-order:stroke fill}
-.feat h2{margin:0;font-size:22px;font-weight:600;text-transform:uppercase;line-height:1.15}
-.feat .sub{color:var(--gray);font-weight:300;font-size:15px}
-.stage{position:relative;aspect-ratio:4/3.2;border-radius:24px;overflow:hidden;background:var(--graphite);box-shadow:var(--shadow)}
-.stage video,.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.stage .bar{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--white);font-size:14px}
-.open{background:var(--mint);color:var(--graphite);border-radius:999px;padding:9px 18px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:14px}
-.open.m{background:var(--mint);color:var(--graphite)}
-/* живые заставки без видео */
-.type{position:absolute;left:16px;right:16px;top:40%;display:flex;align-items:center;gap:10px}
-.type .who{background:rgba(255,255,255,.12);color:var(--white);border-radius:999px;padding:8px 14px;font-weight:600}
-.type .txt{color:var(--white);font-size:17px;white-space:nowrap;overflow:hidden;border-right:2px solid var(--mint);animation:typing 3.6s steps(28) infinite alternate,caret .7s step-end infinite}
-@keyframes typing{from{width:0}to{width:28ch}}
-@keyframes caret{50%{border-color:transparent}}
-/* значок AUDIT — весы в мятном круге, качаются влево-вправо */
-.scales{position:absolute;inset:0;display:grid;place-items:center}
-.scales svg{width:62%;height:auto;overflow:visible}
-.scales .st{fill:none;stroke:#d9dde3;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
-.scales .rg{fill:none;stroke:var(--mint);stroke-width:4;filter:drop-shadow(0 0 6px rgba(180,250,178,.55))}
+/* витрина: 4 компактные тёмные карточки, в каждой панель — главное о проекте печатается строка за строкой.
+   бренд по правилу — первое слово белым, второе мятным, без обводки */
+.feat{flex:0 0 min(80%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:6px;background:var(--graphite);color:var(--white);border-radius:20px;padding:12px;box-shadow:var(--shadow)}
+/* подпись под логотипом — спокойная, не оранжевая (оранжевым только выделяем) */
+.kick{font:500 10.5px/1.2 ui-monospace,Consolas,monospace;letter-spacing:.06em;color:var(--mint);opacity:.8;margin-top:-3px}
+.panel-top b{color:var(--mint);font-weight:600}
+/* AgentProof: «Проверяет всю цепочку» — пункты выезжают по одному */
+.chk{padding:8px 12px 2px;min-height:136px}
+.chk small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2;margin-bottom:6px}
+.chk ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 10px}
+.chk li{display:flex;align-items:center;gap:6px;font-size:13.5px;white-space:nowrap;font-weight:600;color:#fff;animation:pop .35s ease both}
+.chk li::before{content:"✓";display:grid;place-items:center;width:17px;height:17px;border-radius:5px;background:var(--mint);color:var(--graphite);font-size:11px;font-weight:700;flex:none}
+.chk .fx{margin:8px 0 0;font-size:11.5px;color:var(--mint);min-height:16px}
+.feat h2{margin:0;font-size:19px;font-weight:600;text-transform:uppercase;line-height:1.15;display:flex;align-items:center;gap:7px}
+.feat .g{color:var(--mint)}
+.stage{position:relative;border-radius:14px;overflow:hidden;background:#252b37;display:flex;flex-direction:column}
+.panel-top{display:flex;align-items:center;gap:5px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.07);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9aa3b2}
+.panel-top i{width:7px;height:7px;border-radius:50%;background:#4a5366}
+.panel-top i:first-child{background:var(--orange)}.panel-top i:nth-child(3){background:var(--mint)}
+.panel-top span{margin-left:5px}
+.caret{display:inline-block;width:6px;height:12px;background:var(--mint);vertical-align:-2px;margin-left:2px}
+.stage .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 12px 12px;color:var(--white);font-size:13px}
+.score b{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}.score em{font-style:normal;color:var(--mint)}
+.score small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2}
+.open{background:var(--mint);color:var(--graphite);border-radius:999px;padding:8px 16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px}
+/* значок AUDIT — весы в мятном круге, качаются; маленькие, в углу панели (не убирать) */
+.scales{position:absolute;right:10px;top:38px;width:54px;height:54px}
+.scales svg{width:100%;height:auto;overflow:visible}
+.scales .st{fill:none;stroke:#d9dde3;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+.scales .rg{fill:none;stroke:var(--mint);stroke-width:7;filter:drop-shadow(0 0 4px rgba(180,250,178,.55))}
 .scales .beam{transform-box:view-box;transform-origin:100px 64px;animation:sway 3.2s ease-in-out infinite}
 .scales .pan{transform-box:view-box;animation:hang 3.2s ease-in-out infinite}
 .scales .pl{transform-origin:48px 64px}.scales .pr{transform-origin:152px 64px}
 @keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
 @keyframes hang{0%,100%{transform:rotate(8deg)}50%{transform:rotate(-8deg)}}
-.ticker{position:absolute;inset:18px 16px 70px;display:flex;flex-direction:column;gap:8px;overflow:hidden;color:var(--white)}
-.ticker div{background:rgba(255,255,255,.08);border-radius:12px;padding:8px 12px;font-size:14px;line-height:1.3;animation:up 9s linear infinite}
-@keyframes up{from{transform:translateY(0)}to{transform:translateY(-100%)}}
-.dots{display:flex;justify-content:center;gap:6px;margin-top:-4px}
-.dots i{width:6px;height:6px;border-radius:50%;background:rgba(65,65,67,.25)}
+/* логотипы проектов — как на их сайтах */
+.lg-ap{display:flex;align-items:center;gap:7px}.lg-ap svg{width:28px;height:28px;flex:none}
+.lg-app{display:flex;align-items:center;gap:8px;font-size:17px;letter-spacing:.06em}
+.lg-app i{width:12px;height:12px;border-radius:50%;border:2px solid var(--mint);display:grid;place-items:center;flex:none}
+.lg-app i::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--mint)}
+.lg-au{font-size:30px;line-height:1;color:var(--mint);letter-spacing:.02em}
+.lg-asa{text-transform:none;font-size:19px}.lg-asa b{color:var(--mint);font-weight:600}
+/* APP: промпт собирается на глазах */
+.ask{margin:10px 12px 0;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.06);font-size:12px;color:#e6e9ee;min-height:34px}
+.ask small{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#9aa3b2}
+.agents{display:flex;gap:4px;align-items:center;margin:8px 12px 0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9aa3b2;min-height:14px}
+.agents b{width:9px;height:9px;border-radius:50%;background:#4a5366;transition:background .3s}.agents b.on{background:var(--mint)}
+.prompt{margin:8px 12px 0;padding:8px 10px;border-radius:10px;border:1px solid rgba(180,250,178,.35);font:11px/1.45 ui-monospace,Consolas,monospace;color:#e6e9ee;min-height:96px}
+.prompt p{margin:0 0 2px}.prompt em{font-style:normal;color:var(--mint)}
+/* AUDIT: свой серый, как на audit.arsysai.com */
+.stage.au{background:#70757b}
+.stage.au .panel-top{color:#e9ecef;border-color:rgba(255,255,255,.15)}
+.field{margin:10px 74px 0 12px;padding:7px 10px;border-radius:10px;border:1px solid var(--mint);background:#4a4f56;font-size:12px;color:#fff;min-height:32px}
+.field small{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#d5d9dd}
+.report{margin:8px 12px 0;font:11px/1.5 ui-monospace,Consolas,monospace;color:#fff;min-height:84px}
+.report p{margin:0 0 2px}.report .warn{color:#ffd2b8}.report .ok{color:var(--mint)}.report b{color:var(--mint)}
+/* На заказ: услуги выезжают карточками */
+.chips{display:flex;flex-wrap:wrap;gap:5px;padding:10px 12px 4px;min-height:136px;align-content:flex-start}
+.chips span{padding:5px 9px;border-radius:999px;background:rgba(180,250,178,.12);border:1px solid rgba(180,250,178,.4);color:#e6f8e6;font-size:11px;animation:pop .35s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* листание витрины на компьютере: стрелки и точки */
+.nav-rail{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:-4px}
+.nav-rail .ar{width:30px;height:30px;border-radius:50%;background:var(--white);box-shadow:var(--shadow);font-size:18px;line-height:1;color:var(--ink)}
+.dots{display:flex;justify-content:center;gap:6px}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(65,65,67,.25);cursor:pointer}
 .dots i.on{background:var(--orange);width:18px;border-radius:3px}
 
 /* вкладки */
@@ -120,7 +153,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 
   <section id="home">
     <div class="rail" id="rail"></div>
-    <div class="dots" id="dots"></div>
+    <div class="nav-rail"><button class="ar" data-s="-1" aria-label="Назад">‹</button><div class="dots" id="dots"></div><button class="ar" data-s="1" aria-label="Вперёд">›</button></div>
     <nav class="tabs" id="tabs"></nav>
     <div class="free"><b data-t="freeB"></b><span data-t="free"></span></div>
     <div class="feed" id="feed"></div>
@@ -138,26 +171,43 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 // Тексты и материалы — RU/EN рядом: правишь одно — правишь второе (правило двуязычия)
 const T={
  ru:{hi:"Привет,",friend:"друг",freeB:"БЕСПЛАТНО",free:"Все материалы открыты. Бери, пользуйся, делись.",home:"Главная",me:"Профиль",open:"Открыть",soon:"скоро EN",
-     tabs:{all:"Все",guide:"Гайды",prompt:"Промпты",news:"Новости",sec:"Безопасность",agents:"Агенты"},
+     tabs:{all:"Все",sec:"Безопасность",agents:"Агенты",news:"Новости",guide:"Гайды",prompt:"Промпты"},
      pf:[["cta","Оставить заявку","https://t.me/sysarchitect_bot"],["","Задать вопрос","https://t.me/arsysai_bot?start=ask"],["","Канал","https://t.me/arsysai"],["","Поддержка","https://t.me/supprmaster_bot"],["","Документы","https://legal.arsysai.com"]]},
  en:{hi:"Hi,",friend:"friend",freeB:"FREE",free:"Everything is open. Take it, use it, share it.",home:"Home",me:"Profile",open:"Open",soon:"RU only",
-     tabs:{all:"All",guide:"Guides",prompt:"Prompts",news:"News",sec:"Security",agents:"Agents"},
+     tabs:{all:"All",sec:"Security",agents:"Agents",news:"News",guide:"Guides",prompt:"Prompts"},
      pf:[["cta","Leave a request","https://t.me/sysarchitect_bot?start=en"],["","Ask a question","https://t.me/arsysai_bot?start=ask"],["","Channel","https://t.me/arsysai"],["","Support","https://t.me/supprmaster_bot"],["","Documents","https://legal.arsysai.com/en.html"]]}
 };
-// витрина: kind = video | type | shield | news
+// витрина: 4 проекта, у каждого свой логотип (как на его сайте) и свой интерактив
+const AP_LOGO='<svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16 C12.5 10.5 8.5 9 6 11 C3.3 13.2 3.3 18.8 6 21 C8.5 23 12.5 21.5 16 16 C19.5 10.5 23.5 9 26 11 C28.7 13.2 28.7 18.8 26 21 C23.5 23 19.5 21.5 16 16" stroke="#B4FAB2" stroke-width="2.4"/><path d="M21.8 16 L24.4 18.6 L29.6 12.4" stroke="#2c3341" stroke-width="5.2"/><path d="M21.8 16 L24.4 18.6 L29.6 12.4" stroke="#B4FAB2" stroke-width="2.4"/></svg>';
 const FEAT=[
- {kind:"video",src:"https://agentproof.arsysai.com/hero.mp4",poster:"https://agentproof.arsysai.com/hero.png",url:"https://agentproof.arsysai.com",
-  ru:["Аудит агентов","AgentProof","Карта системы, балл надёжности и план усиления","55 классов сбоев"],
-  en:["Agent audit","AgentProof","System map, reliability score and a hardening plan","55 failure classes"]},
- {kind:"type",url:"https://securitygit.netlify.app",urlEn:"https://securitygit.netlify.app/?lang=en",
-  ru:["Гайд","Защита компьютера, кода и доступов","Компьютер · репозитории · проект · ключи и деньги","3 минуты"],
-  en:["Guide","Protect your computer, code and access","Computer · repos · project · keys and money","3 minutes"]},
- {kind:"news",url:"https://t.me/arsysai",
-  ru:["Каждый день в 7:00","Новости AI","Главное за сутки со ссылками на источники","канал @arsysai"],
-  en:["Daily at 7:00","AI news","The day's key news with links to sources","@arsysai channel"]},
- {kind:"shield",url:"https://audit.arsysai.com",
-  ru:["Проверка","AUDIT","Быстрая проверка AI-проекта и документов","за минуты"],
-  en:["Check","AUDIT","A quick check of an AI project and documents","in minutes"]}
+ {id:"ap",url:"https://agentproof.arsysai.com",
+  logo:()=>`<span class="lg-ap">${AP_LOGO}<span>AGENT<span class="g">PROOF</span></span></span>`,
+  ru:{kick:"Multi-Agent System Audit",top:"Аудит <b>мультиагентных</b> систем",head:"Проверяет всю цепочку",
+   checks:["бот","агент","доступы","ключи","платежи","данные","связи агентов","утечки"],fix:"после аудита — агент-исправитель под ваш отчёт"},
+  en:{kick:"Multi-Agent System Audit",top:"<b>Multi-agent</b> system audit",head:"Checks the whole chain",
+   checks:["bot","agent","access","keys","payments","data","agent links","leaks"],fix:"after the audit — a fixer agent for your report"}},
+ {id:"app",url:"https://app.arsysai.com",
+  logo:()=>`<span class="lg-app"><i></i><span>PROMPT <span class="g">MASTER</span> APP</span></span>`,
+  ru:{kick:"Приложение на базе Claude",top:"APP · новый промпт",foot:"промпт за 30 секунд",ask:"Задача",agents:"8 агентов собирают",
+   say:"пост в Instagram про новую услугу салона",
+   prompt:[["Роль","SMM-эксперт бьюти-ниши"],["Контекст","салон, женщины 25–40"],["Задача","пост о новой услуге"],["Формат","5 абзацев + призыв"],["Проверка","без выдуманных цен"]]},
+  en:{kick:"An app built on Claude",top:"APP · new prompt",foot:"a prompt in 30 seconds",ask:"Task",agents:"8 agents building",
+   say:"Instagram post about a new salon service",
+   prompt:[["Role","beauty-niche SMM expert"],["Context","salon, women 25–40"],["Task","post about a new service"],["Format","5 paragraphs + CTA"],["Check","no invented prices"]]}},
+ {id:"au",url:"https://audit.arsysai.com",
+  logo:()=>`<span class="lg-au">${L==="en"?"AUDIT":"АУДИТ"}</span>`,
+  ru:{kick:"Проверка любой задачи",top:"Что проверить",foot:"отчёт с оценкой",ask:"Своими словами",
+   say:"мой договор аренды",
+   report:[["","Оценка: <b>6/10</b>"],["warn","! штраф без верхней границы"],["warn","! нет срока возврата залога"],["ok","✓ 3 шага исправления"]]},
+  en:{kick:"Check any task",top:"What to check",foot:"a scored report",ask:"In your words",
+   say:"my lease agreement",
+   report:[["","Score: <b>6/10</b>"],["warn","! penalty with no upper limit"],["warn","! no deposit return date"],["ok","✓ 3 steps to fix"]]}},
+ {id:"order",url:"https://t.me/sysarchitect_bot",urlEn:"https://t.me/sysarchitect_bot?start=en",
+  logo:()=>`<span class="lg-asa">ArchitectSystems<b>AI</b></span>`,
+  ru:{kick:"На заказ · под ваш проект",top:"Что собираем",foot:"оставить заявку",
+   chips:["AI-агенты под задачу","Мультиагентные системы","Telegram Mini App","Боты заявок и продаж","Безопасность AI-проекта","Сайты и лендинги"]},
+  en:{kick:"Custom · for your project",top:"What we build",foot:"leave a request",
+   chips:["AI agents for any task","Multi-agent systems","Telegram Mini App","Lead and sales bots","AI project security","Websites and landings"]}}
 ];
 // лента: cat, icon, класс иконки, url, url EN (если есть), RU [title, sub], EN [title, sub]
 const ITEMS=[
@@ -199,16 +249,17 @@ const $=s=>document.querySelector(s);
 const go=u=>{ if(tg&&/^https:\/\/t\.me\//.test(u)) tg.openTelegramLink(u); else if(tg) tg.openLink(u); else window.open(u,"_blank"); };
 
 function stage(f){
-  if(f.kind==="video") return `<video src="${f.src}" poster="${f.poster}" autoplay muted loop playsinline></video>`;
-  if(f.kind==="type") return `<div class="type"><span class="who">Claude</span><span class="txt">${L==="en"?"protect my project from leaks":"защити мой проект от утечек"}</span></div>`;
-  if(f.kind==="shield") return `<div class="scales"><svg viewBox="0 0 200 200" aria-hidden="true">
+  const x=f[L],top=`<div class="panel-top"><i></i><i></i><i></i><span>${x.top}</span></div>`;
+  if(f.id==="ap") return top+`<div class="chk"><small>${x.head}</small><ul data-f="ap"></ul><p class="fx" data-f="ap-fix"></p></div>`;
+  if(f.id==="app") return top+`<div class="ask"><small>${x.ask}</small><span data-f="app-ask"></span></div><div class="agents" data-f="app-ag"></div><div class="prompt" data-f="app"></div>`;
+  if(f.id==="au") return top+`<div class="scales"><svg viewBox="0 0 200 200" aria-hidden="true">
     <circle class="rg" cx="100" cy="100" r="92"/>
     <path class="st" d="M100 64V150M74 160h52M82 150h36"/><circle class="st" cx="100" cy="52" r="7"/>
     <g class="beam"><path class="st" d="M48 64c14-10 34-4 52 0s38 10 52 0"/>
       <g class="pan pl"><path class="st" d="M48 64L30 112M48 64l18 48M26 112h44c-4 14-14 20-22 20s-18-6-22-20z"/></g>
       <g class="pan pr"><path class="st" d="M152 64l-18 48M152 64l18 48M130 112h44c-4 14-14 20-22 20s-18-6-22-20z"/></g>
-    </g></svg></div>`;
-  return `<div class="ticker" id="tick"></div>`;
+    </g></svg></div><div class="field"><small>${x.ask}</small><span data-f="au-ask"></span></div><div class="report" data-f="au"></div>`;
+  return top+`<div class="chips" data-f="order"></div>`;
 }
 function render(){
   document.documentElement.lang=L;
@@ -217,8 +268,8 @@ function render(){
   document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
   $("#nm").textContent=(user&&user.first_name)||t.friend;
   $("#ava").innerHTML=user&&user.photo_url?`<img src="${user.photo_url}" alt="">`:((user&&user.first_name||"A")[0]);
-  $("#rail").innerHTML=FEAT.map(f=>{const x=f[L];return `<article class="feat"><span class="kick">${x[0]}</span><h2>${brand(x[1])}</h2><span class="sub">${x[2]}</span>
-    <div class="stage">${stage(f)}<div class="bar"><span>${x[3]}</span><button class="open" data-u="${L==="en"&&f.urlEn||f.url}">${t.open}</button></div></div></article>`}).join("");
+  $("#rail").innerHTML=FEAT.map(f=>{const x=f[L];return `<article class="feat"><h2>${f.logo()}</h2><span class="kick">${x.kick}</span>
+    <div class="stage${f.id==="au"?" au":""}">${stage(f)}<div class="bar"><span>${f.id==="ap"?`<span class="score"><small>${L==="en"?"Reliability score":"Балл надёжности"}</small><b><span class="sc">0.0</span> <em>/10</em></b></span>`:x.foot}</span><button class="open" data-u="${L==="en"&&f.urlEn||f.url}">${t.open}</button></div></div></article>`}).join("");
   $("#dots").innerHTML=FEAT.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("");
   $("#tabs").innerHTML=Object.entries(t.tabs).map(([k,v])=>`<button data-k="${k}" class="${k===tab?"on":""}">${v}</button>`).join("");
   const list=ITEMS.filter(i=>tab==="all"||i[0]===tab);
@@ -226,21 +277,60 @@ function render(){
     return `<a class="item" data-u="${u}" style="animation-delay:${n*40}ms"><span class="ic ${i[2]}">${svg(i[1])}</span><span class="it"><span class="meta">${t.tabs[i[0]]}</span>
     <h3>${brand(x[0])}${ru?`<span class="soon">${t.soon}</span>`:""}</h3><p>${x[1]}</p></span><span class="go">›</span></a>`}).join("");
   $("#profile").innerHTML=t.pf.map(p=>`<a class="${p[0]}" data-u="${p[2]}"><span>${p[1]}</span><span>›</span></a>`).join("");
-  news();
+  runLog();
 }
-// новости дня подтягиваются живьём из news/today.json (тот же сайт)
-async function news(){
-  const box=$("#tick"); if(!box) return;
-  let items=[L==="en"?"AI agents read data with keys from config files":"AI-агенты вошли в системы по ключам из файлов настроек",L==="en"?"Check where your bot keeps its keys":"Проверьте, где лежат ключи вашего бота"];
-  try{const d=await (await fetch(L==="en"?"news/today_en.json":"news/today.json",{cache:"no-store"})).json(); items=d.items.map(i=>i.title);}catch(e){}
-  box.innerHTML=items.concat(items).map(s=>`<div>${s}</div>`).join("");
+// интерактивы витрины: у каждого проекта свой сценарий, крутится по кругу
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let runId=0;
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const q=k=>document.querySelector(`[data-f="${k}"]`);
+async function type(el,text,my){
+  const caret=document.createElement("span");caret.className="caret";
+  for(let k=1;k<=text.length;k++){ if(my!==runId) return; el.textContent=text.slice(0,k); el.appendChild(caret); await wait(18+Math.random()*26); }
+  caret.remove();
+}
+const SCENES={
+  async ap(x,my){
+    const box=q("ap"),fx=q("ap-fix"),sc=box.closest(".stage").querySelector(".sc"); box.innerHTML=""; fx.textContent=""; sc.textContent="0.0";
+    for(const c of x.checks){ if(my!==runId) return; const li=document.createElement("li"); li.textContent=c; box.appendChild(li); await wait(380); }
+    await type(fx,x.fix,my);
+    const t0=performance.now();
+    (function s(ts){if(my!==runId)return;const k=Math.min((ts-t0)/1500,1);sc.textContent=(8.7*(1-Math.pow(1-k,3))).toFixed(1);if(k<1)requestAnimationFrame(s);})(t0);
+  },
+  async app(x,my){
+    const ask=q("app-ask"),ag=q("app-ag"),box=q("app"); ask.textContent=""; box.innerHTML="";
+    ag.innerHTML=`${"<b></b>".repeat(8)}<span>&nbsp;${x.agents}</span>`;
+    await type(ask,x.say,my);
+    for(const b of ag.querySelectorAll("b")){ if(my!==runId) return; b.classList.add("on"); await wait(160); }
+    for(const [k,v] of x.prompt){ if(my!==runId) return; const p=document.createElement("p"); p.innerHTML=`<em>${k}:</em> `; const t=document.createElement("span"); p.appendChild(t); box.appendChild(p); await type(t,v,my); await wait(200); }
+  },
+  async au(x,my){
+    const ask=q("au-ask"),box=q("au"); ask.textContent=""; box.innerHTML="";
+    await type(ask,x.say,my); await wait(500);
+    for(const l of x.report){ if(my!==runId) return; const p=document.createElement("p"); p.className=l[0]; p.innerHTML=l[1]; box.appendChild(p); await wait(550); }
+  },
+  async order(x,my){
+    const box=q("order"); box.innerHTML="";
+    for(const c of x.chips){ if(my!==runId) return; const s=document.createElement("span"); s.textContent=c; box.appendChild(s); await wait(600); }
+  }
+};
+function runLog(){
+  const my=++runId;
+  FEAT.forEach(f=>{
+    const loop=async()=>{ while(my===runId){ await SCENES[f.id](f[L],my); if(reduce) return; await wait(4500); } };
+    loop();
+  });
 }
 document.addEventListener("click",e=>{
   const l=e.target.closest(".lang button"); if(l){L=l.dataset.l;try{localStorage.setItem("asa_lang",L)}catch(_){}render();return;}
   const k=e.target.closest(".tabs button"); if(k){tab=k.dataset.k;render();return;}
   const v=e.target.closest(".nav button"); if(v){document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("on",b===v));
     $("#home").style.display=v.dataset.v==="home"?"":"none";$("#profile").style.display=v.dataset.v==="profile"?"flex":"none";return;}
-  const u=e.target.closest("[data-u]"); if(u){go(u.dataset.u);}
+  const u=e.target.closest("[data-u]"); if(u){go(u.dataset.u);return;}
+  // листание витрины: стрелки ‹ › и точки
+  const r=$("#rail"),w=r.firstElementChild.offsetWidth+12,a=e.target.closest(".nav-rail .ar"),d=e.target.closest("#dots i");
+  if(a) r.scrollBy({left:w*a.dataset.s,behavior:"smooth"});
+  if(d) r.scrollTo({left:w*[...d.parentNode.children].indexOf(d),behavior:"smooth"});
 });
 $("#rail").addEventListener("scroll",e=>{const r=e.target,i=Math.round(r.scrollLeft/(r.firstElementChild.offsetWidth+12));
   document.querySelectorAll("#dots i").forEach((d,n)=>d.classList.toggle("on",n===i));},{passive:true});
