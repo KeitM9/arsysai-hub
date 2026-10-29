@@ -48,7 +48,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .panel-top b{color:var(--mint);font-weight:600}
 /* AgentProof: «Проверяет всю цепочку» — пункты выезжают по одному */
 .chk{padding:8px 12px 2px;min-height:136px}
-.chk small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2;margin-bottom:6px}
+.chk small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#ffffff;margin-bottom:6px}
 .chk ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 10px}
 .chk li{display:flex;align-items:center;gap:6px;font-size:13.5px;white-space:nowrap;font-weight:600;color:#fff;animation:pop .35s ease both}
 .chk li::before{content:"✓";display:grid;place-items:center;width:17px;height:17px;border-radius:5px;background:var(--mint);color:var(--graphite);font-size:11px;font-weight:700;flex:none}
@@ -56,14 +56,14 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .feat h2{margin:0;font-size:19px;font-weight:600;text-transform:uppercase;line-height:1.15;display:flex;align-items:center;gap:7px}
 .feat .g{color:var(--mint)}
 .stage{position:relative;border-radius:14px;overflow:hidden;background:rgba(0,0,0,.18);display:flex;flex-direction:column}
-.panel-top{display:flex;align-items:center;gap:5px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.07);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9aa3b2}
-.panel-top i{width:7px;height:7px;border-radius:50%;background:#4a5366}
+.panel-top{display:flex;align-items:center;gap:5px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.07);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#ffffff}
+.panel-top i{width:7px;height:7px;border-radius:50%;background:#ffffff}
 .panel-top i:first-child{background:var(--orange)}.panel-top i:nth-child(3){background:var(--mint)}
 .panel-top span{margin-left:5px}
 .caret{display:inline-block;width:6px;height:12px;background:var(--mint);vertical-align:-2px;margin-left:2px}
 .stage .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 12px 12px;color:var(--white);font-size:13px}
 .score b{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}.score em{font-style:normal;color:var(--mint)}
-.score small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2}
+.score small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#FD6207}
 .open{background:var(--mint);color:var(--graphite);border-radius:999px;padding:8px 16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px}
 /* значок AUDIT — весы в мятном круге, качаются; маленькие, в углу панели (не убирать) */
 .scales{position:absolute;right:10px;top:38px;width:54px;height:54px}
@@ -83,12 +83,17 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .lg-au{font-size:30px;line-height:1;color:var(--mint);letter-spacing:.02em}
 .lg-asa{text-transform:none;font-size:19px}.lg-asa b{color:var(--mint);font-weight:600}
 /* APP: промпт собирается на глазах */
-.ask{margin:10px 12px 0;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.06);font-size:12px;color:#e6e9ee;min-height:34px}
-.ask small{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#9aa3b2}
-.agents{display:flex;gap:4px;align-items:center;margin:8px 12px 0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9aa3b2;min-height:14px}
-.agents b{width:9px;height:9px;border-radius:50%;background:#4a5366;transition:background .3s}.agents b.on{background:var(--mint)}
+.ask{margin:10px 12px 0;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.06);font-size:12px;color:#e6e9ee;min-height:34px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.feat h2{min-height:30px}.feat .stage{flex:1}.feat .stage .bar{margin-top:auto}
+.ask small{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#ffffff}
+.agents{display:flex;gap:4px;align-items:center;margin:8px 12px 0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#ffffff;min-height:14px}
+.agents b{width:9px;height:9px;border-radius:50%;background:#ffffff;transition:background .3s}.agents b.on{background:var(--mint)}
 .prompt{margin:8px 12px 0;padding:8px 10px;border-radius:10px;border:1px solid rgba(180,250,178,.35);font:11px/1.45 ui-monospace,Consolas,monospace;color:#e6e9ee;min-height:96px}
 .prompt p{margin:0 0 2px}.prompt em{font-style:normal;color:var(--mint)}
+.prompt[data-f="app"]{min-height:84px;line-height:1.3;display:grid;grid-template-columns:1fr 1fr;align-content:start;column-gap:8px}
+.score b:has(.ps){white-space:nowrap;display:inline-flex;align-items:center}
+.score .ps{font:400 13px/1.1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#fff;font-style:normal;margin-left:4px}
+.prompt .more{margin-top:0;color:var(--mint)}
 /* AUDIT: свой серый, как на audit.arsysai.com */
 .stage.au{background:#70757b}
 .stage.au .panel-top{color:#e9ecef;border-color:rgba(255,255,255,.15)}
@@ -203,12 +208,12 @@ const FEAT=[
    checks:["bot","agent","access","keys","payments","data","agent links","leaks"],fix:"after the audit — a fixer agent for your report"}},
  {id:"app",url:"https://app.arsysai.com",
   logo:()=>`<span class="lg-app"><i></i><span>PROMPT <span class="g">MASTER</span> APP</span></span>`,
-  ru:{kick:"Приложение на базе Claude",top:"APP · новый промпт",foot:"промпт за 30 секунд",ask:"Задача",agents:"8 агентов собирают",
+  ru:{kick:"Создание промпт-запросов",top:"Создать PROMPT",foot:`<span class="score"><small class="pp">Партнёрская программа</small><b>25<em>%</em> <i class="ps">с каждой<br>рекомендации</i></b></span>`,more:["УЛУЧШИТЬ","ИСТОРИЯ"],ask:"Опиши задачу",agents:"8 агентов собирают",
    say:"пост в Instagram про новую услугу салона",
-   prompt:[["Роль","SMM-эксперт бьюти-ниши"],["Контекст","салон, женщины 25–40"],["Задача","пост о новой услуге"],["Формат","5 абзацев + призыв"],["Проверка","без выдуманных цен"]]},
-  en:{kick:"An app built on Claude",top:"APP · new prompt",foot:"a prompt in 30 seconds",ask:"Task",agents:"8 agents building",
+   prompt:["Контент","Код","Анализ","Изображение","Автоматизация","Универсальный"]},
+  en:{kick:"Prompt request builder",top:"Create PROMPT",foot:`<span class="score"><small class="pp">Partner program</small><b>25<em>%</em> <i class="ps">per<br>referral</i></b></span>`,more:["IMPROVE","HISTORY"],ask:"Describe the task",agents:"8 agents building",
    say:"Instagram post about a new salon service",
-   prompt:[["Role","beauty-niche SMM expert"],["Context","salon, women 25–40"],["Task","post about a new service"],["Format","5 paragraphs + CTA"],["Check","no invented prices"]]}},
+   prompt:["Content","Code","Analysis","Image","Automation","Universal"]}},
  {id:"au",url:"https://audit.arsysai.com",
   logo:()=>`<span class="lg-au">${L==="en"?"AUDIT":"АУДИТ"}</span>`,
   ru:{kick:"Проверка любой задачи",top:"Что проверить",foot:"отчёт с оценкой",ask:"Своими словами",
@@ -316,7 +321,8 @@ const SCENES={
     ag.innerHTML=`${"<b></b>".repeat(8)}<span>&nbsp;${x.agents}</span>`;
     await type(ask,x.say,my);
     for(const b of ag.querySelectorAll("b")){ if(my!==runId) return; b.classList.add("on"); await wait(160); }
-    for(const [k,v] of x.prompt){ if(my!==runId) return; const p=document.createElement("p"); p.innerHTML=`<em>${k}:</em> `; const t=document.createElement("span"); p.appendChild(t); box.appendChild(p); await type(t,v,my); await wait(200); }
+    for(const w of x.prompt){ if(my!==runId) return; const p=document.createElement("p"); p.innerHTML=`<em>›</em> `; const t=document.createElement("span"); p.appendChild(t); box.appendChild(p); await type(t,w,my); await wait(200); }
+    for(const w of x.more){ if(my!==runId) return; const m=document.createElement("p"); m.className="more"; box.appendChild(m); await type(m,w,my); }
   },
   async au(x,my){
     const ask=q("au-ask"),box=q("au"); ask.textContent=""; box.innerHTML="";
