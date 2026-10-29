@@ -25,16 +25,16 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .wrap{max-width:560px;margin:0 auto;padding:16px 16px 0}
 
 /* шапка */
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--graphite);color:var(--white);border-radius:4px;padding:7px 7px 7px 18px;box-shadow:var(--shadow)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--graphite);color:var(--white);border-radius:999px;padding:7px 7px 7px 18px;box-shadow:var(--shadow)}
 .brand{font-weight:600;font-size:18px;letter-spacing:.01em}
 .brand b{color:var(--mint);font-weight:600}
-.lang{display:flex;background:rgba(255,255,255,.1);border-radius:4px;padding:3px}
-.lang button{padding:5px 12px;border-radius:4px;font-weight:600;font-size:13px;letter-spacing:.06em;color:#b9bdbf}
+.lang{display:flex;background:rgba(255,255,255,.1);border-radius:999px;padding:3px}
+.lang button{padding:5px 12px;border-radius:999px;font-weight:600;font-size:13px;letter-spacing:.06em;color:#b9bdbf}
 .lang button.on{background:var(--mint);color:var(--graphite)}
 .hello{display:flex;align-items:center;justify-content:space-between;margin:18px 0 6px;padding-bottom:14px;border-bottom:1px solid rgba(65,65,67,.15)}
 .hello h1{margin:0;font-size:24px;font-weight:500;text-transform:none}
 .hello h1 span{color:var(--gray);font-weight:400}
-.ava{width:44px;height:44px;border-radius:4px;background:var(--mint);display:grid;place-items:center;font-weight:700;overflow:hidden;flex:none}
+.ava{width:44px;height:44px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-weight:700;overflow:hidden;flex:none}
 .ava img{width:100%;height:100%;object-fit:cover}
 
 /* витрина */
@@ -42,7 +42,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .rail::-webkit-scrollbar{display:none}
 /* витрина: 4 компактные тёмные карточки, в каждой панель — главное о проекте печатается строка за строкой.
    бренд по правилу — первое слово белым, второе мятным, без обводки */
-.feat{flex:0 0 min(80%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:6px;background:var(--graphite);color:var(--white);border-radius:4px;padding:12px;box-shadow:var(--shadow)}
+.feat{flex:0 0 min(80%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:6px;background:var(--graphite);color:var(--white);border-radius:20px;padding:12px;box-shadow:var(--shadow)}
 /* подпись под логотипом — спокойная, не оранжевая (оранжевым только выделяем) */
 .kick{font:500 10.5px/1.2 ui-monospace,Consolas,monospace;letter-spacing:.06em;color:var(--mint);opacity:.8;margin-top:-3px}
 .panel-top b{color:var(--mint);font-weight:600}
@@ -51,20 +51,20 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .chk small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2;margin-bottom:6px}
 .chk ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 10px}
 .chk li{display:flex;align-items:center;gap:6px;font-size:13.5px;white-space:nowrap;font-weight:600;color:#fff;animation:pop .35s ease both}
-.chk li::before{content:"✓";display:grid;place-items:center;width:17px;height:17px;border-radius:4px;background:var(--mint);color:var(--graphite);font-size:11px;font-weight:700;flex:none}
+.chk li::before{content:"✓";display:grid;place-items:center;width:17px;height:17px;border-radius:5px;background:var(--mint);color:var(--graphite);font-size:11px;font-weight:700;flex:none}
 .chk .fx{margin:8px 0 0;font-size:11.5px;color:var(--mint);min-height:16px}
 .feat h2{margin:0;font-size:19px;font-weight:600;text-transform:uppercase;line-height:1.15;display:flex;align-items:center;gap:7px}
 .feat .g{color:var(--mint)}
-.stage{position:relative;border-radius:4px;overflow:hidden;background:#252b37;display:flex;flex-direction:column}
+.stage{position:relative;border-radius:14px;overflow:hidden;background:#252b37;display:flex;flex-direction:column}
 .panel-top{display:flex;align-items:center;gap:5px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.07);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9aa3b2}
-.panel-top i{width:7px;height:7px;border-radius:4px;background:#4a5366}
+.panel-top i{width:7px;height:7px;border-radius:50%;background:#4a5366}
 .panel-top i:first-child{background:var(--orange)}.panel-top i:nth-child(3){background:var(--mint)}
 .panel-top span{margin-left:5px}
 .caret{display:inline-block;width:6px;height:12px;background:var(--mint);vertical-align:-2px;margin-left:2px}
 .stage .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 12px 12px;color:var(--white);font-size:13px}
 .score b{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}.score em{font-style:normal;color:var(--mint)}
 .score small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b2}
-.open{background:var(--mint);color:var(--graphite);border-radius:4px;padding:8px 16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px}
+.open{background:var(--mint);color:var(--graphite);border-radius:999px;padding:8px 16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px}
 /* значок AUDIT — весы в мятном круге, качаются; маленькие, в углу панели (не убирать) */
 .scales{position:absolute;right:10px;top:38px;width:54px;height:54px}
 .scales svg{width:100%;height:auto;overflow:visible}
@@ -78,73 +78,84 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 /* логотипы проектов — как на их сайтах */
 .lg-ap{display:flex;align-items:center;gap:7px}.lg-ap svg{width:28px;height:28px;flex:none}
 .lg-app{display:flex;align-items:center;gap:8px;font-size:17px;letter-spacing:.06em}
-.lg-app i{width:12px;height:12px;border-radius:4px;border:2px solid var(--mint);display:grid;place-items:center;flex:none}
-.lg-app i::after{content:"";width:5px;height:5px;border-radius:4px;background:var(--mint)}
+.lg-app i{width:12px;height:12px;border-radius:50%;border:2px solid var(--mint);display:grid;place-items:center;flex:none}
+.lg-app i::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--mint)}
 .lg-au{font-size:30px;line-height:1;color:var(--mint);letter-spacing:.02em}
 .lg-asa{text-transform:none;font-size:19px}.lg-asa b{color:var(--mint);font-weight:600}
 /* APP: промпт собирается на глазах */
-.ask{margin:10px 12px 0;padding:8px 10px;border-radius:4px;background:rgba(255,255,255,.06);font-size:12px;color:#e6e9ee;min-height:34px}
+.ask{margin:10px 12px 0;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.06);font-size:12px;color:#e6e9ee;min-height:34px}
 .ask small{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#9aa3b2}
 .agents{display:flex;gap:4px;align-items:center;margin:8px 12px 0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9aa3b2;min-height:14px}
-.agents b{width:9px;height:9px;border-radius:4px;background:#4a5366;transition:background .3s}.agents b.on{background:var(--mint)}
-.prompt{margin:8px 12px 0;padding:8px 10px;border-radius:4px;border:1px solid rgba(180,250,178,.35);font:11px/1.45 ui-monospace,Consolas,monospace;color:#e6e9ee;min-height:96px}
+.agents b{width:9px;height:9px;border-radius:50%;background:#4a5366;transition:background .3s}.agents b.on{background:var(--mint)}
+.prompt{margin:8px 12px 0;padding:8px 10px;border-radius:10px;border:1px solid rgba(180,250,178,.35);font:11px/1.45 ui-monospace,Consolas,monospace;color:#e6e9ee;min-height:96px}
 .prompt p{margin:0 0 2px}.prompt em{font-style:normal;color:var(--mint)}
 /* AUDIT: свой серый, как на audit.arsysai.com */
 .stage.au{background:#70757b}
 .stage.au .panel-top{color:#e9ecef;border-color:rgba(255,255,255,.15)}
-.field{margin:10px 74px 0 12px;padding:7px 10px;border-radius:4px;border:1px solid var(--mint);background:#4a4f56;font-size:12px;color:#fff;min-height:32px}
+.field{margin:10px 74px 0 12px;padding:7px 10px;border-radius:10px;border:1px solid var(--mint);background:#4a4f56;font-size:12px;color:#fff;min-height:32px}
 .field small{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#d5d9dd}
 .report{margin:8px 12px 0;font:11px/1.5 ui-monospace,Consolas,monospace;color:#fff;min-height:84px}
 .report p{margin:0 0 2px}.report .warn{color:#ffd2b8}.report .ok{color:var(--mint)}.report b{color:var(--mint)}
 /* На заказ: услуги выезжают карточками */
 .chips{display:flex;flex-wrap:wrap;gap:5px;padding:10px 12px 4px;min-height:136px;align-content:flex-start}
-.chips span{padding:5px 9px;border-radius:4px;background:rgba(180,250,178,.12);border:1px solid rgba(180,250,178,.4);color:#e6f8e6;font-size:11px;animation:pop .35s ease both}
+.chips span{padding:5px 9px;border-radius:999px;background:rgba(180,250,178,.12);border:1px solid rgba(180,250,178,.4);color:#e6f8e6;font-size:11px;animation:pop .35s ease both}
 @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 /* листание витрины на компьютере: стрелки и точки */
 .nav-rail{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:-4px}
-.nav-rail .ar{width:30px;height:30px;border-radius:4px;background:var(--white);box-shadow:var(--shadow);font-size:18px;line-height:1;color:var(--ink)}
+.nav-rail .ar{width:30px;height:30px;border-radius:50%;background:var(--white);box-shadow:var(--shadow);font-size:18px;line-height:1;color:var(--ink)}
 .dots{display:flex;justify-content:center;gap:6px}
-.dots i{width:6px;height:6px;border-radius:4px;background:rgba(65,65,67,.25);cursor:pointer}
-.dots i.on{background:var(--orange);width:18px;border-radius:4px}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(65,65,67,.25);cursor:pointer}
+.dots i.on{background:var(--orange);width:18px;border-radius:3px}
 
 /* вкладки */
 .tabs{display:flex;gap:6px;overflow-x:auto;margin:16px -16px 0;padding:0 16px 4px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tabs button{flex:none;padding:7px 14px;border-radius:4px;font-weight:500;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--gray)}
+.tabs button{flex:none;padding:7px 14px;border-radius:999px;font-weight:500;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--gray)}
 .tabs button.on{background:var(--graphite);color:var(--white)}
-.free{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:4px;padding:12px 14px;margin:12px 0;box-shadow:var(--shadow);font-size:15px}
-.free b{background:var(--mint);color:var(--graphite);border-radius:4px;padding:3px 10px;font-size:12px;letter-spacing:.08em;flex:none}
+.free{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:16px;padding:12px 14px;margin:12px 0;box-shadow:var(--shadow);font-size:15px}
+.free b{background:var(--mint);color:var(--graphite);border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.08em;flex:none}
 
 /* лента */
 .feed{display:flex;flex-direction:column;gap:10px}
-.item{display:flex;gap:12px;background:var(--card);border-radius:4px;padding:14px;box-shadow:var(--shadow);animation:in .4s ease both}
+.item{display:flex;gap:12px;background:var(--white);border-radius:20px;padding:14px;box-shadow:var(--shadow);animation:in .4s ease both}
 @keyframes in{from{opacity:0;transform:translateY(8px)}}
-.ic{flex:none;width:46px;height:46px;border-radius:4px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
+.ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
 .si{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .nav .si{width:18px;height:18px}
 .ic.o{background:var(--orange);color:var(--white)}
 .ic.m{background:var(--mint);color:var(--graphite)}
-.it{min-width:0;flex:1}
+.it{min-width:0;flex:1;align-self:center}
 .meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);font-weight:600}
 .it h3{margin:2px 0 2px;font-size:17px;font-weight:600;text-transform:uppercase;line-height:1.2}
 .it p{margin:0;color:var(--gray);font-weight:300;font-size:14px}
-.go{align-self:center;flex:none;width:36px;height:36px;border-radius:4px;background:var(--white);display:grid;place-items:center;box-shadow:var(--shadow);font-size:18px}
-.soon{display:inline-block;white-space:nowrap;font-size:11px;letter-spacing:.06em;background:var(--white);border-radius:4px;padding:2px 8px;color:var(--gray);margin-left:6px;vertical-align:2px}
+.go{align-self:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--white);display:grid;place-items:center;box-shadow:var(--shadow);font-size:18px}
+.soon{display:inline-block;white-space:nowrap;font-size:11px;letter-spacing:.06em;background:var(--white);border-radius:999px;padding:2px 8px;color:var(--gray);margin-left:6px;vertical-align:2px}
 
 /* профиль */
 .pf{display:none;flex-direction:column;gap:10px;margin-top:16px}
-.pf a,.pf button{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:4px;padding:16px;box-shadow:var(--shadow);font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:.03em;text-align:left;width:100%}
+.pf a,.pf button{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:16px;padding:16px;box-shadow:var(--shadow);font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:.03em;text-align:left;width:100%}
 .pf .cta{background:var(--mint);color:var(--graphite)}
 
 /* нижняя панель */
-.nav{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:4px;background:var(--white);border-radius:4px;padding:5px;box-shadow:0 12px 30px rgba(65,65,67,.25)}
-.nav button{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:4px;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--gray)}
+.nav{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:4px;background:var(--white);border-radius:999px;padding:5px;box-shadow:0 12px 30px rgba(65,65,67,.25)}
+.nav button{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--gray)}
 .nav button.on{background:var(--graphite);color:var(--white)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 
 /* мелкий текст по всему хабу — системный шрифт телефона, чёрный (правило Екатерины 28.10) */
 .it p,.free{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;font-weight:400}
 .it p{color:#414143}
+/* согласия: один экран при первом входе (29.10.2026) */
+#cons{position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;padding:16px 16px 24px}
+#cons h2{margin:6px 0 4px;font-size:24px;font-weight:600;text-transform:uppercase}
+#cons .sub{margin:0 0 12px;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#414143}
+.cn{display:flex;align-items:center;gap:10px;background:var(--white);border-radius:20px;padding:12px 14px;margin-bottom:8px;box-shadow:var(--shadow);font:15px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#414143;text-align:left;width:100%}
+.cn i{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid #c9c9cb;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:700}
+.cn.on i{background:var(--mint);border-color:var(--mint);color:var(--graphite)}.cn.on i::before{content:"✓"}
+.cn span{flex:1}.cn small{color:var(--gray)}
+.cn a{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid #c9c9cb;display:grid;place-items:center;font-size:13px;color:#414143;text-decoration:none}
+#consGo{width:100%;margin-top:8px;padding:14px;border-radius:20px;background:var(--mint);color:var(--graphite);font-weight:600;font-size:16px;letter-spacing:.04em;text-transform:uppercase}
+#consGo:disabled{opacity:.45}
 </style>
 </head>
 <body>
@@ -215,17 +226,17 @@ const FEAT=[
 ];
 // лента: cat, icon, класс иконки, url, url EN (если есть), RU [title, sub], EN [title, sub]
 const ITEMS=[
- ["sec","shield","o","https://securitygit.netlify.app","https://securitygit.netlify.app/?lang=en",["Защита компьютера кода и доступов","Проверка и рекомендации для Claude, Codex, Cursor"],["Protect your computer and code access","Checks and recommendations for Claude, Codex, Cursor"]],
- ["agents","agent","","https://agentproof.arsysai.com","https://agentproof.arsysai.com",["AgentProof аудит мультиагентных систем","Утечки ключей, инъекции, тихие сбои"],["AgentProof multi-agent system audit","Key leaks, injections, silent failures"]],
- ["agents","box","m","https://agentproof.arsysai.com/paket.html","",["Подготовка проекта к аудиту","Промпт, который соберёт описание системы"],["Prepare your project for an audit","A prompt that builds your system description"]],
- ["guide","key","m","https://pm-25keys.netlify.app","",["Лист Мастера: 25 ключей","Нейросеть отвечает по делу"],["Master sheet: 25 keys","Make the model answer to the point"]],
+ ["sec","shield","o","https://securitygit.netlify.app","https://securitygit.netlify.app/?lang=en",["Защита компьютера","Проверка и рекомендации для Claude, Codex, Cursor"],["Protect your computer and code access","Checks and recommendations for Claude, Codex, Cursor"]],
+ ["agents","agent","","https://agentproof.arsysai.com","https://agentproof.arsysai.com",["AgentProof","Утечки ключей, инъекции, тихие сбои"],["AgentProof multi-agent system audit","Key leaks, injections, silent failures"]],
+ ["agents","box","m","https://agentproof.arsysai.com/paket.html","",["Подготовка к аудиту","Промпт, который соберёт описание системы"],["Prepare your project for an audit","A prompt that builds your system description"]],
+ ["guide","key","m","https://pm-25keys.netlify.app","",["Лист Мастера","Нейросеть отвечает по делу"],["Master sheet: 25 keys","Make the model answer to the point"]],
  ["guide","gear","","https://pm-cowork8.netlify.app","",["Cowork за 8 шагов","Настройка Claude Cowork"],["Cowork in 8 steps","Setting up Claude Cowork"]],
  ["prompt","pen","o","https://pm-5promtov.netlify.app","",["5 промпт-запросов","Под точный результат"],["5 prompt requests","For a precise result"]],
  ["prompt","switch","","https://pm-slova.netlify.app","",["Слова-переключатели","Переключают режим модели"],["Switch words","Change the model's mode"]],
  ["prompt","film","m","https://pm-magiya.netlify.app","",["Магия удержания","Хуки для Shorts и Reels"],["The magic of retention","Hooks for Shorts and Reels"]],
  ["prompt","gift","o","https://pm-10promptov.netlify.app","",["10 промптов в подарок","Контент, прогрев и продажи"],["10 prompts as a gift","Content, warm-up and sales"]],
  ["prompt","rocket","","https://pm-zapusk-kursa.netlify.app","",["Запуск онлайн-курса","10 промптов на весь запуск"],["Launching an online course","10 prompts for the whole launch"]],
- ["prompt","book","m","https://arsysai.com/biblioteka.html","",["Золотая библиотека промптов","Коллекция с поиском"],["Golden prompt library","A searchable collection"]],
+ ["prompt","book","m","https://arsysai.com/biblioteka.html","",["Золотая библиотека","Коллекция с поиском"],["Golden prompt library","A searchable collection"]],
  ["news","news","o","https://t.me/arsysai","https://t.me/arsysai",["Новости AI дня","Каждое утро в 7:00"],["Today's AI news","Every morning at 7:00"]],
  ["guide","spark","","https://pu.arsysai.com","",["Протокол PROMPT MASTER","Система управления AI"],["PROMPT MASTER protocol","A system for managing AI"]]
 ];
@@ -278,8 +289,7 @@ function render(){
   $("#tabs").innerHTML=Object.entries(t.tabs).map(([k,v])=>`<button data-k="${k}" class="${k===tab?"on":""}">${v}</button>`).join("");
   const list=ITEMS.filter(i=>tab==="all"||i[0]===tab);
   $("#feed").innerHTML=list.map((i,n)=>{const x=L==="en"?i[6]:i[5],u=L==="en"&&i[4]?i[4]:i[3],ru=L==="en"&&!i[4];
-    return `<a class="item" data-u="${u}" style="animation-delay:${n*40}ms"><span class="ic ${i[2]}">${svg(i[1])}</span><span class="it"><span class="meta">${t.tabs[i[0]]}</span>
-    <h3>${brand(x[0])}${ru?`<span class="soon">${t.soon}</span>`:""}</h3><p>${x[1]}</p></span><span class="go">›</span></a>`}).join("");
+    return `<a class="item" data-u="${u}" style="animation-delay:${n*40}ms"><span class="ic ${i[2]}">${svg(i[1])}</span><span class="it"><h3>${brand(x[0])}${ru?`<span class="soon">${t.soon}</span>`:""}</h3></span><span class="go">›</span></a>`}).join("");
   $("#profile").innerHTML=t.pf.map(p=>`<a class="${p[0]}" data-u="${p[2]}"><span>${p[1]}</span><span>›</span></a>`).join("");
   runLog();
 }
@@ -339,6 +349,23 @@ document.addEventListener("click",e=>{
 $("#rail").addEventListener("scroll",e=>{const r=e.target,i=Math.round(r.scrollLeft/(r.firstElementChild.offsetWidth+12));
   document.querySelectorAll("#dots i").forEach((d,n)=>d.classList.toggle("on",n===i));},{passive:true});
 render();
+// согласия — первым экраном, один раз (29.10.2026, Екатерина)
+(function(){
+  try{ if(localStorage.getItem("asa_cons")) return; }catch(e){}
+  const D="https://legal.arsysai.com",en=L==="en";
+  const C=[[1,en?"Privacy Policy":"Политика конфиденциальности","/privacy"],[1,en?"Data processing consent":"Согласие на обработку данных","/consent-bot"],
+    [1,en?"Payment & refund terms":"Условия оплаты и возврата","/offer"],[0,en?"News and materials":"Сообщения о новых материалах","/consent#ads"]];
+  const on=[0,0,0,0],box=document.createElement("div"); box.id="cons";
+  const draw=()=>{box.innerHTML=`<h2>${en?"Before you start":"Прежде чем начать"}</h2><p class="sub">${en?"Tick the first three. The fourth is optional.":"Отметь первые три пункта. Четвёртый по желанию."}</p>`+
+    C.map((c,i)=>`<button class="cn${on[i]?" on":""}" data-c="${i}"><i></i><span>${c[1]}${c[0]?"":` <small>${en?"optional":"по желанию"}</small>`}</span><a href="${D+c[2]}" target="_blank" data-doc>i</a></button>`).join("")+
+    `<button id="consGo"${on[0]&&on[1]&&on[2]?"":" disabled"}>${en?"Continue":"Продолжить"}</button>`;};
+  box.addEventListener("click",e=>{
+    const a=e.target.closest("[data-doc]"); if(a){e.preventDefault();e.stopPropagation();tg?tg.openLink(a.href):window.open(a.href,"_blank");return;}
+    const c=e.target.closest("[data-c]"); if(c){on[c.dataset.c]^=1;draw();return;}
+    if(e.target.closest("#consGo")){try{localStorage.setItem("asa_cons",JSON.stringify({v:1,at:new Date().toISOString(),c:on}))}catch(e){}box.remove();}
+  },true);
+  draw(); document.body.appendChild(box);
+})();
 </script>
 </body>
 </html>
