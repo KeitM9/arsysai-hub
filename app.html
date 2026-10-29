@@ -274,7 +274,8 @@ const user=tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user;
 let L=(()=>{const q=new URLSearchParams(location.search).get("lang");if(q==="ru"||q==="en")return q;try{return localStorage.getItem("asa_lang")}catch(e){return null}})()||((user&&user.language_code||navigator.language||"ru").slice(0,2)==="ru"?"ru":"en");
 let tab="prod";
 const $=s=>document.querySelector(s);
-const go=u=>{ if(tg&&/^https:\/\/t\.me\//.test(u)) tg.openTelegramLink(u); else if(tg) tg.openLink(u); else window.open(u,"_blank"); };
+const go=u=>{ if(!(tg&&tg.initData)&&u.includes("sysarchitect_bot?startapp")){location.href="zayavka.html"+(L==="en"?"?lang=en":"");return;} // в браузере заявка открывается прямо здесь
+  if(tg&&/^https:\/\/t\.me\//.test(u)) tg.openTelegramLink(u); else if(tg) tg.openLink(u); else window.open(u,"_blank"); };
 
 function stage(f){
   const x=f[L],top=`<div class="panel-top"><i></i><i></i><i></i><span>${x.top}</span></div>`;
