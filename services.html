@@ -27,6 +27,7 @@ p{margin:0}
 /* шапка */
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--graphite);color:var(--white);border-radius:4px;padding:7px 7px 7px 20px;box-shadow:var(--shadow)}
 .brand{font-weight:600;font-size:18px}.brand b{color:var(--mint);font-weight:600}
+.top .bk{flex:none;width:34px;height:34px;border-radius:50%;background:#ffffff1a;display:grid;place-items:center;color:var(--white)}
 .lang{display:flex;background:rgba(255,255,255,.1);border-radius:4px;padding:3px}
 .lang button{padding:5px 12px;border-radius:4px;font-weight:600;font-size:13px;letter-spacing:.06em;color:#b9bdbf}
 .lang button.on{background:var(--mint);color:var(--graphite)}
@@ -111,7 +112,8 @@ footer .brand{color:var(--ink);font-size:20px}
 <body>
 <div class="wrap">
   <header class="top">
-    <div class="brand">ArchitectSystems<b>AI</b></div>
+    <button class="bk" aria-label="Назад" onclick="history.length>1?history.back():location.href='app.html'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="brand" style="flex:1">ArchitectSystems<b>AI</b></div>
     <div class="lang"><button data-l="ru">RU</button><button data-l="en">EN</button></div>
   </header>
 

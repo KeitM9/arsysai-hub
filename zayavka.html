@@ -56,12 +56,12 @@ h2{font-size:26px;line-height:1.1;font-weight:600;margin:4px 0 6px;text-transfor
 
 /* главное меню */
 .menu{margin-top:12px;display:flex;flex-direction:column;gap:10px}
-.mi{width:100%;display:flex;gap:14px;align-items:center;background:var(--card);border-radius:20px;padding:14px;box-shadow:var(--shadow);text-align:left;transition:transform .2s var(--ease),background .3s}
+.mi{width:100%;display:flex;gap:12px;align-items:center;background:var(--card);border-radius:20px;padding:12px 14px;box-shadow:var(--shadow);text-align:left;transition:transform .2s var(--ease),background .3s}
 .mi:active{transform:scale(.98)}
-.mi .ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
+.mi .ic{flex:none;width:44px;height:44px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
 .mi .tx{flex:1}
-.mi b{display:block;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
-.mi small{font-size:13px;color:var(--muted)}
+.mi b{display:block;font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+.mi small{display:none}
 .mi .go{flex:none;width:34px;height:34px;border-radius:50%;background:var(--bg);display:grid;place-items:center;transition:transform .3s var(--ease)}
 .mi:hover .go{transform:translateX(3px)}
 .mi.main{background:var(--mint);color:var(--on-mint)}
@@ -202,11 +202,7 @@ html[data-theme="light"] .dir .bd p{color:#414143}
 
   <div class="views">
     <section class="view on" data-v="home">
-      <div class="hero st" style="--i:0">
-        <div><div class="hk"><span data-t="hk1"></span><b data-t="hk2"></b></div>
-        <div class="hs" data-t="hs"></div></div>
-        <span class="free" data-t="free"></span>
-      </div>
+      <div class="dirs" id="dirs"></div>
       <div class="menu">
         <button class="mi main st" style="--i:1" data-go="req"><span class="ic" data-ic="pen"></span><span class="tx"><b data-t="m1"></b><small data-t="m1s"></small></span><span class="go" data-ic="arrow"></span></button>
         <button class="mi st" style="--i:2" data-go="ask"><span class="ic" data-ic="chat"></span><span class="tx"><b data-t="m2"></b><small data-t="m2s"></small></span><span class="go" data-ic="arrow"></span></button>
@@ -215,10 +211,6 @@ html[data-theme="light"] .dir .bd p{color:#414143}
       <p class="note st" style="--i:4" data-t="note"></p>
     </section>
 
-    <section class="view" data-v="dir">
-      <h2 class="st" style="--i:0" data-t="s1"></h2>
-     <div class="dirs" id="dirs"></div>
-    </section>
 
     <section class="view" data-v="task">
       <h2 class="st" style="--i:0" data-t="s2"></h2>
@@ -353,7 +345,7 @@ const view=()=>S.stack[S.stack.length-1];
 const svg=(p,s=22)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const hap=k=>{try{if(tg)k?tg.HapticFeedback.notificationOccurred(k):tg.HapticFeedback.selectionChanged();else navigator.vibrate&&navigator.vibrate(8)}catch(e){}};
-const flow=()=>S.mode==='entry'?['cons']:['dir','task'];
+const flow=()=>S.mode==='entry'?['cons']:['task'];
 
 if(tg){tg.ready();tg.expand();try{tg.disableVerticalSwipes&&tg.disableVerticalSwipes()}catch(e){}
  try{tg.setHeaderColor('#e4e2e3');tg.setBackgroundColor('#e4e2e3')}catch(e){}}
@@ -406,12 +398,12 @@ function render(){
  sync();
 }
 function go(v){S.stack.push(v);render()}
-function back(){if(sheetOn())return closeSheet();if(S.stack.length>1){S.stack.pop();render()}}
+function back(){if(sheetOn())return closeSheet();if(S.stack.length>1){S.stack.pop();render()}else location.href='app.html'+(S.lang==='en'?'?lang=en':'')}
 function home(){S.stack=['home'];render()}
 $('#bk').onclick=back;
 if(tg)tg.BackButton.onClick(back);
-function syncBack(){const can=S.stack.length>1||sheetOn();$('#bk').classList.toggle('hide',S.stack.length<2);if(tg)can?tg.BackButton.show():tg.BackButton.hide()}
-$$('[data-go]').forEach(b=>b.onclick=()=>{hap();const g=b.dataset.go;if(g==='docs')return go('docs');if(g==='ask'){const u='https://t.me/arsysai_bot';return tg?tg.openTelegramLink(u):window.open(u,'_blank')}S.mode=g;go(flow()[0])});
+function syncBack(){const can=S.mode!=='entry';$('#bk').classList.toggle('hide',!can);if(tg)can?tg.BackButton.show():tg.BackButton.hide()}
+$$('[data-go]').forEach(b=>b.onclick=()=>{hap();const g=b.dataset.go;if(g==='docs')return go('docs');if(g==='req'&&!S.dirs.length){toast(t('need_dir'));const d=$('#dirs');d.classList.remove('shake');void d.offsetWidth;d.classList.add('shake');hap('error');return}if(g==='ask'){const u='https://t.me/arsysai_bot';return tg?tg.openTelegramLink(u):window.open(u,'_blank')}S.mode=g;go(flow()[0])});
 $('#toHome').onclick=home;
 $('#closeApp').onclick=()=>tg?tg.close():home();
 
