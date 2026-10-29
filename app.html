@@ -129,6 +129,9 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .ic.o{background:var(--orange);color:var(--white)}
 .ic.m{background:var(--mint);color:var(--graphite)}
 .it{min-width:0;flex:1;align-self:center}
+.acc{flex-direction:column;gap:0;cursor:pointer}.acc .hd{display:flex;gap:12px;align-items:center}.acc .go{transition:transform .25s}.acc.open .go{transform:rotate(90deg)}
+.acc .bd{display:none;padding:10px 0 2px}.acc.open .bd{display:block}.acc .bd p{text-transform:none;letter-spacing:0;font-weight:400;margin:0 0 10px;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#414143}
+.acc .btn{background:var(--mint);color:var(--graphite);border-radius:999px;padding:9px 18px;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
 .meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);font-weight:600}
 .it h3{margin:2px 0 2px;font-size:17px;font-weight:600;text-transform:uppercase;line-height:1.2}
 .it p{margin:0;color:var(--gray);font-weight:300;font-size:14px}
@@ -190,11 +193,11 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 // Тексты и материалы — RU/EN рядом: правишь одно — правишь второе (правило двуязычия)
 const T={
  ru:{hi:"Привет",friend:"друг",freeB:"БЕСПЛАТНО",free:"Все материалы открыты. Бери, пользуйся, делись.",home:"Главная",me:"Профиль",open:"Открыть",soon:"скоро EN",
-     tabs:{all:"Все",sec:"Безопасность",agents:"Агенты",news:"Новости",guide:"Гайды",prompt:"Промпты"},
-     pf:[["cta","Оставить заявку","https://t.me/sysarchitect_bot"],["","Задать вопрос","https://t.me/arsysai_bot?start=ask"],["","Канал","https://t.me/arsysai"],["","Поддержка","https://t.me/supprmaster_bot"],["","Документы","https://legal.arsysai.com"]]},
+     tabs:{prod:"Проекты",order:"На заказ",guide:"Гайды",news:"Новости",lib:"Библиотека"},openP:"Открыть проект",req:"Оставить заявку",
+     pf:[["cta","Оставить заявку","https://t.me/sysarchitect_bot?startapp"],["","Задать вопрос","https://t.me/arsysai_bot"],["","Канал","https://t.me/arsysai"],["","Поддержка","https://t.me/supprmaster_bot"],["","Документы","https://legal.arsysai.com"]]},
  en:{hi:"Hi",friend:"friend",freeB:"FREE",free:"Everything is open. Take it, use it, share it.",home:"Home",me:"Profile",open:"Open",soon:"RU only",
-     tabs:{all:"All",sec:"Security",agents:"Agents",news:"News",guide:"Guides",prompt:"Prompts"},
-     pf:[["cta","Leave a request","https://t.me/sysarchitect_bot?start=en"],["","Ask a question","https://t.me/arsysai_bot?start=ask"],["","Channel","https://t.me/arsysai"],["","Support","https://t.me/supprmaster_bot"],["","Documents","https://legal.arsysai.com/en.html"]]}
+     tabs:{prod:"Projects",order:"Custom",guide:"Guides",news:"News",lib:"Library"},openP:"Open project",req:"Leave a request",
+     pf:[["cta","Leave a request","https://t.me/sysarchitect_bot?startapp=en"],["","Ask a question","https://t.me/arsysai_bot"],["","Channel","https://t.me/arsysai"],["","Support","https://t.me/supprmaster_bot"],["","Documents","https://legal.arsysai.com/en.html"]]}
 };
 // витрина: 4 проекта, у каждого свой логотип (как на его сайте) и свой интерактив
 const AP_LOGO='<svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16 C12.5 10.5 8.5 9 6 11 C3.3 13.2 3.3 18.8 6 21 C8.5 23 12.5 21.5 16 16 C19.5 10.5 23.5 9 26 11 C28.7 13.2 28.7 18.8 26 21 C23.5 23 19.5 21.5 16 16" stroke="#B4FAB2" stroke-width="2.4"/><path d="M21.8 16 L24.4 18.6 L29.6 12.4" stroke="#2c3341" stroke-width="5.2"/><path d="M21.8 16 L24.4 18.6 L29.6 12.4" stroke="#B4FAB2" stroke-width="2.4"/></svg>';
@@ -230,19 +233,20 @@ const FEAT=[
 ];
 // лента: cat, icon, класс иконки, url, url EN (если есть), RU [title, sub], EN [title, sub]
 const ITEMS=[
- ["sec","shield","o","https://securitygit.netlify.app","https://securitygit.netlify.app/?lang=en",["Защита компьютера","Проверка и рекомендации для Claude, Codex, Cursor"],["Protect your computer and code access","Checks and recommendations for Claude, Codex, Cursor"]],
- ["agents","agent","","https://agentproof.arsysai.com","https://agentproof.arsysai.com",["AgentProof","Утечки ключей, инъекции, тихие сбои"],["AgentProof multi-agent system audit","Key leaks, injections, silent failures"]],
- ["agents","box","m","https://agentproof.arsysai.com/paket.html","",["Подготовка к аудиту","Промпт, который соберёт описание системы"],["Prepare your project for an audit","A prompt that builds your system description"]],
+ ["prod","agent","","https://agentproof.arsysai.com","https://agentproof.arsysai.com",["AgentProof","Аудит мультиагентных систем: утечки ключей, инъекции, тихие сбои. После аудита — агент-исправитель под твой отчёт."],["AgentProof","Multi-agent system audit: key leaks, injections, silent failures. After the audit, a fixer agent for your report."]],
+ ["prod","pen","m","https://app.arsysai.com","https://app.arsysai.com",["PROMPT MASTER APP","8 AI-агентов собирают точный промпт под твою задачу. 6 режимов, улучшение промптов, история. $99 один раз."],["PROMPT MASTER APP","8 AI agents build a precise prompt for your task. 6 modes, prompt improvement, history. $99 one-time."]],
+ ["prod","scales","o","https://audit.arsysai.com","https://audit.arsysai.com",["AUDIT","Проверка договора, онлайн-бизнеса, текста, промпта или настроек приложения. Отчёт с оценкой и шагами исправления."],["AUDIT","Checks a contract, online business, text, prompt or app settings. A scored report with steps to fix."]],
+ ["prod","spark","","https://pu.arsysai.com","",["Протокол управления AI","Один файл: метапромпт-ядро, 25 правил против слива токенов, QA-шаблон проверки фактов. Любая нейросеть отвечает по делу. $14."],["AI control protocol","One file: a meta-prompt core, 25 rules against wasted tokens, a fact-check QA template. Any AI answers to the point. $14."]],
+ ["guide","shield","o","https://securitygit.netlify.app","https://securitygit.netlify.app/?lang=en",["Защита компьютера","Проверка и рекомендации для Claude, Codex, Cursor"],["Protect your computer and code access","Checks and recommendations for Claude, Codex, Cursor"]],
+ ["guide","box","m","https://agentproof.arsysai.com/paket.html","",["Подготовка к аудиту","Промпт, который соберёт описание системы"],["Prepare your project for an audit","A prompt that builds your system description"]],
  ["guide","key","m","https://pm-25keys.netlify.app","",["Лист Мастера","Нейросеть отвечает по делу"],["Master sheet: 25 keys","Make the model answer to the point"]],
  ["guide","gear","","https://pm-cowork8.netlify.app","",["Cowork за 8 шагов","Настройка Claude Cowork"],["Cowork in 8 steps","Setting up Claude Cowork"]],
- ["prompt","pen","o","https://pm-5promtov.netlify.app","",["5 промпт-запросов","Под точный результат"],["5 prompt requests","For a precise result"]],
- ["prompt","switch","","https://pm-slova.netlify.app","",["Слова-переключатели","Переключают режим модели"],["Switch words","Change the model's mode"]],
- ["prompt","film","m","https://pm-magiya.netlify.app","",["Магия удержания","Хуки для Shorts и Reels"],["The magic of retention","Hooks for Shorts and Reels"]],
- ["prompt","gift","o","https://pm-10promptov.netlify.app","",["10 промптов в подарок","Контент, прогрев и продажи"],["10 prompts as a gift","Content, warm-up and sales"]],
- ["prompt","rocket","","https://pm-zapusk-kursa.netlify.app","",["Запуск онлайн-курса","10 промптов на весь запуск"],["Launching an online course","10 prompts for the whole launch"]],
- ["prompt","book","m","https://arsysai.com/biblioteka.html","",["Золотая библиотека","Коллекция с поиском"],["Golden prompt library","A searchable collection"]],
- ["news","news","o","https://t.me/arsysai","https://t.me/arsysai",["Новости AI дня","Каждое утро в 7:00"],["Today's AI news","Every morning at 7:00"]],
- ["guide","spark","","https://pu.arsysai.com","",["Протокол PROMPT MASTER","Система управления AI"],["PROMPT MASTER protocol","A system for managing AI"]]
+ ["guide","pen","o","https://pm-5promtov.netlify.app","",["5 промпт-запросов","Под точный результат"],["5 prompt requests","For a precise result"]],
+ ["guide","switch","","https://pm-slova.netlify.app","",["Слова-переключатели","Переключают режим модели"],["Switch words","Change the model's mode"]],
+ ["guide","film","m","https://pm-magiya.netlify.app","",["Магия удержания","Хуки для Shorts и Reels"],["The magic of retention","Hooks for Shorts and Reels"]],
+ ["guide","gift","o","https://pm-10promptov.netlify.app","",["10 промптов в подарок","Контент, прогрев и продажи"],["10 prompts as a gift","Content, warm-up and sales"]],
+ ["guide","rocket","","https://pm-zapusk-kursa.netlify.app","",["Запуск онлайн-курса","10 промптов на весь запуск"],["Launching an online course","10 prompts for the whole launch"]],
+ ["lib","book","m","https://arsysai.com/biblioteka.html","",["Золотая библиотека","Коллекция с поиском"],["Golden prompt library","A searchable collection"]]
 ];
 const ICON={shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
  agent:'<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 16h6"/>',
@@ -256,6 +260,11 @@ const ICON={shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path 
  rocket:'<path d="M12 3c4 2 6 6 6 10l-3 3H9l-3-3c0-4 2-8 6-10z"/><circle cx="12" cy="10" r="2"/><path d="M9 19l-1 3M15 19l1 3"/>',
  book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',
  news:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
+ funnel:'<path d="M3 4h18l-7 8v7l-4 2v-9z"/>',
+ chat:'<path d="M4 5h16v11H9l-5 4z"/>',
+ phone:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+ site:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>',
+ scales:'<path d="M12 4v16M7 20h10M5 7h14M7 7l-3 6h6zM17 7l-3 6h6z"/>',
  spark:'<path d="M12 3v6M12 15v6M3 12h6M15 12h6M6 6l3 3M15 15l3 3M6 18l3-3M15 9l3-3"/>'};
 const svg=k=>`<svg class="si" viewBox="0 0 24 24">${ICON[k]}</svg>`;
 // бренды двухцветно и слитно (Екатерина, 17.10.2026)
@@ -263,7 +272,7 @@ const brand=s=>s.replace(/AgentProof/g,'AGENT<span class="g">PROOF</span>').repl
 const tg=window.Telegram&&Telegram.WebApp; if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#FFFFFF');tg.setBackgroundColor('#FFFFFF')}catch(e){}} // светлая шапка и в тёмном Telegram
 const user=tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user;
 let L=(()=>{const q=new URLSearchParams(location.search).get("lang");if(q==="ru"||q==="en")return q;try{return localStorage.getItem("asa_lang")}catch(e){return null}})()||((user&&user.language_code||navigator.language||"ru").slice(0,2)==="ru"?"ru":"en");
-let tab="all";
+let tab="prod";
 const $=s=>document.querySelector(s);
 const go=u=>{ if(tg&&/^https:\/\/t\.me\//.test(u)) tg.openTelegramLink(u); else if(tg) tg.openLink(u); else window.open(u,"_blank"); };
 
@@ -291,8 +300,9 @@ function render(){
     <div class="stage${f.id==="au"?" au":""}">${stage(f)}<div class="bar"><span>${f.id==="ap"||x.sl?`<span class="score"><small>${x.sl||(L==="en"?"Reliability score":"Балл надёжности")}</small><b><span class="sc">0.0</span> <em>/10</em></b></span>`:x.foot}</span><button class="open" data-u="${L==="en"&&f.urlEn||f.url}">${t.open}</button></div></div></article>`}).join("");
   $("#dots").innerHTML=FEAT.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("");
   $("#tabs").innerHTML=Object.entries(t.tabs).map(([k,v])=>`<button data-k="${k}" class="${k===tab?"on":""}">${v}</button>`).join("");
-  const list=ITEMS.filter(i=>tab==="all"||i[0]===tab);
+  const list=ITEMS.filter(i=>i[0]===tab); $(".free").style.display=tab==="guide"||tab==="lib"?"":"none";
   $("#feed").innerHTML=list.map((i,n)=>{const x=L==="en"?i[6]:i[5],u=L==="en"&&i[4]?i[4]:i[3],ru=L==="en"&&!i[4];
+    if(i[0]==="prod"||i[0]==="order") return `<div class="item acc" style="animation-delay:${n*40}ms"><div class="hd"><span class="ic ${i[2]}">${svg(i[1])}</span><span class="it"><h3>${brand(x[0])}</h3></span><span class="go">›</span></div><div class="bd"><p>${x[1]}</p><button class="btn" data-u="${u}">${i[0]==="prod"?t.openP:t.req}</button></div></div>`;
     return `<a class="item" data-u="${u}" style="animation-delay:${n*40}ms"><span class="ic ${i[2]}">${svg(i[1])}</span><span class="it"><h3>${brand(x[0])}${ru?`<span class="soon">${t.soon}</span>`:""}</h3></span><span class="go">›</span></a>`}).join("");
   $("#profile").innerHTML=t.pf.map(p=>`<a class="${p[0]}" data-u="${p[2]}"><span>${p[1]}</span><span>›</span></a>`).join("");
   runLog();
@@ -344,10 +354,11 @@ function runLog(){
 }
 document.addEventListener("click",e=>{
   const l=e.target.closest(".lang button"); if(l){L=l.dataset.l;try{localStorage.setItem("asa_lang",L)}catch(_){}render();return;}
-  const k=e.target.closest(".tabs button"); if(k){tab=k.dataset.k;render();return;}
+  const k=e.target.closest(".tabs button"); if(k){if(k.dataset.k==="news"){go("https://t.me/arsysai");return;}if(k.dataset.k==="order"){go(L==="en"?"https://t.me/sysarchitect_bot?startapp=en":"https://t.me/sysarchitect_bot?startapp");return;}tab=k.dataset.k;render();return;}
   const v=e.target.closest(".nav button"); if(v){document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("on",b===v));
     $("#home").style.display=v.dataset.v==="home"?"":"none";$("#profile").style.display=v.dataset.v==="profile"?"flex":"none";return;}
   const u=e.target.closest("[data-u]"); if(u){go(u.dataset.u);return;}
+  const h=e.target.closest(".acc .hd"); if(h){h.parentNode.classList.toggle("open");return;}
   // листание витрины: стрелки ‹ › и точки
   const r=$("#rail"),w=r.firstElementChild.offsetWidth+12,a=e.target.closest(".nav-rail .ar"),d=e.target.closest("#dots i");
   if(a) r.scrollBy({left:w*a.dataset.s,behavior:"smooth"});

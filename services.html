@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Telegram Mini App под ключ · ArchitectSystemsAI</title>
+<title>Приложение в Telegram под ключ · ArchitectSystemsAI</title>
 <meta name="description" content="Мини-приложение внутри Telegram под ключ: витрина, материалы, заявки, оплата и AI-ассистент. От $399.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,7 +168,7 @@ footer .brand{color:var(--ink);font-size:20px}
 // RU и EN рядом: правишь одно — правишь второе
 const ORDER={ru:"https://t.me/sysarchitect_bot",en:"https://t.me/sysarchitect_bot?start=en"};
 const T={
-ru:{kick:"Telegram Mini App под ключ",
+ru:{kick:"Приложение в Telegram под ключ",
  h1:'Ваше приложение <span class="g">внутри Telegram</span>',
  lead:"Витрина, материалы, заявки, оплата и AI-ассистент в одном окне, там, где уже живёт ваша аудитория. Открывается за секунду кнопкой в вашем боте.",
  cta:"Обсудить проект",seeplans:"Смотреть цены",
@@ -209,7 +209,7 @@ const ALL={ru:["Работает на телефоне и компьютере",
            en:["Works on phone and desktop","Your own domain","Code and access handed to you","Tested on phones before launch","Privacy policy"]};
 const STEPS={ru:[["Заявка","Пишете в бот: что у вас есть и что хотите получить."],["Концепт","Показываем первый экран на ваших материалах, вы видите результат до оплаты."],["Сборка","Собираем, вы смотрите и вносите правки."],["Запуск","Подключаем к боту и домену, передаём доступы, дальше поддержка по желанию."]],
              en:[["Request","Tell the bot what you have and what you want."],["Concept","We show a first screen built on your materials, so you see the result before paying."],["Build","We build, you review and request edits."],["Launch","We connect your bot and domain, hand over access, support if you want it."]]};
-const FAQ={ru:[["Что такое Mini App?","Приложение, которое открывается прямо в Telegram кнопкой в боте. Открывается сразу, на любом телефоне и компьютере."],
+const FAQ={ru:[["Что такое приложение в Telegram?","Приложение, которое открывается прямо в Telegram кнопкой в боте. Открывается сразу, на любом телефоне и компьютере."],
                ["Подойдёт ли мне?","Экспертам, авторам курсов и каналов, онлайн-школам, сервисам с записью, магазинам и сообществам, у которых аудитория уже в Telegram."],
                ["Как посмотреть пример?","Справа на этой странице живое приложение Architect Systems AI. Можно листать и нажимать, всё работает как у ваших клиентов."],
                ["Можно ли начать с малого?","Да. Начните с витрины, позже добавим языки, оплату и AI-ассистента на той же основе."],
@@ -234,7 +234,7 @@ function render(){
  $("#all").innerHTML=ALL[L].map(a=>`<span>${a}</span>`).join("");
  $("#steps").innerHTML=STEPS[L].map((s,i)=>`<div class="step"><div class="n">0<i>${i+1}</i></div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
  $("#faq").innerHTML=FAQ[L].map(q=>`<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("");
- document.title=(L==="en"?"Telegram Mini App, turnkey":"Telegram Mini App под ключ")+" · ArchitectSystemsAI";
+ document.title=(L==="en"?"Telegram Mini App, turnkey":"Приложение в Telegram под ключ")+" · ArchitectSystemsAI";
 }
 document.addEventListener("click",e=>{const l=e.target.closest(".lang button");if(l){L=l.dataset.l;try{localStorage.setItem("asa_lang",L)}catch(_){}render();}});
 render();
