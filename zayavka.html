@@ -20,24 +20,24 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
 button:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 
 .app{position:fixed;inset:0;display:flex;flex-direction:column}
-.top{margin:12px 16px 0;display:flex;align-items:center;gap:10px;background:var(--graphite);color:var(--on-graphite);border-radius:4px;padding:6px;box-shadow:var(--shadow)}
-.top .bk{flex:none;width:34px;height:34px;border-radius:4px;background:#ffffff1a;display:grid;place-items:center;transition:width .35s var(--ease),opacity .25s,margin .35s var(--ease)}
+.top{margin:12px 16px 0;display:flex;align-items:center;gap:10px;background:var(--graphite);color:var(--on-graphite);border-radius:999px;padding:6px;box-shadow:var(--shadow)}
+.top .bk{flex:none;width:34px;height:34px;border-radius:50%;background:#ffffff1a;display:grid;place-items:center;transition:width .35s var(--ease),opacity .25s,margin .35s var(--ease)}
 .top .bk.hide{width:0;opacity:0;margin-right:-10px;pointer-events:none}
 .top .ttl{flex:1;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:8px}
 .top .ttl b{color:var(--mint);font-weight:600}
-.seg{position:relative;flex:none;display:flex;background:#ffffff1a;border-radius:4px;padding:3px}
-.seg::before{content:"";position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:4px;background:var(--mint);transition:transform .35s var(--spring)}
+.seg{position:relative;flex:none;display:flex;background:#ffffff1a;border-radius:999px;padding:3px}
+.seg::before{content:"";position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:var(--mint);transition:transform .35s var(--spring)}
 .seg[data-v="en"]::before{transform:translateX(100%)}
 .seg button{position:relative;z-index:1;width:42px;padding:5px 0;font-size:13px;font-weight:600;letter-spacing:.06em;color:#b9bdbf;transition:color .25s}
 .seg button[aria-pressed="true"]{color:#2c3341}
 
 .prog{margin:14px 16px 0;display:flex;align-items:center;gap:12px;height:16px;transition:opacity .3s,height .3s,margin .3s}
 .prog.hide{opacity:0;height:0;margin-top:0}
-.prog .track{flex:1;height:6px;border-radius:4px;background:var(--line);overflow:hidden}
-.prog .bar{height:100%;width:0;border-radius:4px;background:var(--orange);transition:width .6s var(--ease)}
+.prog .track{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.prog .bar{height:100%;width:0;border-radius:3px;background:var(--orange);transition:width .6s var(--ease)}
 .prog .cnt{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:70px;text-align:right}
 
-.views{position:relative;flex:1;overflow:hidden;overflow:clip} /* clip: фокус в поле не сдвигает экраны вбок */
+.views{position:relative;flex:1;overflow:hidden}
 .view{position:absolute;inset:0;overflow-y:auto;padding:16px 16px 130px;opacity:0;transform:translateX(48px);filter:blur(6px);pointer-events:none;visibility:hidden;transition:opacity .45s var(--ease),transform .55s var(--ease),filter .45s var(--ease),visibility 0s .55s;scrollbar-width:none}
 .view::-webkit-scrollbar{display:none}
 .view.left{transform:translateX(-48px)}
@@ -48,21 +48,30 @@ button:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px soli
 h2{font-size:26px;line-height:1.1;font-weight:600;margin:4px 0 6px;text-transform:uppercase;letter-spacing:.01em}
 .sub{font-size:14px;color:var(--muted);margin:0 0 16px}
 
-.hero{display:grid;grid-template-columns:1fr;gap:10px 12px;border-radius:4px;background:var(--graphite);color:var(--on-graphite);box-shadow:var(--shadow);padding:16px}
-.hero .hk{font-size:30px;line-height:1;font-weight:600;text-transform:uppercase}
+.hero{position:relative;height:220px;border-radius:24px;background:var(--graphite);color:var(--on-graphite);overflow:hidden;box-shadow:var(--shadow);padding:22px}
+.hero .hk{position:relative;z-index:2;font-size:30px;line-height:1;font-weight:600;text-transform:uppercase;max-width:170px}
 .hero .hk b{display:block;color:var(--mint);font-weight:600}
-.hero .hs{margin-top:8px;font-size:13px;color:#b9bdbf;}
-.hero .free{grid-column:1/-1;justify-self:start;margin-top:6px;background:var(--mint);color:var(--on-mint);border-radius:4px;padding:5px 12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.hero .hs{position:relative;z-index:2;margin-top:10px;font-size:14px;color:#b9bdbf;max-width:150px}
+.hero .free{position:absolute;z-index:2;left:22px;bottom:22px;background:var(--mint);color:var(--on-mint);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.orbit{position:absolute;right:-128px;top:50%;width:300px;height:300px;margin-top:-150px}
+.ring{position:absolute;inset:0;animation:spin 22s linear infinite}
+.ring.r2{inset:60px;animation-duration:14s;animation-direction:reverse}
+.ring span{position:absolute;left:50%;top:50%;height:16px;border-radius:8px;margin:-8px 0 0 -18px;width:36px;background:#f7f6f6;opacity:.9;transform:rotate(var(--a)) translateX(var(--r))}
+.ring span.m{background:var(--mint);opacity:1}
+.ring span.o{background:var(--orange);width:16px;margin-left:-8px;opacity:1}
+.core{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--mint);color:var(--on-mint);display:grid;place-items:center;animation:pulse 2.6s var(--ease) infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #b4fab266}50%{box-shadow:0 0 0 16px #b4fab200}}
 
 /* главное меню */
 .menu{margin-top:12px;display:flex;flex-direction:column;gap:10px}
-.mi{width:100%;display:flex;gap:14px;align-items:center;background:var(--card);border-radius:4px;padding:14px;box-shadow:var(--shadow);text-align:left;transition:transform .2s var(--ease),background .3s}
+.mi{width:100%;display:flex;gap:14px;align-items:center;background:var(--card);border-radius:20px;padding:14px;box-shadow:var(--shadow);text-align:left;transition:transform .2s var(--ease),background .3s}
 .mi:active{transform:scale(.98)}
-.mi .ic{flex:none;width:46px;height:46px;border-radius:4px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
+.mi .ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
 .mi .tx{flex:1}
 .mi b{display:block;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
 .mi small{font-size:13px;color:var(--muted)}
-.mi .go{flex:none;width:34px;height:34px;border-radius:4px;background:var(--bg);display:grid;place-items:center;transition:transform .3s var(--ease)}
+.mi .go{flex:none;width:34px;height:34px;border-radius:50%;background:var(--bg);display:grid;place-items:center;transition:transform .3s var(--ease)}
 .mi:hover .go{transform:translateX(3px)}
 .mi.main{background:var(--mint);color:var(--on-mint)}
 .mi.main small{color:#2c3341cc}
@@ -71,21 +80,16 @@ h2{font-size:26px;line-height:1.1;font-weight:600;margin:4px 0 6px;text-transfor
 .note{margin:14px 4px 0;font-size:13px;color:var(--muted);text-align:center}
 
 .dirs,.docs{display:flex;flex-direction:column;gap:10px}
-.dir{background:var(--card);border-radius:4px;box-shadow:var(--shadow);transition:background .35s var(--ease),transform .2s var(--ease),color .35s}
+.dir{background:var(--card);border-radius:20px;box-shadow:var(--shadow);transition:background .35s var(--ease),transform .2s var(--ease),color .35s}
 .dir:active{transform:scale(.98)}
 .dir .hd{width:100%;display:flex;align-items:center;gap:12px;padding:12px 14px;text-align:left}
-.dir .ic{flex:none;width:44px;height:44px;border-radius:4px;background:var(--graphite);color:var(--mint);display:grid;place-items:center;transition:transform .45s var(--spring)}
+.dir .ic{flex:none;width:44px;height:44px;border-radius:14px;background:var(--graphite);color:var(--mint);display:grid;place-items:center;transition:transform .45s var(--spring)}
 .dir .t{flex:1;font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
-.dir .rd{flex:none;width:24px;height:24px;border-radius:4px;border:1.5px solid var(--muted);display:grid;place-items:center;transition:border-color .3s}
-.dir .rd::after{content:"";width:12px;height:12px;border-radius:4px;background:var(--on-mint);transform:scale(0);transition:transform .35s var(--spring)}
+.dir .rd{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;transition:border-color .3s}
+.dir .rd::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--on-mint);transform:scale(0);transition:transform .35s var(--spring)}
 .dir .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
 .dir .bd>div{overflow:hidden}
-/* описание — обычным читаемым шрифтом, заголовки остаются Oswald */
-.dir .bd p{margin:0;padding:0 14px 12px 16px;font:400 14.5px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .4s var(--ease)}
-html[data-theme="light"] .dir .bd p{color:#414143}
-/* компактно: в раскрытой карточке без пустоты между заголовком и описанием (правило Екатерины 28.10) */
-.dir.sel .hd{padding-bottom:2px}
-.dir .bd a{color:inherit;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.dir .bd p{margin:0;padding:0 16px 14px 70px;font-size:14px;line-height:1.45;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .4s var(--ease)}
 .dir.sel{background:var(--mint);color:var(--on-mint)}
 .dir.sel .ic{transform:rotate(-8deg) scale(1.06);background:#2c3341}
 .dir.sel .rd{border-color:var(--on-mint)}
@@ -96,7 +100,7 @@ html[data-theme="light"] .dir .bd p{color:#414143}
 .fld{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
 .fld label{font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .fld label i{color:var(--orange);font-style:normal}
-.fld textarea,.fld input{font:400 16px/1.45 var(--f);color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:4px;padding:12px 14px;box-shadow:var(--shadow);transition:border-color .2s;width:100%}
+.fld textarea,.fld input{font:400 16px/1.45 var(--f);color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);transition:border-color .2s;width:100%}
 .fld textarea{resize:none;height:104px}
 .fld textarea.tall{height:160px}
 .fld textarea::placeholder,.fld input::placeholder{color:var(--muted)}
@@ -104,19 +108,19 @@ html[data-theme="light"] .dir .bd p{color:#414143}
 .fld .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
 .fld .meta .ok{color:var(--ink)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--card);border-radius:4px;padding:9px 14px;font-size:14px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;transition:background .3s,color .3s,transform .35s var(--spring),border-color .3s}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 14px;font-size:14px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;transition:background .3s,color .3s,transform .35s var(--spring),border-color .3s}
 .chip[aria-pressed="true"]{background:var(--mint);color:var(--on-mint);border-color:var(--mint);transform:scale(1.04);font-weight:600}
 
 .cons{display:flex;flex-direction:column;gap:10px}
-.con{background:var(--card);border-radius:4px;box-shadow:var(--shadow)}
+.con{background:var(--card);border-radius:16px;box-shadow:var(--shadow)}
 .con .hd{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 14px}
-.box{flex:none;width:26px;height:26px;border-radius:4px;border:1.5px solid var(--muted);display:grid;place-items:center;transition:background .25s,border-color .25s,transform .35s var(--spring)}
+.box{flex:none;width:26px;height:26px;border-radius:8px;border:1.5px solid var(--muted);display:grid;place-items:center;transition:background .25s,border-color .25s,transform .35s var(--spring)}
 .box path{stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .35s var(--ease) .05s}
 .con.ck .box{background:var(--mint);border-color:var(--mint);transform:scale(1.08)}
 .con.ck .box path{stroke-dashoffset:0}
 .con .tx{flex:1;font-size:14px;line-height:1.35;text-align:left}
 .con .tx small{color:var(--muted)}
-.con .mo{flex:none;width:32px;height:32px;border-radius:4px;display:grid;place-items:center;color:var(--muted);transition:transform .4s var(--ease)}
+.con .mo{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:transform .4s var(--ease)}
 .con.open .mo{transform:rotate(180deg)}
 .con .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
 .con .bd>div{overflow:hidden}
@@ -124,28 +128,28 @@ html[data-theme="light"] .dir .bd p{color:#414143}
 .con .bd button{color:var(--ink);text-decoration:underline;text-underline-offset:2px;font-size:13px}
 .con.open .bd{grid-template-rows:1fr}
 
-.doc{width:100%;display:flex;align-items:center;gap:12px;background:var(--card);border-radius:4px;padding:14px;box-shadow:var(--shadow);text-align:left;transition:transform .2s var(--ease)}
+.doc{width:100%;display:flex;align-items:center;gap:12px;background:var(--card);border-radius:16px;padding:14px;box-shadow:var(--shadow);text-align:left;transition:transform .2s var(--ease)}
 .doc:active{transform:scale(.98)}
-.doc .ic{flex:none;width:40px;height:40px;border-radius:4px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
+.doc .ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--graphite);color:var(--mint);display:grid;place-items:center}
 .doc b{display:block;font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
 .doc small{font-size:13px;color:var(--muted)}
 
 .done{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:32px}
-.mark{position:relative;width:112px;height:112px;border-radius:4px;background:var(--mint);color:var(--on-mint);display:grid;place-items:center;margin-bottom:22px;transform:scale(0)}
+.mark{position:relative;width:112px;height:112px;border-radius:50%;background:var(--mint);color:var(--on-mint);display:grid;place-items:center;margin-bottom:22px;transform:scale(0)}
 .view.on .mark{animation:pop .7s var(--spring) .15s forwards}
 .mark path{stroke-dasharray:40;stroke-dashoffset:40}
 .view.on .mark path{animation:draw .5s var(--ease) .6s forwards}
-.mark::before{content:"";position:absolute;inset:-14px;border-radius:4px;border:2px solid var(--mint);opacity:0}
+.mark::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid var(--mint);opacity:0}
 .view.on .mark::before{animation:ring 1.2s var(--ease) .5s}
 @keyframes pop{to{transform:scale(1)}}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes ring{0%{opacity:.9;transform:scale(.8)}100%{opacity:0;transform:scale(1.5)}}
-.bit{position:absolute;left:50%;top:50%;height:12px;width:26px;border-radius:4px;pointer-events:none;animation:fly 1.1s var(--ease) forwards}
+.bit{position:absolute;left:50%;top:50%;height:12px;width:26px;border-radius:6px;pointer-events:none;animation:fly 1.1s var(--ease) forwards}
 @keyframes fly{from{transform:translate(-50%,-50%) rotate(0);opacity:1}to{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--rot));opacity:0}}
 .done h2{font-size:28px}
 .done .sub{max-width:290px}
 .btns{display:flex;flex-direction:column;gap:10px;width:100%;margin-top:8px}
-.btn{height:52px;border-radius:4px;font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;box-shadow:var(--shadow);transition:transform .2s var(--ease)}
+.btn{height:52px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;box-shadow:var(--shadow);transition:transform .2s var(--ease)}
 .btn:active{transform:scale(.97)}
 .btn.mint{background:var(--mint);color:var(--on-mint)}
 .btn.dark{background:var(--graphite);color:var(--on-graphite)}
@@ -154,41 +158,36 @@ html[data-theme="light"] .dir .bd p{color:#414143}
 /* нижняя шторка: подтверждение, документ, уведомление */
 .dim{position:fixed;inset:0;background:#0b0d12;opacity:0;pointer-events:none;transition:opacity .35s;z-index:20}
 .dim.on{opacity:.45;pointer-events:auto}
-.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88%;display:flex;flex-direction:column;background:var(--bg);border-radius:4px;box-shadow:0 -10px 40px rgba(0,0,0,.25);transform:translateY(105%);transition:transform .5s var(--ease);z-index:21;padding:8px 16px calc(16px + env(safe-area-inset-bottom))}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88%;display:flex;flex-direction:column;background:var(--bg);border-radius:24px 24px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.25);transform:translateY(105%);transition:transform .5s var(--ease);z-index:21;padding:8px 16px calc(16px + env(safe-area-inset-bottom))}
 .sheet.on{transform:none}
-.sheet .grab{width:40px;height:5px;border-radius:4px;background:var(--line);margin:4px auto 10px}
+.sheet .grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:4px auto 10px}
 .sheet .sh{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 .sheet .sh b{font-size:20px;font-weight:600;text-transform:uppercase}
-.sheet .x{flex:none;width:34px;height:34px;border-radius:4px;background:var(--card);display:grid;place-items:center}
+.sheet .x{flex:none;width:34px;height:34px;border-radius:50%;background:var(--card);display:grid;place-items:center}
 .sheet .sb{overflow-y:auto;flex:1;min-height:0}
-.sheet iframe{width:100%;height:62vh;border:0;border-radius:4px;background:#fff}
-.sum{background:var(--card);border-radius:4px;padding:4px 16px 14px;box-shadow:var(--shadow);margin-bottom:12px}
+.sheet iframe{width:100%;height:62vh;border:0;border-radius:16px;background:#fff}
+.sum{background:var(--card);border-radius:16px;padding:4px 16px 14px;box-shadow:var(--shadow);margin-bottom:12px}
 .sum dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:10px}
 .sum dd{margin:2px 0 0;font-size:15px;line-height:1.4;word-break:break-word}
 .sheet .btns{margin-top:4px}
 
 .mb{position:fixed;left:0;right:0;bottom:0;padding:14px 16px calc(18px + env(safe-area-inset-bottom));display:flex;justify-content:center;background:linear-gradient(to top,var(--bg) 65%,transparent);z-index:5;transition:transform .5s var(--ease)}
 .mb.hide{transform:translateY(130%)}
-.mainbtn{position:relative;height:54px;width:100%;border-radius:4px;background:var(--mint);color:var(--on-mint);font-size:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;box-shadow:var(--float);overflow:hidden;transition:width .45s var(--ease),opacity .3s,transform .2s var(--ease)}
+.mainbtn{position:relative;height:54px;width:100%;border-radius:999px;background:var(--mint);color:var(--on-mint);font-size:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;box-shadow:var(--float);overflow:hidden;transition:width .45s var(--ease),opacity .3s,transform .2s var(--ease)}
 .mainbtn:active{transform:scale(.97)}
 .mainbtn.off{opacity:.5}
 .mainbtn .lbl{display:inline-flex;align-items:center;gap:8px;transition:opacity .2s}
 .mainbtn.load{width:54px}
 .mainbtn.load .lbl{opacity:0}
-.spin{position:absolute;inset:15px;border-radius:4px;border:3px solid #2c334133;border-top-color:#2c3341;opacity:0;animation:spin .8s linear infinite}
+.spin{position:absolute;inset:15px;border-radius:50%;border:3px solid #2c334133;border-top-color:#2c3341;opacity:0;animation:spin .8s linear infinite}
 .load .spin{opacity:1;transition:opacity .2s .25s}
 .btn.mint{position:relative;overflow:hidden}
 .btn.load .lbl{opacity:0}
-.toast{position:fixed;left:50%;bottom:calc(98px + env(safe-area-inset-bottom));transform:translate(-50%,12px);background:var(--graphite);color:var(--on-graphite);border-radius:4px;padding:9px 16px;font-size:13px;letter-spacing:.03em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s,transform .35s var(--spring);z-index:30}
+.toast{position:fixed;left:50%;bottom:calc(98px + env(safe-area-inset-bottom));transform:translate(-50%,12px);background:var(--graphite);color:var(--on-graphite);border-radius:999px;padding:9px 16px;font-size:13px;letter-spacing:.03em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s,transform .35s var(--spring);z-index:30}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 .shake{animation:shake .45s}
 @keyframes shake{20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-
-/* мелкий текст по всему хабу — системный шрифт телефона, чёрный (правило Екатерины 28.10) */
-.sub,.mi small,.note,.fld .meta,.con .tx,.con .bd p,.con .bd button,.doc small,.sum dd,.sheet .sb,textarea,input,.toast{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;font-weight:400}
-.sub,.mi small,.note,.fld .meta,.con .bd p,.doc small{color:#414143;font-size:14px}
-.hero .hs{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;font-weight:400}
 </style>
 </head>
 <body>
@@ -203,9 +202,14 @@ html[data-theme="light"] .dir .bd p{color:#414143}
   <div class="views">
     <section class="view on" data-v="home">
       <div class="hero st" style="--i:0">
-        <div><div class="hk"><span data-t="hk1"></span><b data-t="hk2"></b></div>
-        <div class="hs" data-t="hs"></div></div>
+        <div class="hk"><span data-t="hk1"></span><b data-t="hk2"></b></div>
+        <div class="hs" data-t="hs"></div>
         <span class="free" data-t="free"></span>
+        <div class="orbit" aria-hidden="true">
+          <div class="ring" id="r1"></div>
+          <div class="ring r2" id="r2"></div>
+          <div class="core"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></div>
+        </div>
       </div>
       <div class="menu">
         <button class="mi main st" style="--i:1" data-go="req"><span class="ic" data-ic="pen"></span><span class="tx"><b data-t="m1"></b><small data-t="m1s"></small></span><span class="go" data-ic="arrow"></span></button>
@@ -217,7 +221,8 @@ html[data-theme="light"] .dir .bd p{color:#414143}
 
     <section class="view" data-v="dir">
       <h2 class="st" style="--i:0" data-t="s1"></h2>
-     <div class="dirs" id="dirs"></div>
+      <p class="sub st" style="--i:1" data-t="s1h"></p>
+      <div class="dirs" id="dirs"></div>
     </section>
 
     <section class="view" data-v="task">
@@ -290,8 +295,8 @@ m1:'Оставить заявку',m1s:'Направление, задача, с
 note:'Ответы приходят в чат с ботом. Приложение можно держать открытым.',
 tHome:['Architect Systems','AI'],tReq:['Оставить','заявку'],tAsk:['Задать','вопрос'],tDocs:['Документы',''],tDone:['Готово',''],
 next:'Далее',check:'Проверить заявку',sendQ:'Отправить вопрос',step:'Шаг',of:'из',
-s1:'Выбирай направление',
-s2:'Расскажи о задаче',s2h:'Можно коротко, детали уточним в переписке',goal:'Что должно получиться в итоге',goalH:'Минимум 10 символов',name:'Как к тебе обращаться',tg:'Твой Telegram',when:'Когда нужно',
+s1:'Что нужно сделать?',s1h:'Выбери одно направление, нажми ещё раз, чтобы свернуть',
+s2:'Расскажи о задаче',s2h:'Можно коротко, детали уточним в переписке',goal:'Что должно получиться в итоге?',goalH:'Минимум 10 символов',name:'Как к тебе обращаться',tg:'Твой Telegram',when:'Когда нужно',
 s3:'Согласия',s3h:'Один раз: три пункта обязательны, четвёртый по желанию. Стрелка раскрывает суть документа.',opt:'по желанию',full:'Открыть полный текст',
 a1:'Вопрос Екатерине',a1h:'Про услуги, сроки, цену или то, что пока непонятно',a2:'Твой вопрос',a2h:'Ответ придёт в чат с ботом',
 d1:'Документы',d1h:'Нажми, чтобы открыть текст прямо здесь',
@@ -305,8 +310,8 @@ m1:'Send a request',m1s:'Direction, task, timing',m2:'Ask a question',m2s:'Ekate
 note:'Replies come to your chat with the bot. You can keep the app open.',
 tHome:['Architect Systems','AI'],tReq:['Send a','request'],tAsk:['Ask a','question'],tDocs:['Documents',''],tDone:['Done',''],
 next:'Next',check:'Review request',sendQ:'Send question',step:'Step',of:'of',
-s1:'Choose your direction',
-s2:'Tell us about the task',s2h:'Short is fine, we’ll clarify in chat',goal:'What should the result be',goalH:'At least 10 characters',name:'Your name',tg:'Your Telegram',when:'Timing',
+s1:'What do you need?',s1h:'Pick one direction, tap again to collapse',
+s2:'Tell us about the task',s2h:'Short is fine, we’ll clarify in chat',goal:'What should the result be?',goalH:'At least 10 characters',name:'Your name',tg:'Your Telegram',when:'Timing',
 s3:'Consents',s3h:'Once only: three items are required, the fourth is optional. The arrow opens a short summary.',opt:'optional',full:'Open full text',
 a1:'Question for Ekaterina',a1h:'About services, timing, price or anything unclear',a2:'Your question',a2h:'The reply comes to your chat with the bot',
 d1:'Documents',d1h:'Tap to open the text right here',
@@ -329,12 +334,13 @@ doc:'<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 15.5h6"/>',
 arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>'};
 // id совпадают с APP_DIRS в bot.py — бот сам подставляет название направления
 const DIRS=[
- {id:'security',ic:'shield',ru:['Безопасность AI','Найдём, где в твоём проекте могут утечь ключи, данные клиентов или деньги. Соберём агента-исправителя под твой проект: он закрывает слабые места по порядку, в твоей среде, под твоим контролем.'],en:['AI security','We find where keys, client data or money could leak in your project. We build a fixer agent for your project: it closes the weak spots in order, in your environment, under your control.']},
- {id:'agent',ic:'multi',ru:['AI-агенты под заказ','Соберём AI-агента или команду агентов под любую твою задачу. Сначала карта агентов: кто что делает и какие у кого права. Потом готовые агенты: каждый делает свою часть, координатор собирает итог, передача данных, лимиты и контроль настроены.'],en:['Custom AI agents','We build an AI agent or a team of agents for any task you have. First an agent map: who does what and with which rights. Then the ready agents: each does its part, a coordinator assembles the result, hand-offs, limits and control are set up.']},
- {id:'audit',ic:'scales',ru:['Аудит любой сложности','Система агентов, промпт, сайт, воронка, продукт. На выходе отчёт: что мешает, что исправить первым и как.'],en:['Audit of any complexity','An agent system, a prompt, a site, a funnel, a product. You get a report: what gets in the way, what to fix first and how.']},
- {id:'miniapp',ic:'phone',ru:['Мини-приложение под ключ','Приложение внутри Telegram для твоего бизнеса, как это, в котором ты сейчас: запись, заявки, каталог, оплата. <a href="services.html">Пакеты и цены →</a>'],en:['Telegram Mini App, turnkey','An app inside Telegram for your business, like the one you are in now: bookings, requests, a catalog, payments. <a href="services.html">Packages and prices →</a>']},
- {id:'site',ic:'site',ru:['Гайд или мини-сайт','Одностраничный гайд или мини-сайт о твоём продукте: понятно объясняет, что ты делаешь, и ведёт человека к заявке.'],en:['Guide or mini-site','A one-page guide or a mini-site about your product: it explains clearly what you do and leads people to a request.']},
- {id:'general',ic:'spark',ru:['Пока не знаю','Опиши задачу своими словами. Подскажем, с чего начать и что подойдёт.'],en:['Not sure yet','Describe the task in your words. We’ll suggest where to start and what fits.']}];
+ {id:'security',ic:'shield',ru:['Безопасность AI','Проверим, где агент или бот может раскрыть данные, и укрепим эти места.'],en:['AI security','We find where an agent or bot could expose data and reinforce those spots.']},
+ {id:'agent',ic:'bot',ru:['Агент под заказ','Агент берёт на себя рутину: ответы клиентам, заявки, отчёты.'],en:['Custom agent','An agent takes over routine work: client replies, requests, reports.']},
+ {id:'multi',ic:'multi',ru:['Мультиагентная система','Команда агентов: каждый делает свою часть, координатор собирает итог.'],en:['Multi-agent system','A team of agents: each does its part, a coordinator assembles the result.']},
+ {id:'audit',ic:'scales',ru:['Аудит любой сложности','Отчёт по промпту, сайту, воронке или продукту с приоритетами.'],en:['Audit of any complexity','A report on a prompt, site, funnel or product, with priorities.']},
+ {id:'miniapp',ic:'phone',ru:['Мини-приложение под ключ','Такое же приложение в Telegram для твоего бизнеса: запись, заявки, каталог.'],en:['Telegram Mini App, turnkey','An app like this one for your business: bookings, requests, a catalog.']},
+ {id:'site',ic:'site',ru:['Сайт или лендинг','Страница, которая объясняет продукт и ведёт человека к заявке.'],en:['Website or landing','A page that explains the product and leads people to a request.']},
+ {id:'general',ic:'spark',ru:['Пока не знаю','Опиши задачу своими словами, подскажем, с чего начать.'],en:['Not sure yet','Describe the task in your words, we’ll suggest where to start.']}];
 const WHEN={ru:['Как можно скорее','В этом месяце','Спокойно, без спешки'],en:['As soon as possible','This month','No rush']};
 const LEGAL='https://legal.arsysai.com';
 const CONS=[
@@ -346,7 +352,7 @@ const DOCS=[['Политика конфиденциальности','Privacy Po
 
 const user=tg&&tg.initDataUnsafe&&tg.initDataUnsafe.user||{};
 const S={lang:(qs.get('lang')||((user.language_code||'ru').slice(0,2)==='en'?'en':'ru'))==='en'?'en':'ru',
- stack:['home'],mode:'req',dirs:[],when:0,cons:[0,0,0,0],consented:qs.get('c')==='1',open:-1};
+ stack:['home'],mode:'req',dir:null,when:0,cons:[0,0,0,0],consented:qs.get('c')==='1',open:-1};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const t=k=>T[S.lang][k];
 const view=()=>S.stack[S.stack.length-1];
@@ -356,16 +362,16 @@ const hap=k=>{try{if(tg)k?tg.HapticFeedback.notificationOccurred(k):tg.HapticFee
 const flow=()=>S.mode==='ask'?(S.consented?['ask']:['cons','ask']):(S.consented?['dir','task']:['dir','task','cons']);
 
 if(tg){tg.ready();tg.expand();try{tg.disableVerticalSwipes&&tg.disableVerticalSwipes()}catch(e){}
- try{tg.setHeaderColor('#e4e2e3');tg.setBackgroundColor('#e4e2e3')}catch(e){}}
-// всегда светлая тема, даже в тёмном Telegram (Екатерина 28.10: тёмные тона больше не делаем)
-document.documentElement.dataset.theme='light';
+ const bg=tg.colorScheme==='dark'?'#1c2029':'#e4e2e3';try{tg.setHeaderColor(bg);tg.setBackgroundColor(bg)}catch(e){}}
+document.documentElement.dataset.theme=tg&&tg.colorScheme==='dark'?'dark':(qs.get('theme')==='dark'?'dark':'light');
 $('#nm').value=user.first_name||'';
 $('#tgn').value=user.username?'@'+user.username:'';
 $$('[data-ic]').forEach(e=>e.innerHTML=svg(I[e.dataset.ic],e.classList.contains('go')?18:22));
+[[$('#r1'),12,118],[$('#r2'),8,70]].forEach(([el,n,r],k)=>{for(let i=0;i<n;i++){const s=document.createElement('span');s.style.setProperty('--a',(360/n*i)+'deg');s.style.setProperty('--r',r+'px');if(i%4===1)s.className='m';if(k&&i%4===3)s.className='o';el.appendChild(s)}});
 
 function renderDirs(){
- $('#dirs').innerHTML=DIRS.map((d,i)=>`<div class="dir st${S.dirs.includes(d.id)?' sel':''}" style="--i:${i+2}" data-id="${d.id}"><button class="hd" aria-expanded="${S.dirs.includes(d.id)}"><span class="ic">${svg(I[d.ic])}</span><span class="t">${d[S.lang][0]}</span><span class="rd"></span></button><div class="bd"><div><p>${d[S.lang][1]}</p></div></div></div>`).join('');
- $$('#dirs .dir').forEach(el=>el.querySelector('.hd').onclick=()=>{const id=el.dataset.id;S.dirs=S.dirs.includes(id)?S.dirs.filter(x=>x!==id):[...S.dirs,id];$$('#dirs .dir').forEach(x=>{const on=S.dirs.includes(x.dataset.id);x.classList.toggle('sel',on);x.querySelector('.hd').setAttribute('aria-expanded',on)});hap();sync()});
+ $('#dirs').innerHTML=DIRS.map((d,i)=>`<div class="dir st${S.dir===d.id?' sel':''}" style="--i:${i+2}" data-id="${d.id}"><button class="hd" aria-expanded="${S.dir===d.id}"><span class="ic">${svg(I[d.ic])}</span><span class="t">${d[S.lang][0]}</span><span class="rd"></span></button><div class="bd"><div><p>${d[S.lang][1]}</p></div></div></div>`).join('');
+ $$('.dir').forEach(el=>el.querySelector('.hd').onclick=()=>{const id=el.dataset.id;S.dir=S.dir===id?null:id;$$('.dir').forEach(x=>{const on=x.dataset.id===S.dir;x.classList.toggle('sel',on);x.querySelector('.hd').setAttribute('aria-expanded',on)});hap();sync()});
 }
 function renderWhen(){
  $('#when').innerHTML=WHEN[S.lang].map((w,i)=>`<button class="chip" aria-pressed="${S.when===i}">${w}</button>`).join('');
@@ -415,10 +421,8 @@ $$('[data-go]').forEach(b=>b.onclick=()=>{hap();const g=b.dataset.go;if(g==='doc
 $('#toHome').onclick=home;
 $('#closeApp').onclick=()=>tg?tg.close():home();
 
-// Telegram принимаем в любом виде: @ник, ник или ссылка t.me/ник — дальше работаем с чистым ником
-const tgNick=()=>$('#tgn').value.trim().replace(/^(https?:\/\/)?(www\.)?(t|telegram)\.me\//i,'').replace(/^@/,'').replace(/[/?#].*$/,'');
-const tgOk=()=>/^[A-Za-z0-9_]{4,32}$/.test(tgNick());
-const valid=v=>({dir:S.dirs.length>0,task:$('#goal').value.trim().length>=10&&tgOk(),cons:!!(S.cons[0]&&S.cons[1]&&S.cons[2]),ask:$('#q').value.trim().length>=3})[v];
+const tgOk=()=>/^@?[A-Za-z0-9_]{4,32}$/.test($('#tgn').value.trim());
+const valid=v=>({dir:!!S.dir,task:$('#goal').value.trim().length>=10&&tgOk(),cons:!!(S.cons[0]&&S.cons[1]&&S.cons[2]),ask:$('#q').value.trim().length>=3})[v];
 const TITLE={home:'tHome',dir:'tReq',task:'tReq',cons:null,ask:'tAsk',docs:'tDocs',done:'tDone'};
 function sync(){
  const v=view(),f=flow(),pos=f.indexOf(v),inFlow=pos>-1;
@@ -451,14 +455,14 @@ $('#main').onclick=()=>{
 };
 
 function payload(action){
- const tgv=tgNick();
+ const tgv=$('#tgn').value.trim();
  return action==='question'
   ?{action,text:$('#q').value.trim(),name:$('#nm').value.trim()||user.first_name||'',tg:user.username?'@'+user.username:tgv,cons:S.cons,lang:S.lang}
-  :{action,dir:S.dirs,goal:$('#goal').value.trim(),name:$('#nm').value.trim(),tg:tgv&&tgv[0]!=='@'?'@'+tgv:tgv,when:S.when,cons:S.cons,lang:S.lang};
+  :{action,dir:S.dir,goal:$('#goal').value.trim(),name:$('#nm').value.trim(),tg:tgv&&tgv[0]!=='@'?'@'+tgv:tgv,when:S.when,cons:S.cons,lang:S.lang};
 }
 function confirmReq(){
- const p=payload('zayavka'),dn=DIRS.filter(x=>S.dirs.includes(x.id)).map(x=>x[S.lang][0]).join(', ');
- const rows=[[t('sDir'),dn],[t('sGoal'),p.goal],[t('sName'),p.name||'—'],[t('sTg'),p.tg],[t('sWhen'),WHEN[S.lang][S.when]]];
+ const p=payload('zayavka'),d=DIRS.find(x=>x.id===S.dir);
+ const rows=[[t('sDir'),d[S.lang][0]],[t('sGoal'),p.goal],[t('sName'),p.name||'—'],[t('sTg'),p.tg],[t('sWhen'),WHEN[S.lang][S.when]]];
  sheet(t('confT'),`<dl class="sum">${rows.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl><div class="btns"><button class="btn mint" id="shSend"><span class="lbl">${esc(t('send'))}</span><span class="spin"></span></button><button class="btn ghost" id="shEdit">${esc(t('edit'))}</button></div>`);
  $('#shEdit').onclick=closeSheet;
  $('#shSend').onclick=()=>send('zayavka',$('#shSend'));
@@ -482,7 +486,7 @@ async function send(action,btn){
   if(sheetOn())closeSheet();
   S.consented=true;
   $('#dT').textContent=t(action==='question'?'qT':'dT');$('#dS').textContent=t(action==='question'?'qS':'dS');
-  if(action==='question')$('#q').value='';else{S.dirs=[];$('#goal').value='';S.when=0;renderDirs();renderWhen()}
+  if(action==='question')$('#q').value='';else{S.dir=null;$('#goal').value='';S.when=0;renderDirs();renderWhen()}
   hap('success');S.stack=['home','done'];render();
  }catch(e){toast(t(e.message==='slow'?'slow':'err'));hap('error')}
  finally{busy=false;btn.classList.remove('load')}
