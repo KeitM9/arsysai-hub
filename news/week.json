@@ -1,17 +1,17 @@
 {
-  "date": "2026-10-25",
-  "title": "🗓 Главное в AI за неделю · 19–25 октября",
+  "date": "2026-11-01",
+  "title": "🗓 Главное в AI за неделю · 26 октября – 1 ноября",
   "items": [
-    {"emoji": "🔐", "title": "Забытый ключ открыл дорогу вредоносной версии LiteLLM", "text": "Ключ из открытого репозитория не отозвали, и 21 октября вышла версия, которая крала ключи.", "url": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html"},
-    {"emoji": "🔐", "title": "У ИИ-агентов с платежами не было лимита трат", "text": "В коде x402 нашли 25 ошибок, и агент мог отдать весь баланс токенов.", "url": "https://thehackernews.com/2026/10/critical-x402-sdk-flaw-could-let.html"},
-    {"emoji": "🔐", "title": "Ошибка в Brotli затронула Node.js, Bun и Python", "text": "Подготовленные данные могли запустить чужой код, исправления уже вышли.", "url": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html"},
-    {"emoji": "🔐", "title": "Старое приложение Popcorn Time открывало доступ к компьютерам", "text": "Обновления шли без проверки подписи, под угрозой были миллионы компьютеров.", "url": "https://www.bleepingcomputer.com/news/security/abandoned-popcorn-time-app-exposed-millions-of-device-to-rce-attacks/"},
-    {"emoji": "🤖", "title": "OpenAI перестанет учить модели на живом интернете", "text": "Компания перейдёт на кэшированные и смоделированные копии сети из-за рисков.", "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/"},
-    {"emoji": "🗣", "title": "Block выпустила голосовую модель Dessa", "text": "Модель работает на устройстве без облака и говорит и слушает одновременно.", "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/"},
-    {"emoji": "📢", "title": "Google: данные Gmail и Фото могут влиять на рекламу", "text": "Новая политика с 16 октября разрешает использовать данные других сервисов в AI-поиске.", "url": "https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html"},
-    {"emoji": "📱", "title": "iPhone Duo поступил в продажу в 70 странах", "text": "Первый складной iPhone от Apple начал отправляться покупателям.", "url": "https://www.gsmarena.com/iphone_duo_is_now_shipping-news-75182.php"},
-    {"emoji": "💻", "title": "Apple назначила событие на 28 октября", "text": "Ждут первый MacBook с сенсорным OLED-экраном, Apple это не подтверждала.", "url": "https://www.gsmarena.com/oppo_find_x10_and_x10_pro_max_go_global_oled_macbook_coming_on_oct_28-news-75191.php"},
-    {"emoji": "🦆", "title": "Робот Microduck: 20 000 предзаказов за день", "text": "Открытый робот-утёнок выполняет голосовые команды, доставку обещают к Рождеству.", "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/"}
+    {"emoji": "💰", "title": "Binance: кража 6,3 миллиарда через ноутбук инженера", "text": "Через взломанный ноутбук инженера отправили выводы денег от имени биржи.", "url": "https://www.bleepingcomputer.com/news/security/binance-links-63-billion-crypto-theft-to-compromised-devops-laptop/"},
+    {"emoji": "🔑", "title": "Хостинг Northflank взломан, ключи AI клиентов тратят чужие", "text": "Клиентов просят сменить все ключи и пароли, которые хранились на хостинге.", "url": "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/"},
+    {"emoji": "🧩", "title": "В магазине Cursor лежал поддельный Claude Code", "text": "Расширение 11 часов ставило на компьютеры скрытый вход по SSH.", "url": "https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/"},
+    {"emoji": "🤖", "title": "ИИ-агенты вошли во внутренние системы Anthropic", "text": "Стартап Cathedral добрался до них через сторонние программы продаж и администрирования.", "url": "https://the-decoder.com/ai-agents-hacked-anthropic-maker-of-arguably-the-most-capable-ai-models-for-cyberdefense/"},
+    {"emoji": "🦊", "title": "Открытая модель GLM 5.3 сама взломала Firefox за 12 часов", "text": "Один успешный взлом обошёлся примерно в 1 000 долларов.", "url": "https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/"},
+    {"emoji": "🧠", "title": "Google выпустила Gemini 4 Carbon через две недели после Argon", "text": "В индексе Artificial Analysis она набрала 59 баллов и вышла на первое место.", "url": "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/"},
+    {"emoji": "🧬", "title": "Агент на Claude Sonnet 5 сам провёл операцию на мозге мыши", "text": "Он выбрал терапию из 19 вариантов, каждый необратимый шаг одобрял ветеринар.", "url": "https://the-decoder.com/a-claude-model-autonomously-chose-a-gene-therapy-and-operated-on-a-mouse-brain-with-no-human-decision-making/"},
+    {"emoji": "💻", "title": "Apple показала первый Mac с сенсорным экраном", "text": "Новый MacBook Pro с OLED стоит от 2 899 долларов, продажи с 6 ноября.", "url": "https://www.gsmarena.com/apple_announces_new_macbook_pro_models_with_oled_and_touchscreen-news-75254.php"},
+    {"emoji": "🛰", "title": "Первый спутник Google с чипами для ИИ вышел на связь", "text": "На борту четыре чипа TPU, ещё два спутника запланированы на 2027 год.", "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/"}
   ],
-  "takeaway": "Три вещи, которые стоит проверить на этой неделе: 1. Найдите в проекте старые ключи и отзовите ненужные. 2. Задайте предел трат для агента, который платит сам. 3. Посмотрите, какие программы на вашем компьютере давно не обновлялись."
+  "takeaway": "Три вещи, которые стоит проверить на этой неделе: 1. Где лежат ключи вашего бота: на хостинге, в коде или в заметках. 2. Какие расширения стоят в вашем редакторе кода. 3. На каких компьютерах открыт доступ к серверам и платежам.",
+  "cta": "🔐 Проверить свой проект"
 }
