@@ -112,13 +112,14 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .dots i.on{background:var(--orange);width:18px;border-radius:3px}
 
 /* С чего начать: 5 дорожек, выбранная подсвечивает 3 шага (03.11.2026) */
-.start{background:var(--card);border-radius:20px;padding:12px 14px;margin-top:14px;box-shadow:var(--shadow)}
-.start h2{margin:0;font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.start .hint{margin:2px 0 8px;font:13px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#414143}
-.paths{display:flex;gap:6px;overflow-x:auto;margin:0 -14px;padding:0 14px 2px;scrollbar-width:none}
-.paths::-webkit-scrollbar{display:none}
-.paths button{flex:none;padding:6px 11px;border-radius:999px;background:var(--white);font-size:13px;font-weight:500;letter-spacing:.02em;box-shadow:0 0 0 1px rgba(65,65,67,.1);transition:background .3s,color .3s}
-.paths button.on{background:var(--graphite);color:var(--white)}
+.start{margin-top:22px}
+.start h2{margin:0;font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.start .hint{margin:2px 0 10px;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#414143}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.paths button{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:16px;padding:10px;box-shadow:var(--shadow);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.03em;text-align:left;line-height:1.15;transition:background .3s}
+.paths button.on{background:var(--mint);color:var(--graphite)}
+.paths .ic{width:34px;height:34px;border-radius:11px}
+.paths .ic .si{width:18px;height:18px}
 .steps{display:flex;flex-direction:column;gap:6px;margin-top:10px}
 .steps:empty{display:none}
 .step{display:flex;align-items:center;gap:10px;background:var(--white);border-radius:14px;padding:8px 10px;box-shadow:0 0 0 1px rgba(65,65,67,.06);animation:in .35s ease both;position:relative}
@@ -194,13 +195,13 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <section id="home">
     <div class="rail" id="rail"></div>
     <div class="nav-rail"><button class="ar" data-s="-1" aria-label="Назад">‹</button><div class="dots" id="dots"></div><button class="ar" data-s="1" aria-label="Вперёд">›</button></div>
-    <div class="start" id="start"><h2 data-t="startH"></h2><p class="hint" id="startHint"></p><div class="paths" id="paths"></div><div class="steps" id="steps"></div></div>
     <nav class="tabs" id="tabs"></nav>
     <div class="free"><b data-t="freeB"></b><span data-t="free"></span></div>
     <div class="feed" id="feed"></div>
   </section>
 
   <section class="pf" id="profile"></section>
+  <div class="start" id="start" hidden><h2 data-t="startH"></h2><p class="hint" id="startHint"></p><div class="paths" id="paths"></div><div class="steps" id="steps"></div></div>
 </div>
 
 <div class="nav">
@@ -211,10 +212,10 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 <script>
 // Тексты и материалы — RU/EN рядом: правишь одно — правишь второе (правило двуязычия)
 const T={
- ru:{hi:"Привет",friend:"друг",freeB:"БЕСПЛАТНО",free:"Все материалы открыты. Бери, пользуйся, делись.",home:"Главная",me:"Профиль",open:"Открыть",soon:"скоро EN",startH:"С чего начать",startHint:"Выбери, что ближе к тебе, и я покажу первые три шага.",startPicked:"Твои первые три шага.<br>Всё остальное открыто ниже.",
+ ru:{hi:"Привет",friend:"друг",freeB:"БЕСПЛАТНО",free:"Все материалы открыты. Бери, пользуйся, делись.",home:"Главная",me:"Профиль",open:"Открыть",soon:"скоро EN",startH:"С чего начать",startHint:"Выбери, что ближе к тебе, и я покажу первые три шага.",startPicked:"Твои первые три шага.<br>Всё остальное открыто на главной.",
      tabs:{prod:"Проекты",order:"На заказ",guide:"Гайды",lib:"Библиотека"},openP:"Открыть проект",req:"Оставить заявку",
      pf:[["cta","Оставить заявку","https://t.me/sysarchitect_bot?startapp"],["","Задать вопрос","https://t.me/arsysai_bot"],["","Канал","https://t.me/arsysai"],["","Поддержка","https://t.me/supprmaster_bot"],["","Документы","https://legal.arsysai.com"]]},
- en:{hi:"Hi",friend:"friend",freeB:"FREE",free:"Everything is open. Take it, use it, share it.",home:"Home",me:"Profile",open:"Open",soon:"RU only",startH:"Where to start",startHint:"Pick what's closest to you and I'll show your first three steps.",startPicked:"Your first three steps.<br>Everything else is open below.",
+ en:{hi:"Hi",friend:"friend",freeB:"FREE",free:"Everything is open. Take it, use it, share it.",home:"Home",me:"Profile",open:"Open",soon:"RU only",startH:"Where to start",startHint:"Pick what's closest to you and I'll show your first three steps.",startPicked:"Your first three steps.<br>Everything else is open on Home.",
      tabs:{prod:"Projects",order:"Custom",guide:"Guides",lib:"Library"},openP:"Open project",req:"Leave a request",
      pf:[["cta","Leave a request","https://t.me/sysarchitect_bot?startapp=en"],["","Ask a question","https://t.me/arsysai_bot"],["","Channel","https://t.me/arsysai"],["","Support","https://t.me/supprmaster_bot"],["","Documents","https://legal.arsysai.com/en.html"]]}
 };
@@ -269,25 +270,27 @@ const ITEMS=[
  ["guide","rocket","","https://pm-zapusk-kursa.netlify.app","",["Запуск онлайн-курса","10 промптов на весь запуск"],["Launching an online course","10 prompts for the whole launch"]],
  ["lib","book","m","https://arsysai.com/biblioteka.html","",["Золотая библиотека","Коллекция с поиском"],["Golden prompt library","A searchable collection"]]
 ];
-// дорожки «С чего начать»: ключ → [RU, EN, три ссылки из ITEMS]. Только подсвечивают, ничего не прячут
+// дорожки «С чего начать» (в профиле): ключ → [RU, EN, значок, класс значка, три ссылки из ITEMS]. Только подсвечивают, ничего не прячут
 const PATHS={
- new:["🌱 Только начинаю","🌱 Just starting",["https://karta-ai.netlify.app/?lang=ru","https://pm-25keys.netlify.app","https://app.arsysai.com"]],
- use:["💬 Пользуюсь AI","💬 I use AI",["https://karta-ai.netlify.app/?lang=ru","https://pm-5promtov.netlify.app","https://app.arsysai.com"]],
- build:["🛠 Строю проекты","🛠 I build projects",["https://securitygit.netlify.app","https://skills-new.netlify.app/?lang=ru","https://agentproof.arsysai.com"]],
- biz:["🏪 Свой бизнес","🏪 My business",["https://karta-ai.netlify.app/?lang=ru","https://audit.arsysai.com","https://t.me/sysarchitect_bot?startapp"]],
- pro:["🎓 Эксперт","🎓 Expert",["https://pm-magiya.netlify.app","https://pm-10promptov.netlify.app","https://app.arsysai.com"]]
+ new:["Новичок","Beginner","leaf","m",["https://karta-ai.netlify.app/?lang=ru","https://pm-25keys.netlify.app","https://app.arsysai.com"]],
+ use:["Пользуюсь AI","I use AI","chat","",["https://karta-ai.netlify.app/?lang=ru","https://pm-5promtov.netlify.app","https://app.arsysai.com"]],
+ build:["Строю проекты","I build projects","code","o",["https://securitygit.netlify.app","https://skills-new.netlify.app/?lang=ru","https://agentproof.arsysai.com"]],
+ pro:["Эксперт","Expert","cap","",["https://pm-magiya.netlify.app","https://pm-10promptov.netlify.app","https://app.arsysai.com"]]
 };
 let path=(()=>{const q=new URLSearchParams(location.search).get("path");if(q&&PATHS[q])return q;try{const s=localStorage.getItem("asa_path");return PATHS[s]?s:null}catch(e){return null}})();
 const ORDER_STEP={ru:["На заказ","AI-агенты под вашу задачу"],en:["Custom","AI agents for your task"]};
 function renderStart(){
   const t=T[L];
   $("#startHint").innerHTML=path?t.startPicked:t.startHint;
-  $("#paths").innerHTML=Object.entries(PATHS).map(([k,v])=>`<button data-path="${k}" class="${k===path?"on":""}">${L==="en"?v[1]:v[0]}</button>`).join("");
-  $("#steps").innerHTML=path?PATHS[path][2].map((u,n)=>{const i=ITEMS.find(x=>x[3]===u);
+  $("#paths").innerHTML=Object.entries(PATHS).map(([k,v])=>`<button data-path="${k}" class="${k===path?"on":""}"><span class="ic ${v[3]}">${svg(v[2])}</span>${L==="en"?v[1]:v[0]}</button>`).join("");
+  $("#steps").innerHTML=path?PATHS[path][4].map((u,n)=>{const i=ITEMS.find(x=>x[3]===u);
     const x=i?(L==="en"?i[6]:i[5]):ORDER_STEP[L],href=i&&L==="en"&&i[4]?i[4]:(i?u:(L==="en"?u+"=en":u)),ic=i?i[1]:"agent",cl=i?i[2]:"o";
     return `<a class="step" data-u="${href}" style="animation-delay:${n*60}ms"><span class="ic ${cl}">${svg(ic)}</span><span class="it"><h3>${brand(x[0])}</h3><p>${x[1].split(/(?<=\.)\s/)[0]}</p></span><span class="go">›</span></a>`}).join(""):"";
 }
-const ICON={map:'<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
+const ICON={leaf:'<path d="M5 20c0-9 6-15 15-15 0 9-6 15-15 15z"/><path d="M5 20l8-8"/>',
+ code:'<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/>',
+ cap:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v5"/>',
+ map:'<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
  folder:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
  shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
  agent:'<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 16h6"/>',
@@ -400,7 +403,7 @@ document.addEventListener("click",e=>{
   const pb=e.target.closest("[data-path]"); if(pb){path=path===pb.dataset.path?null:pb.dataset.path;try{path?localStorage.setItem("asa_path",path):localStorage.removeItem("asa_path")}catch(_){}renderStart();return;}
   const k=e.target.closest(".tabs button"); if(k){if(k.dataset.k==="news"){go("https://t.me/arsysai");return;}if(k.dataset.k==="order"){go(L==="en"?"https://t.me/sysarchitect_bot?startapp=en":"https://t.me/sysarchitect_bot?startapp");return;}tab=k.dataset.k;render();return;}
   const v=e.target.closest(".nav button"); if(v){document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("on",b===v));
-    $("#home").style.display=v.dataset.v==="home"?"":"none";$("#profile").style.display=v.dataset.v==="profile"?"flex":"none";return;}
+    $("#home").style.display=v.dataset.v==="home"?"":"none";$("#profile").style.display=v.dataset.v==="profile"?"flex":"none";$("#start").hidden=v.dataset.v!=="profile";return;}
   const u=e.target.closest("[data-u]"); if(u){go(u.dataset.u);return;}
   const h=e.target.closest(".acc .hd"); if(h){h.parentNode.classList.toggle("open");return;}
   // листание витрины: стрелки ‹ › и точки
@@ -411,6 +414,7 @@ document.addEventListener("click",e=>{
 $("#rail").addEventListener("scroll",e=>{const r=e.target,i=Math.round(r.scrollLeft/(r.firstElementChild.offsetWidth+12));
   document.querySelectorAll("#dots i").forEach((d,n)=>d.classList.toggle("on",n===i));},{passive:true});
 render();
+if(new URLSearchParams(location.search).get("path")) document.querySelector('.nav [data-v="profile"]').click();
 // согласия — первым экраном, один раз (29.10.2026, Екатерина)
 (function(){
   try{ if(localStorage.getItem("asa_cons")) return; }catch(e){}
