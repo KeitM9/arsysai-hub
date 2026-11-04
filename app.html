@@ -224,6 +224,12 @@ const FEAT=[
   en:{kick:"Check any task",top:"What to check",sl:"Scored report",sv:7.5,ask:"In your words",
    say:"my lease agreement",
    list:["Contract","Online business","Text","Prompt","App settings"]}},
+ {id:"pu",url:"https://pu.arsysai.com",
+  logo:()=>L==="en"?`<span>AI <span class="g">PROTOCOL</span></span>`:`<span>ПРОТОКОЛ <span class="g">AI</span></span>`,
+  ru:{kick:"Протокол управления AI",top:"Один файл <b>на весь диалог</b>",head:"Правила действуют весь диалог",foot:"",
+   list:["Метапромпт-ядро","25 правил против переделок","25 стратегий против уклонения","Шаблон проверки фактов","Claude · ChatGPT · Gemini · Grok"]},
+  en:{kick:"AI control protocol",top:"One file <b>for the whole chat</b>",head:"Your rules hold all chat long",foot:"",
+   list:["Metaprompt core","25 rules against rework","25 anti-evasion strategies","Fact-check template","Claude · ChatGPT · Gemini · Grok"]}},
  {id:"order",url:"https://t.me/sysarchitect_bot?startapp",urlEn:"https://t.me/sysarchitect_bot?startapp=en",
   logo:()=>`<span class="lg-asa">ArchitectSystems<b>AI</b></span>`,
   ru:{kick:"На заказ · под ваш проект",top:"Что собираем",foot:`<span class="ft">Оставить заявку</span>`,
@@ -291,6 +297,7 @@ function stage(f){
       <g class="pan pl"><path class="st" d="M48 64L30 112M48 64l18 48M26 112h44c-4 14-14 20-22 20s-18-6-22-20z"/></g>
       <g class="pan pr"><path class="st" d="M152 64l-18 48M152 64l18 48M130 112h44c-4 14-14 20-22 20s-18-6-22-20z"/></g>
     </g></svg></div><div class="ask au-ask"><small>${x.ask}</small><span data-f="au-ask"></span></div><div class="prompt one" data-f="au"></div>`;
+  if(f.id==="pu") return top+`<div class="chk one"><small>${x.head}</small><ul data-f="pu"></ul></div>`;
   return top+`<div class="chk one"><ul data-f="order"></ul></div>`;
 }
 function render(){
@@ -341,6 +348,10 @@ const SCENES={
     await type(ask,x.say,my); await wait(300);
     for(const w of x.list){ if(my!==runId) return; const p=document.createElement("p"); p.innerHTML=`<em>✓</em> `; const t=document.createElement("span"); p.appendChild(t); box.appendChild(p); await type(t,w,my); await wait(150); }
     countUp(sc,x.sv,my);
+  },
+  async pu(x,my){
+    const box=q("pu"); box.innerHTML="";
+    for(const c of x.list){ if(my!==runId) return; const li=document.createElement("li"); li.textContent=c; box.appendChild(li); await wait(420); }
   },
   async order(x,my){
     const box=q("order"); box.innerHTML="";
