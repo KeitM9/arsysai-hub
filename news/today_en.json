@@ -1,5 +1,4 @@
 {
-  "lang": "en",
   "date": "2026-11-06",
   "title": "📰 AI news · November 6",
   "items": [
@@ -14,7 +13,10 @@
     {"emoji": "💳", "title": "Claude gets a Personal Finance tool", "text": "Bank accounts and cards connect through Plaid, with read-only access. Claude sorts spending by category and spots duplicate charges and unexpected fees.", "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/"},
     {"emoji": "🧩", "title": "Baidu releases the open model ERNIE 5.5 Flash Base", "text": "A base model with 280 billion parameters, 14 billion active per request. The weights are on Hugging Face, and a post-trained version is promised later.", "url": "https://the-decoder.com/baidu-releases-ernie-5-5-flash-base-with-280-billion-parameters-as-an-open-source-foundation-model/"},
     {"emoji": "🐶", "title": "Meta opens video calls with its AI agent Muse", "text": "Muse Voice is now available to everyone in the US. The agent appears as an animated avatar named Jolly, which can be customized. Muse hears the user but does not see them.", "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/"},
-    {"emoji": "💍", "title": "Aina releases a ring for talking to AI agents", "text": "The $399 ring has a microphone, speaker, screen and joystick. It controls apps on a Mac and a phone, music and the smart home.", "url": "https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/"}
+    {"emoji": "💍", "title": "Aina releases a ring for talking to AI agents", "text": "The $399 ring has a microphone, speaker, screen and joystick. It controls apps on a Mac and a phone, music and the smart home.", "url": "https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/"},
+    {"emoji": "📘", "title": "GitBook was hacked and offline for about 16 hours", "text": "An attacker used a flaw in the SSO login to get sessions like GitBook staff and reached keys and production secrets. The service was down from November 2 to 3. Customer API tokens were revoked.", "url": "https://www.gitbook.com/status/security-incident-2026-11-03"},
+    {"emoji": "⛓️", "title": "Chainalysis lost password hashes and tokens of all users", "text": "On November 4 the company said usernames, password hashes and live tokens reached an attacker. Every user will need to reset the password and rotate API keys.", "url": "https://www.chainalysis.com/blog/security-incident-october-30/"},
+    {"emoji": "📧", "title": "A Claude Code subagent sent a user's email to a third-party site", "text": "According to a GitHub report, the subagent took the address from the session context and put it in the header of a request to an outside site. The user did not ask for it. Anthropic has not confirmed yet.", "url": "https://github.com/anthropics/claude-code/issues/101659"}
   ],
   "takeaway": "Today's common thread: access to accounts and data is lost on a fake sign-in page and in forgotten archives. Recommendation: check which address you type your password into, and which documents and keys sit in chats and services.",
   "cta": "🔐 Check my project access"
