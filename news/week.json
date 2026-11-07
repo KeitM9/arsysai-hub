@@ -1,17 +1,16 @@
 {
-  "date": "2026-11-01",
-  "title": "🗓 Главное в AI за неделю · 26 октября – 1 ноября",
+  "date": "2026-11-08",
+  "title": "🗓 Главное в AI за неделю · 2–8 ноября",
   "items": [
-    {"emoji": "💰", "title": "Binance: кража 6,3 миллиарда через ноутбук инженера", "text": "Через взломанный ноутбук инженера отправили выводы денег от имени биржи.", "url": "https://www.bleepingcomputer.com/news/security/binance-links-63-billion-crypto-theft-to-compromised-devops-laptop/"},
-    {"emoji": "🔑", "title": "Хостинг Northflank взломан, ключи AI клиентов тратят чужие", "text": "Клиентов просят сменить все ключи и пароли, которые хранились на хостинге.", "url": "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/"},
-    {"emoji": "🧩", "title": "В магазине Cursor лежал поддельный Claude Code", "text": "Расширение 11 часов ставило на компьютеры скрытый вход по SSH.", "url": "https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/"},
-    {"emoji": "🤖", "title": "ИИ-агенты вошли во внутренние системы Anthropic", "text": "Стартап Cathedral добрался до них через сторонние программы продаж и администрирования.", "url": "https://the-decoder.com/ai-agents-hacked-anthropic-maker-of-arguably-the-most-capable-ai-models-for-cyberdefense/"},
-    {"emoji": "🦊", "title": "Открытая модель GLM 5.3 сама взломала Firefox за 12 часов", "text": "Один успешный взлом обошёлся примерно в 1 000 долларов.", "url": "https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/"},
-    {"emoji": "🧠", "title": "Google выпустила Gemini 4 Carbon через две недели после Argon", "text": "В индексе Artificial Analysis она набрала 59 баллов и вышла на первое место.", "url": "https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/"},
-    {"emoji": "🧬", "title": "Агент на Claude Sonnet 5 сам провёл операцию на мозге мыши", "text": "Он выбрал терапию из 19 вариантов, каждый необратимый шаг одобрял ветеринар.", "url": "https://the-decoder.com/a-claude-model-autonomously-chose-a-gene-therapy-and-operated-on-a-mouse-brain-with-no-human-decision-making/"},
-    {"emoji": "💻", "title": "Apple показала первый Mac с сенсорным экраном", "text": "Новый MacBook Pro с OLED стоит от 2 899 долларов, продажи с 6 ноября.", "url": "https://www.gsmarena.com/apple_announces_new_macbook_pro_models_with_oled_and_touchscreen-news-75254.php"},
-    {"emoji": "🛰", "title": "Первый спутник Google с чипами для ИИ вышел на связь", "text": "На борту четыре чипа TPU, ещё два спутника запланированы на 2027 год.", "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/"}
+    {"emoji": "🔑", "title": "Claude Code сохраняет пароли в файле проекта", "text": "Apiiro нашла 1122 публичные копии файла настроек с секретами на GitHub.", "url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html"},
+    {"emoji": "🤖", "title": "ИИ-агент вышел из тестовой среды и взломал WorkOS", "text": "Агент исследователя нашёл внутренний API с забытым ключом для разработки.", "url": "https://www.bleepingcomputer.com/news/security/runaway-ai-hacking-agent-behind-workos-breach-after-escaping-sandbox/"},
+    {"emoji": "🏦", "title": "Банк Arkéa потерял до 133 миллионов долларов", "text": "Взломщик зашёл через платформу подрядчика и переводил деньги со счёта банка.", "url": "https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/"},
+    {"emoji": "🧰", "title": "Фальшивые инструменты безопасности на GitHub заразили 2000 компьютеров", "text": "Dr.Web нашла проекты, которые ставят программу удалённого доступа и крадут пароли.", "url": "https://www.bleepingcomputer.com/news/security/fake-security-tools-on-github-push-backdoors-and-infostealers/"},
+    {"emoji": "🛡", "title": "OpenAI показала GPT-6 Cyber", "text": "Модель ищет уязвимости и пишет исправления: в Firefox нашла 81 критическую ошибку.", "url": "https://the-decoder.com/openais-gpt-6-cyber-can-both-break-into-systems-and-propose-how-to-fix-them/"},
+    {"emoji": "🧠", "title": "Thinking Machines показала Inkling 2 Small", "text": "Веса модели под лицензией Apache 2.0 компания обещает открыть на следующей неделе.", "url": "https://thinkingmachines.ai/news/inkling-2-small/"},
+    {"emoji": "🛰", "title": "Открытая DeepSeek V4.1 Flash почти догнала закрытую модель в атаках", "text": "В тесте Vals AI она достигла 72,8 процента целей против 80,8 у GPT-6 Sol Daybreak.", "url": "https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/"},
+    {"emoji": "🎟", "title": "Фальшивые события OpenAI и SpaceX крадут рабочие аккаунты", "text": "Push Security нашла кампанию с приглашениями, которая забирает вход в Microsoft и Google.", "url": "https://www.bleepingcomputer.com/news/security/fake-openai-spacex-events-used-to-steal-microsoft-google-accounts/"},
+    {"emoji": "🛻", "title": "Tesla прекратит выпуск Cybertruck в 2027 году", "text": "Завод займут роботакси Cybercab.", "url": "https://techcrunch.com/2026/11/06/tesla-will-stop-making-the-cybertruck-in-2027/"}
   ],
-  "takeaway": "Три вещи, которые стоит проверить на этой неделе: 1. Где лежат ключи вашего бота: на хостинге, в коде или в заметках. 2. Какие расширения стоят в вашем редакторе кода. 3. На каких компьютерах открыт доступ к серверам и платежам.",
-  "cta": "🔐 Проверить свой проект"
+  "takeaway": "Три вещи, которые стоит проверить на этой неделе: найдите папку .claude в своих репозиториях и замените ключи из команд; удалите тестовые ключи из рабочей версии проекта; включите двухфакторную защиту в главных сервисах."
 }
